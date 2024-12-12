@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Azure Front Door vs Load Balancer - Notes</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Azure Front Door vs Load Balancer";
+        var mkdocs_page_input_path = "Azure\\ChatGPT\\Azure Front Door vs Load Balancer.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../Power%20Shell/">Power Shell</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AWS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../AWS/SignUp/">AWS Customer Agreement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/CQRS/">CQRS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Diagrams%20included%20in%20HLD/">DiagramsIncludedInHLD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Event%20Sourcing/">Event Sourcing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/GraphQL%20vs%20OData/">GraphQL vs OData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/GraphQL%20vs%20Rest/">GraphQL vs Rest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Onion%20Architecture/">Onion Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Transactional%20Saga%20Patterns/">Transactional Saga Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/modular%20monolith/">Modular monolith</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Driven Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Event%20Driven%20Architecture/One/">One</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Interview</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Interview/Interview%20Story/">Interview Story</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Interview/Monolith%20Structure/">Monolith Structure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Interview/tags/">InterviewStorySolutionArchitect</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Microservices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Microservices/Deployment%20issues%20of%20monolith/">Deployment issues of monolith</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Microservices/Granularity/">Granularity</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >TransactionSagas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/TransactionSagas/Saga%20names/">Saga names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Patterns</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Architecture/TransactionSagas/Patterns/Epic%20Saga%20-%20Synchronous%20Atomic%20Orchestrated/">Epic Saga   Synchronous Atomic Orchestrated</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Architecture/TransactionSagas/Patterns/Phone%20Tag%20Sag%20-%20Synchronous%20Atomic%20Choreographed/">Phone Tag Sag   Synchronous Atomic Choreographed</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Automapper</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Automapper/Anti%20Automapper%20Argument/">Anti Automapper Argument</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Azure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../AppService%20and%20AzureFunction/">AppService and AzureFunction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure%20Charts/">Azure Charts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure%20SQL%20High%20Availability%20and%20Fail%20Over/">FailOverAzureSQL #HighAvailabilityAzureSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Install%20Azure%20CLI/">Install Azure CLI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Kafka%20vs%20EventStoreDB%20%283rd-Party%20Tool%29/">Kafka vs EventStoreDB (3rd Party Tool)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >AKS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../AKS/AKS%20Samples/">AKS-Code-Samples</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../AKS/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../AKS/Diagram%20Deployment%20on%20AKS%20Cluster/">Diagram Deployment on AKS Cluster</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/URLs/">URLs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Why%20CAF%20WAF%20and%20Azure%20Architecture%20Center%20are%20grouped%20together/">Why CAF WAF and Azure Architecture Center are grouped together</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Authentication</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Authentication/Azure%20OpenID%20Connect%20%28OIDC%29/">Azure OpenID Connect (OIDC)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Basics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Basics/Azure%20Management%20Infrastructure/">Azure Management Infrastructure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Basics/Regions%20in%20Australia.%20AvZones%20in%20Australia/">Regions in Australia. AvZones in Australia</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >ChatGPT</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Azure Front Door vs Load Balancer</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Cloud Adoption vs Well Architected Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud%20Adoption%20vs%20Well%20Architected%20Framework/Key%20Differences/">Key Differences</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Cloud%20Adoption%20vs%20Well%20Architected%20Framework/When%20to%20Use%20Which%20Framework/">When to Use Which Framework</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Sourcing</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Event%20Sourcing/Azure%20Event%20Sourcing/">Azure Event Sourcing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Event%20Sourcing/Kafka%20vs%20Azure%20Blob%20Storage/">Kafka vs Azure Blob Storage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Event%20Sourcing/Kafka%20vs%20Azure%20Cosmos%20DB/">Kafka vs Azure Cosmos DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Event%20Sourcing/Kafka%20vs%20Azure%20Event%20Hubs/">Kafka vs Azure Event Hubs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Event%20Sourcing/Kafka%20vs%20Azure%20Service%20Bus/">Kafka vs Azure Service Bus</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Landing Zone</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Landing%20Zone/Azure%20Landing%20Zone/">Azure Landing Zone</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Messaging</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Messaging/Azure%20Event%20Grid%20VS%20Kafka/">Azure Event Grid VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Messaging/Azure%20Service%20Bus%20VS%20Kafka/">Azure Service Bus VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Messaging/Azure%20Service%20Bus%20With%20Sessions/">Azure Service Bus With Sessions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Messaging/Event%20Grid%20vs%20Service%20Bus%20Pub%20Sub/">Event Grid vs Service Bus Pub Sub</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Messaging/Kafka%20is%20push%20or%20pull/">Kafka is push or pull</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SSL Termination</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../SSL%20Termination/AG%20and%20AGIC/">AGandAGIC-TLS-SSL-Termination</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SSL%20Termination/AGIC%20vs%20NGINX%20Ingress%20Controller/">AGIC vs NGINX Ingress Controller</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SSL%20Termination/Pods%20cant%20Terminate%20with%20AG%20AGIC/">Pods cant Terminate with AG AGIC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SSL%20Termination/What%20AGIC%20can%20do%20but%20NGINX%20cant/">What AGIC can do but NGINX cant</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SSL%20Termination/What%20NGINX%20can%20do%20which%20AGIC%20cant/">What NGINX can do which AGIC cant</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cloud</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Cloud/Landing%20Zone/">Landing Zone</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Container Orchestration Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/Rancher%20TerraForm%20K3up/">Rancher TerraForm K3up</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Docker Swarm</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/Docker%20Swarm/Why/">Why</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >K8S</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/AKS%20Dashboard/">AKS Dashboard</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/AKS%20Node/">AKS Node</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/AKS%20Pods/">AKS Pods</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Agents/">Agents</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Check%20container%20in%20AKS%20or%20Docker/">Check container in AKS or Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/DevOps%20Pipelines%20Flow/">DevOps Pipelines Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Docker%20Compose%20vs%20Swarm%20vs%20Kubernetis/">Docker Compose vs Swarm vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Docker%20vs%20Kubernetis/">Docker vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm%20%2B%20Docker/">Helm + Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm%20AKS%20to%20EKS/">Helm AKS to EKS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/K3S%20vs%20K8S/">K3S vs K8S</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/One%20Container%20Per%20Pod/">One Container Per Pod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Port%20Mapping/">Port Mapping</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Temp/">Temp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Commands</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/AKS%20stuck%20pod%20fix/">AKS stuck pod fix</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20Alias%20in%20PowerShell%20Profile/">Create K8S Alias in PowerShell Profile</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20service%20account/">Create K8S service account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Create%20ServiceAccount%20With%20Service%20Admin%20Role/">Create the Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Get%20Token%20of%20Service%20Account/">Get Token of Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Give%20Cluster%20Wide%20Read%20Access/">Give Cluster Wide Read Access</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Command%20alias/">K8S Command alias</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Commands%20in%20Table/">K8S Commands in Table</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ForDevelopersCourse PluralSights</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" >MyNotes</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/2%20-%20Core%20Concepts/">2   Core Concepts</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/3-%20Pods/">3  Pods</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Helm</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/1-%20What%20is%20Helm%20Charts/">1  What is Helm Charts</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/2-%20Helm%20Chart%20Templates/">2  Helm Chart Templates</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/3-%20Helm%20Install/">3  Helm Install</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/4.0%20Helm%20Template%20to%20Kubernetes%20manifest/">4.0 Helm Template to Kubernetes manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/4.1%20Helms%20Templates%20Processing%20Order/">4.1 Helms Templates Processing Order</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/4.2%20Viewing%20the%20Combined%20Manifest/">4.2 Viewing the Combined Manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/4.3%20Order%20in%20which%20resources%20are%20created%20by%20Kubernetes/">4.3 Order in which resources are created by Kubernetes</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Probes</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/AKS%20Liveness%20vs%20Readiness/">AKS Liveness vs Readiness</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/Effect%20of%20failing%20probes/">Effect of failing probes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/Kubelet/">Kubelet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/Minimum%20implementation/">Minimum implementation</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/Startup%20Probe/">Startup Probe</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Setup Environment</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Docker-Desktop%20vs%20Minikube/">Docker Desktop vs Minikube</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/First%20Build/">First Build</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Identify%20K8S%20Environment/">Identify K8S Environment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Min%20Resources%20for%20deployment/">Min Resources for deployment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Options%20to%20run%20K8S%20locally/">Options to run K8S locally</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Setup%20K8S%20dashboard%20on%20DockerDesktop/">Setup K8S dashboard on DockerDesktop</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DDD</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/DomainEvent%20vs%20DomainActivity/">DomainEvent vs DomainActivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Elephant%20Analogy/">Elephant Analogy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Entity%20vs%20Aggregate/">Entity vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Life%20inside%20aggergate%20root/">Life inside an Aggregate Root, part 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Problems%20Solved%20By%20DDD/">Problems Solved By DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Repository%20in%20DDD/">RepositoryDDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Transaction%20Across%20Aggregrates%20in%20DDD/">Transaction Across Aggregrates in DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Value%20vs%20Aggregate/">Value vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Value%20vs%20Entity%20Object/">Value vs Entity Object</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Bounded Context</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DDD/Bounded%20Context/Identify%20Bounded%20Context%20-%20ChatGpt/">Identify Bounded Context   ChatGpt</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DDD/Bounded%20Context/Sub%20Domain%20VS%20Bounded%20Context/">Sub Domain VS Bounded Context</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DailySheet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DailySheet/2024-11-04/">2024 11 04</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DailySheet/2024-11-14/">2024 11 14</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DailySheet/2024-11-21/">2024 11 21</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Design Pattern</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Design%20Pattern/4%20Mistakes%20In%20Repository%20Pattern/">4 Mistakes In Repository Pattern</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diagrams</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Context%20Diagram/">Context Diagram</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Diagrame%20Tool%20Names/">Diagrame Tool Names</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Feature%20Comparison/">Feature Comparison</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Highlevel%20design%20document/">Highlevel design document</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Mermaid%20DiagramsNet%20App%20vs%20Web/">Mermaid DiagramsNet App vs Web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Mermaid%20and%20Diagram.net%20together/">Mermaid and Diagram.net together</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/UML%20Diagrams/">UML Diagrams</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Docker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Docker/Docker%20Commands/">Docker Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Docker/Docker%20File/">Docker File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Docker/Docker%20file%20network%20tools/">Install necessary tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Docker/Use%20DockerCompose%20vs%20Docker/">Use DockerCompose vs Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Common Build Issues</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Docker/Common%20Build%20Issues/Context%20Issue/">Context Issue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Docker/Common%20Build%20Issues/NuGet%20Package%20Download%20Issue/">NuGet Package Download Issue</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DotNet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/Anonymous%20Types%20vs%20Dynamic%20vs%20Tuple/">Anonymous Types vs Dynamic vs Tuple</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/Collections/">Collections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/Net%20Release%20Cycle/">Net Release Cycle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/Net%20SDK%20Web%20vs%20Worker/">Net SDK Web vs Worker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/NetCore%203.1%20Application%20Start/">NetCore 3.1 Application Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ASPNET</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/ASPNET/Minimum%20Code%20to%20access%20a%20controller/">Minimum Code to access a controller</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Collections</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Collections/Class%20Hierarchy/">Class Hierarchy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Collections/IEnumerable%20vs%20IQureyable/">IEnumerable vs IQureyable</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF 8</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >Migrations</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/EF%208/Migrations/Add%20Migration/">Add Migration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/EF%208/Migrations/Update%20EF%20Tools/">Update EF Tools</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/EF%208/Migrations/add-migration%20vs%20dotnet%20ef/">Add migration vs dotnet ef</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >HangFire</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/HangFire/DEL/">DEL</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/HangFire/HangFire%20Job%20Chaining%20HangFire%20Job%20Waiting/">HangFire Job Chaining HangFire Job Waiting</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Net 6 vs Net 3.1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/ActionResult%20T%20sets%20StatusCode%20to%20200/">ActionResult sets StatusCode to 200</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/Net%206%20vs%203.1/">Net 6 vs 3.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Hosting</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/Hosting/GenericHost%20code%20vs%20WebApplication/">GenericHost code vs WebApplication</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20GenericHost/">WebApi code using GenericHost</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20WebApplication/">WebApi code using WebApplication</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SampleProjects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/SampleProjects/Sample%20Console%20Project/">SampleConsoleProject</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >WebApi</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/API%20Testing/">WebApiResponses</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/GPT/">GPT</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/Sample%20Batch%20File%20Text/">Sample Batch File Text</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/Tags/">sampleprojectwebapi #sampleprojectrestapi #sampleprojectDotNetwebapi</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/git/">Git</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tasks</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/Async/">Async</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/More%20Info/">More Info</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/Task.Run%20vs%20AsyncAwait%20vs%20Thread/">Task.Run vs AsyncAwait vs Thread</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/Task.Run/">Task.Run</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/Task.WhenAll%20Exception/">Task.WhenAll Exception</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integrations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Integrations/Mulesoft%20VS%20Azure%20Service%20Bus/">Mulesoft VS Azure Service Bus</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LocalSetup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../LocalSetup/Git%20Extensions/">Git Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../LocalSetup/MS%20SQL%20Server/">MS SQL Server</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MicroServices</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MicroServices/Granularity/">Granularity</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">NoSQL DB</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Azure CosmosDB</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../NoSQL%20DB/Azure%20CosmosDB/Useful%20Queries/">Useful Queries</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Plus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Plus/Discontinued%20Google%20Products/">Discontinued Google Products</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Plus/List/">List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Adobe Stock</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Plus/Adobe%20Stock/Adobe%20Stock/">Adobe Stock</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Agile</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Project%20Management/Agile/Issue%20Hierarchy/">Issue Hierarchy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Phases</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Project%20Phases/Budgeting/">Budgeting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Project%20Phases/Phase%20wise%20role%20engagement/">RoleInvolvement #ProjectPhaseNeededRoles #RolesInvolvedConceptualization #PhaseWiseRoleEngagement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Roles</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Roles/Systems%20Engineering/">SystemEngineering #SystemEngineerVSArchitect</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Site Reliability Engineer SRE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Roles/Site%20Reliability%20Engineer%20SRE/SRE%20vs%20DevOps/">SREVSDevOps #SiteReliabiltyEnginnerVSDevops #RoleComparison</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Roles/Site%20Reliability%20Engineer%20SRE/Site%20Reliability%20Engineer%20vs%20Architect%20vs%20QA/">Site Reliability Engineer vs Architect vs QA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Roles/Site%20Reliability%20Engineer%20SRE/Some%20Tasks%20of%20SRE/">ChaosEnginnering #ScalabilityTesting #SRETasks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Roles/Site%20Reliability%20Engineer%20SRE/Who%20is%20an%20SRE/">Who is an SRE</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQL Server</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../SQL%20Server/View%20in%20Complex%20Query/">View in Complex Query</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/EF/DBContext%20Scoped/">DBContext Scoped</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/EF/DBContext%20Transient%20%28Didnt%20work%29/">DBContext Transient (Didnt work)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/EF/EFCore.BulkExtensions/">EFCore.BulkExtensions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >General Queries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/General%20Queries/Data%20Insertion%20Rate/">Data Insertion Rate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/General%20Queries/SET%20ANSI_NULLS/">SET ANSI NULLS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/General%20Queries/Test%20Data%20Cleanup/">Test Data Cleanup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/General%20Queries/find%20a%20table%20having%20column/">Find a table having column</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Search</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Elastic%20Search%20Perdictability/">Elastic Search Perdictability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Elastic%20Search%20vs%20NoSQL/">Elastic Search vs NoSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Elastic%20Search/">Elastic Search</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Elastic%20VS%20OpenSearch/">Elastic VS OpenSearch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/GreyLog/">GreyLog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/KQL%20VS%20DSL/">KQL VS DSL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Kibana/">Kibana</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Security</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Security/Auth0%20vs%20MS%20Entra%20Id/">Auth0 vs MS Entra Id</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Security/M2M%20vs%20UserToken%20Usage%20Scenerio/">M2M vs UserToken Usage Scenerio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Security/OpenID%20Connect%20%28OIDC%29/">OpenID Connect (OIDC)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Security/Relevance%20of%20scopes%20in%20M2M%20tokens/">Relevance of scopes in M2M tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Security/Roles%20vs%20Scopes/">Roles vs Scopes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Security/SSL%20HTTPS%20and%20TLS/">SSL HTTPS and TLS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Auth0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Access%20Token%20Validation/">Access Token Validation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/AppMetaData%20vs%20UserMetaData/">AppMetaData vs UserMetaData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Auth0%20Applications%20vs%20APIs/">Auth0 Applications vs APIs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Flow%201%20-%20Machine%20to%20Machine%20Client%20Credential%20Flow/">Flow 1   Machine to Machine Client Credential Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Flow%202A%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE/">Flow 2A   SPA Authorization Code Flow with PKCE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Flow%202B%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE%20Detail/">Flow 2B   SPA Authorization Code Flow with PKCE Detail</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Flows%20in%20Auth0/">Flows in Auth0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/How%20to%20handle%20stolen%20access%20tokens/">How to handle stolen access tokens</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/How%20to%20handle%20stolen%20refresh%20token/">How to handle stolen refresh token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Id%20Token/">Id Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Refresh%20Token/">Refresh Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/Token%20Best%20Practices/">Token Best Practices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/What%20can%20be%20stored%20in%20Auth0%20DB/">What can be stored in Auth0 DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Security/Auth0/When%20not%20to%20add%20application%20for%20an%20API/">When not to add application for an API</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TerraForm</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../TerraForm/Terraform%20Does%20or%20DoesNot%20for%20AKS/">Terraform Does or DoesNot for AKS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >KodeCloud Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/2-%20Types%20of%20IAC%20Tools/">2  Types of IAC Tools</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/3-%20Terraform/">3  Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/4-%20Installing%20Terraform/">4  Installing Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/5-%20HCL%20Basics/">5  HCL Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/6-%20Labs/">6  Labs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Test</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/Functional%20Tests/">Functional Tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/In%20NET%206%2B/">In NET 6+</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/Log%20Console.WriteLine/">Log Console.WriteLine</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/TestExplorer%20not%20showing%20tests/">TestExplorer not showing tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/TheUnit/">TheUnit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >xUnit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Test/xUnit/XUnit%20Packages/">XUnit Packages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Test/xUnit/XUnit%20VS%20MSTest/">XUnit VS MSTest</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Test/xUnit/XUnit%20and%20Mocking/">XUnit and Mocking</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ubuntu</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Ubuntu/Debian%20vs%20Ubuntu%20Hardening/">Debian vs Ubuntu Hardening</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Ubuntu/Snap%20vs%20Apt/">Snap vs Apt</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">VS Help</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../VS%20Help/Get%20Json%20during%20debugging/">Get Json during debugging</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Azure</li>
+          <li class="breadcrumb-item">ChatGPT</li>
+      <li class="breadcrumb-item active">Azure Front Door vs Load Balancer</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Azure Front Door and Azure Load Balancer are both designed to handle traffic routing, but they serve different purposes and have distinct capabilities. Here’s a comparison to help understand their differences:</p>
+<h3 id="azure-front-door"><strong>Azure Front Door:</strong><a class="headerlink" href="#azure-front-door" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Global Load Balancing:</strong> Azure Front Door is a global load balancer designed to route traffic across multiple regions and geographies.</li>
+<li><strong>Application Layer (Layer 7) Load Balancing:</strong> It operates at Layer 7 (HTTP/HTTPS), offering features like URL-based routing, SSL termination, web application firewall (WAF), and path-based routing.</li>
+<li><strong>SSL Offloading:</strong> Azure Front Door provides SSL offloading capabilities, meaning it can handle SSL encryption/decryption, reducing the load on backend services.</li>
+<li><strong>Web Application Acceleration:</strong> Front Door offers CDN-like capabilities by caching static content at the edge, improving load times for end users.</li>
+<li><strong>Traffic Management:</strong> It can route traffic based on geography, performance, or priority of backend endpoints.</li>
+<li><strong>Custom Domain and HTTPS:</strong> Provides easy management of custom domains and certificates.</li>
+</ul>
+<h3 id="azure-load-balancer"><strong>Azure Load Balancer:</strong><a class="headerlink" href="#azure-load-balancer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Regional Load Balancing:</strong> Azure Load Balancer is designed for internal or external load balancing within a single region or Virtual Network.</li>
+<li><strong>Network Layer (Layer 4) Load Balancing:</strong> It works at Layer 4 (TCP/UDP) and is typically used for balancing traffic for applications that don’t require application-specific routing (like HTTP headers or URLs).</li>
+<li><strong>Support for Any Protocol:</strong> It can handle any TCP/UDP traffic, not just HTTP/HTTPS, which makes it suitable for scenarios like database or VPN traffic.</li>
+<li><strong>Automatic Reconfiguration:</strong> It supports automatic reconfiguration in response to changes in backend pool health and handles connection resilience at the network level.</li>
+<li><strong>Health Probes:</strong> Allows health checks for each backend, removing unhealthy instances from the pool automatically.</li>
+</ul>
+<h3 id="key-differences"><strong>Key Differences:</strong><a class="headerlink" href="#key-differences" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Layer of Operation:</strong> Front Door works at Layer 7 (application layer), while Load Balancer works at Layer 4 (transport layer).</li>
+<li><strong>Scope:</strong> Front Door is designed for global, multi-region applications, while Load Balancer is primarily for regional applications.</li>
+<li><strong>Traffic Type:</strong> Azure Load Balancer supports all TCP/UDP traffic, whereas Azure Front Door only supports HTTP/HTTPS traffic.</li>
+<li><strong>Advanced Routing:</strong> Azure Front Door offers advanced routing features like path-based routing, which Azure Load Balancer does not.</li>
+</ul>
+<h3 id="conclusion"><strong>Conclusion:</strong><a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>Azure Front Door cannot fully replace Azure Load Balancer because they serve different use cases. If you need global traffic distribution, SSL offloading, or Layer 7 routing, Azure Front Door is the better option. However, for low-level transport layer load balancing within a region or for protocols other than HTTP/HTTPS, Azure Load Balancer is necessary.</p>
+<p>4o</p>
+<h5 id="you-said">You said:<a class="headerlink" href="#you-said" title="Permanent link">&para;</a></h5>
+<p>So if our services run in region1.zone1 and their replica is running in region2.zone2 i.e one zone only in each region then basically we don't need load balancer and we can achieve full resilience with only front door ?</p>
+<h6 id="chatgpt-said">ChatGPT said:<a class="headerlink" href="#chatgpt-said" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Yes, you can achieve resilience using only Azure Front Door if your services are running in a single zone within each region, as Azure Front Door can handle global load balancing across multiple regions. Here's why:</p>
+<h3 id="resilience-with-azure-front-door"><strong>Resilience with Azure Front Door:</strong><a class="headerlink" href="#resilience-with-azure-front-door" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Global Traffic Distribution:</strong> Azure Front Door provides global traffic distribution across multiple regions (region1.zone1 and region2.zone2 in your case). It can route requests to the nearest or fastest available region, ensuring traffic is evenly distributed and reducing latency.</p>
+</li>
+<li>
+<p><strong>Failover and Redundancy:</strong> If one zone or region fails, Azure Front Door can automatically redirect traffic to the replica in the other region. This failover happens at the application layer (Layer 7), meaning users will be routed to the healthy backend without needing a Layer 4 load balancer.</p>
+</li>
+<li>
+<p><strong>Health Probes and Automatic Failover:</strong> Azure Front Door uses health probes to continuously check the status of your services. If one backend or zone becomes unhealthy, it will automatically route traffic to the healthy region without downtime.</p>
+</li>
+<li>
+<p><strong>Cross-Region Resilience:</strong> By using Front Door, you gain global resilience. Even if an entire region fails (including all zones), Front Door can route traffic to a different region, ensuring continuous availability.</p>
+</li>
+<li>
+<p><strong>Traffic Management:</strong> You can set up traffic routing methods (e.g., priority-based, weighted, or performance-based) to direct users to the optimal region based on availability or latency.</p>
+</li>
+</ol>
+<h3 id="when-you-might-still-need-azure-load-balancer"><strong>When You Might Still Need Azure Load Balancer:</strong><a class="headerlink" href="#when-you-might-still-need-azure-load-balancer" title="Permanent link">&para;</a></h3>
+<p>You might need Azure Load Balancer if:</p>
+<ul>
+<li><strong>Multiple Zones in the Same Region:</strong> If you want zone-level resilience (i.e., having services in multiple zones within the same region), Azure Load Balancer is useful to distribute traffic across zones within a region. Azure Front Door won't handle intra-region zone failover.</li>
+<li><strong>Non-HTTP/HTTPS Workloads:</strong> If your services use protocols like TCP/UDP or you need load balancing for internal traffic, Azure Load Balancer would be required.</li>
+<li><strong>Internal Traffic:</strong> If you have services that need internal-only load balancing (e.g., within a virtual network), Azure Load Balancer is designed for this, while Azure Front Door is for external, internet-facing services.</li>
+</ul>
+<h3 id="conclusion_1"><strong>Conclusion:</strong><a class="headerlink" href="#conclusion_1" title="Permanent link">&para;</a></h3>
+<p>If you are running your services in a single zone in each region and are using HTTP/HTTPS-based traffic, you can achieve full resilience with only Azure Front Door. It will handle global load balancing, failover between regions, and health monitoring. However, if you plan to scale across multiple zones within the same region or use other protocols, Azure Load Balancer might still be necessary for specific scenarios.</p>
+<p>4o</p>
+<h5 id="you-said_1">You said:<a class="headerlink" href="#you-said_1" title="Permanent link">&para;</a></h5>
+<p>As majority of services these days are http based so do U think Azure front door is best for cross region resilience as chance of two zones going down in one region is more than one zone going down in each region</p>
+<h6 id="chatgpt-said_1">ChatGPT said:<a class="headerlink" href="#chatgpt-said_1" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Yes, Azure Front Door is an excellent choice for cross-region resilience, especially for HTTP-based services. Here’s why:</p>
+<h3 id="cross-region-resilience-with-azure-front-door"><strong>Cross-Region Resilience with Azure Front Door:</strong><a class="headerlink" href="#cross-region-resilience-with-azure-front-door" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Global Resilience:</strong> Azure Front Door’s ability to route traffic across regions ensures that even if an entire region (including all its zones) goes down, your services can remain available by directing traffic to another region. This provides a higher level of resilience compared to relying on multiple zones within a single region.</p>
+</li>
+<li>
+<p><strong>Regional Failures vs. Multi-Region Failures:</strong></p>
+<ul>
+<li><strong>Regional Failures:</strong> The likelihood of an entire region going down is rare, but it can happen due to significant infrastructure issues or natural disasters.</li>
+<li><strong>Multi-Region Failures:</strong> The chance of simultaneous outages in separate regions is extremely low, especially since regions are geographically isolated. Therefore, having services spread across regions, as Azure Front Door enables, provides a strong safety net against widespread failures.</li>
+<li><strong>Zone-Level Failures:</strong> Within a single region, the probability of a single zone going down (e.g., due to power issues, hardware failures, or maintenance) is higher than an entire region going down. Azure Front Door can route traffic between regions, making the system resilient even to entire region failures.</li>
+</ul>
+</li>
+<li>
+<p><strong>Failover and Traffic Management:</strong> With Azure Front Door, you can easily implement failover mechanisms. For example:</p>
+<ul>
+<li><strong>Primary/Secondary Setup:</strong> You can prioritize routing to a primary region and failover to a secondary region only when the primary is down.</li>
+<li><strong>Weighted Load Balancing:</strong> Distribute traffic based on region capacity, load, or other criteria.</li>
+<li><strong>Performance-Based Routing:</strong> Direct traffic to the lowest-latency region, improving user experience.</li>
+<li><strong>Simplicity:</strong> Azure Front Door consolidates global traffic management, SSL offloading, and HTTP-based load balancing into a single solution, reducing the need for multiple services like Azure Traffic Manager (DNS-based routing) or Azure Load Balancer (regional balancing). This simplifies architecture and provides a more straightforward approach to handling cross-region resilience.</li>
+</ul>
+</li>
+<li>
+<p><strong>Health Probes:</strong> Azure Front Door continuously checks the health of your backend services. If one zone or region goes down, it automatically routes traffic to another healthy region, ensuring minimal downtime and faster recovery without manual intervention.</p>
+</li>
+</ol>
+<h3 id="azure-front-door-vs-intra-region-zone-resilience"><strong>Azure Front Door vs. Intra-Region Zone Resilience:</strong><a class="headerlink" href="#azure-front-door-vs-intra-region-zone-resilience" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Zone Failures in One Region:</strong> While placing services in multiple zones within the same region (using Azure Load Balancer) provides some resilience, it does not protect you from a full region outage. Given that region-level outages are less common than zone-level outages, but more impactful, cross-region resilience is more robust.</li>
+<li><strong>Cross-Region Resilience with Azure Front Door:</strong> Having a multi-region setup with Azure Front Door greatly reduces the likelihood of complete service unavailability because it leverages geographic diversity. This approach protects against outages that affect not just a zone but an entire region.</li>
+</ul>
+<h3 id="conclusion_2"><strong>Conclusion:</strong><a class="headerlink" href="#conclusion_2" title="Permanent link">&para;</a></h3>
+<p>Azure Front Door is highly suited for cross-region resilience, especially for HTTP-based services. The chance of two zones going down in a single region is higher than separate regions going down simultaneously, so by distributing your services across multiple regions with Front Door, you achieve higher fault tolerance. It is a more robust and future-proof approach for ensuring high availability and resilience in modern cloud architectures.</p>
+<p>If your services are primarily HTTP/HTTPS-based, Azure Front Door is a best-in-class solution for achieving global load balancing, fast failover, and resilience across regions.</p>
+<p>4o</p>
+<h5 id="you-said_2">You said:<a class="headerlink" href="#you-said_2" title="Permanent link">&para;</a></h5>
+<p>However if we want to scale our services as load increases then does front door has ability to some how start more services to cater more load ?</p>
+<h6 id="chatgpt-said_2">ChatGPT said:<a class="headerlink" href="#chatgpt-said_2" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>No, Azure Front Door by itself does not have the ability to directly scale your services based on load. Azure Front Door is a global load balancer and traffic manager, but it does not control the scaling of backend resources. However, it can integrate with other Azure services to achieve dynamic scaling.</p>
+<p>To scale your services automatically based on load, you would need to use <strong>Azure Front Door</strong> in combination with <strong>Azure Autoscaling</strong> features. Here’s how you can achieve automatic scaling:</p>
+<h3 id="how-to-achieve-autoscaling-with-azure-front-door"><strong>How to Achieve Autoscaling with Azure Front Door:</strong><a class="headerlink" href="#how-to-achieve-autoscaling-with-azure-front-door" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Combine with Azure App Services / Azure Virtual Machine Scale Sets / Azure Kubernetes Service (AKS):</strong></p>
+<ul>
+<li><strong>Azure App Services:</strong> If your services are hosted as Azure App Services, you can configure <strong>App Service Autoscaling</strong>. App Services can automatically scale in/out based on metrics like CPU usage, memory consumption, or request count.</li>
+<li><strong>Azure Virtual Machine Scale Sets (VMSS):</strong> If you are using virtual machines, <strong>VM Scale Sets</strong> can automatically scale the number of VMs based on custom metrics or predefined rules.</li>
+<li><strong>Azure Kubernetes Service (AKS):</strong> If you are using AKS, Kubernetes provides <strong>Horizontal Pod Autoscaling (HPA)</strong> based on CPU utilization, memory, or custom metrics like request rates. You can configure AKS to scale up pods automatically as demand increases and Azure Front Door will automatically route traffic to the additional pods.</li>
+<li>
+<p><strong>Autoscaling Triggers:</strong></p>
+</li>
+<li>
+<p>You can configure autoscaling triggers based on key performance indicators (KPIs) such as CPU utilization, memory usage, or HTTP request rate. When the load increases, your services (App Service, VMSS, or AKS) will automatically scale out to handle the additional traffic.</p>
+</li>
+<li>Azure Monitor or Application Insights can be used to collect metrics and help with determining when to scale based on specific thresholds.</li>
+<li>
+<p><strong>Azure Front Door + Autoscaling Integration:</strong></p>
+</li>
+<li>
+<p>Azure Front Door routes traffic globally across your backend services, which could be App Services, VMSS, or AKS in different regions.</p>
+</li>
+<li>When traffic spikes, your backend services (e.g., App Services or AKS) can automatically scale out based on demand, and Front Door will continue to route traffic across the increased number of instances or pods.</li>
+<li>
+<p><strong>Scaling Policies:</strong></p>
+</li>
+<li>
+<p>Set <strong>scale-out</strong> policies to increase capacity when load increases (e.g., adding more virtual machines, containers, or app service instances).</p>
+</li>
+<li>Set <strong>scale-in</strong> policies to reduce the number of instances when load decreases, to optimize costs.</li>
+</ul>
+</li>
+</ol>
+<h3 id="example-workflow-with-azure-front-door-and-autoscaling"><strong>Example Workflow with Azure Front Door and Autoscaling:</strong><a class="headerlink" href="#example-workflow-with-azure-front-door-and-autoscaling" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Step 1:</strong> Azure Front Door distributes traffic globally across multiple backend services.</li>
+<li><strong>Step 2:</strong> Backend services are hosted on Azure App Services, Virtual Machine Scale Sets, or AKS clusters.</li>
+<li><strong>Step 3:</strong> Azure Monitor or Application Insights monitors metrics like CPU usage, memory, or HTTP request rate.</li>
+<li><strong>Step 4:</strong> When predefined thresholds are reached (e.g., CPU &gt; 75%, or request rate &gt; 1000 requests/second), the autoscaling mechanisms (VMSS, App Service, AKS) trigger and add more instances or pods.</li>
+<li><strong>Step 5:</strong> Azure Front Door automatically routes traffic to the new instances, ensuring the increased load is distributed evenly across the expanded capacity.</li>
+<li><strong>Step 6:</strong> As the load decreases, the autoscaling policies can trigger a scale-in event, reducing the number of running instances.</li>
+</ul>
+<h3 id="summary"><strong>Summary:</strong><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Azure Front Door</strong> handles global traffic distribution but does not directly manage scaling.</li>
+<li><strong>Autoscaling</strong> for your backend services is handled by the specific Azure service hosting your applications (App Services, Virtual Machine Scale Sets, or AKS).</li>
+<li>By combining <strong>Azure Front Door</strong> with <strong>autoscaling</strong> in services like <strong>App Service</strong>, <strong>VM Scale Sets</strong>, or <strong>AKS</strong>, you can ensure your services scale automatically to handle increased traffic and maintain resilience.</li>
+</ul>
+<p>This setup provides a highly scalable and resilient architecture for handling variable traffic loads effectively.</p>
+<p>4o</p>
+<h5 id="you-said_3">You said:<a class="headerlink" href="#you-said_3" title="Permanent link">&para;</a></h5>
+<p>However if cross region scaling is achieved then ideally U have to use separate database for separate regions and traffic from same region should always be served from the same region unless the region goes down. The two databases can be kept in sync so that during failover every thing keeps on working. Keeping a single database will increase commit time from the other region</p>
+<h6 id="chatgpt-said_3">ChatGPT said:<a class="headerlink" href="#chatgpt-said_3" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>You are absolutely correct. When implementing <strong>cross-region scaling</strong> and resilience, managing databases effectively is crucial. To maintain performance and resilience, especially for latency-sensitive applications, it is often necessary to adopt a strategy where:</p>
+<ol>
+<li><strong>Each region has its own database</strong> for low-latency access.</li>
+<li><strong>Traffic should ideally be served from the same region</strong>, unless there's a failure.</li>
+<li><strong>Databases across regions are synchronized</strong> to ensure consistency during failover scenarios.</li>
+</ol>
+<h3 id="key-points-to-consider-for-cross-region-scaling-and-databases">Key Points to Consider for Cross-Region Scaling and Databases:<a class="headerlink" href="#key-points-to-consider-for-cross-region-scaling-and-databases" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Local Databases for Each Region:</strong></p>
+<ul>
+<li>Each region should have its own database to minimize latency and ensure fast read/write operations. If a user in Region A makes a request, it should ideally interact with the database in Region A for optimal performance.</li>
+<li>This avoids the high latency of accessing a database in a distant region, which would increase the commit time due to the network round-trip.</li>
+<li>
+<p><strong>Traffic Served from the Same Region:</strong></p>
+</li>
+<li>
+<p>Azure Front Door (or any global load balancer) can be configured to route traffic to the nearest region or to a specific region based on user geography, ensuring that requests from users in a particular region are served by the same region's services and database.</p>
+</li>
+<li>This avoids cross-region database access unless necessary, keeping the data processing localized and reducing latency.</li>
+<li>
+<p><strong>Database Synchronization Across Regions:</strong></p>
+</li>
+<li>
+<p>To handle failover, the databases in different regions need to stay synchronized so that if a region fails, another region can take over without data loss.</p>
+</li>
+<li>Some strategies to achieve this include:<ul>
+<li><strong>Active-Passive Replication:</strong> One region is primary (active) and others are secondary (passive). Data is replicated asynchronously or synchronously to the secondary regions. In case of failure in the primary region, the secondary region can take over.</li>
+<li><strong>Active-Active Replication:</strong> Both regions can read and write data, and changes are replicated across both databases in real-time. This can be challenging due to issues like data conflicts and consistency, but with proper conflict resolution mechanisms, this can work well.</li>
+<li><strong>Read Replicas:</strong> For scenarios where writes are only performed in a primary region but reads can be performed globally, you can set up read replicas in different regions to ensure faster read access with eventual consistency for writes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consistency and Latency Trade-offs:</strong></p>
+</li>
+<li>
+<p><strong>Synchronous Replication:</strong> Ensures data consistency by waiting for writes to be replicated to both regions before committing, but this increases latency, especially when regions are far apart. This approach is better for applications that prioritize consistency over performance.</p>
+</li>
+<li><strong>Asynchronous Replication:</strong> Allows faster commits by not waiting for data to replicate across regions. However, there's a risk of data loss in case of a failure before replication completes. This is commonly used for applications that prioritize availability and performance over strict consistency.</li>
+<li>
+<p><strong>Failover Handling:</strong></p>
+</li>
+<li>
+<p>In the event of a regional failure, traffic should automatically be routed to the secondary region via Azure Front Door.</p>
+</li>
+<li>The failover region will start serving traffic, and the database in the secondary region should be able to handle both reads and writes (assuming it's synchronized or able to catch up quickly).</li>
+<li><strong>Data Replication Tools:</strong> Azure offers tools like <strong>Azure SQL Geo-Replication</strong>, <strong>Cosmos DB Multi-region Replication</strong>, and <strong>MySQL/PostgreSQL Replication</strong> to help you synchronize databases across regions.</li>
+</ul>
+</li>
+</ol>
+<h3 id="azure-specific-database-options-for-cross-region-architectures">Azure-Specific Database Options for Cross-Region Architectures:<a class="headerlink" href="#azure-specific-database-options-for-cross-region-architectures" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Azure SQL Database with Geo-Replication:</strong></p>
+<ul>
+<li><strong>Active Geo-Replication:</strong> You can set up secondary databases in different regions. The secondary databases are asynchronously replicated, and if the primary region fails, you can failover to the secondary region.</li>
+<li><strong>Auto-Failover Groups:</strong> This feature automates failover across regions, ensuring that traffic is routed to a new primary database if the original fails.</li>
+<li>
+<p><strong>Cosmos DB for Multi-Region Scaling:</strong></p>
+</li>
+<li>
+<p>Cosmos DB natively supports <strong>multi-region writes</strong> and <strong>read replicas</strong>, making it highly suitable for global-scale applications. It allows for low-latency reads and writes in any region, with automatic synchronization across all replicas.</p>
+</li>
+<li><strong>Consistency Models:</strong> Cosmos DB allows you to choose different consistency levels (e.g., strong, bounded staleness, session, consistent prefix, eventual) based on your trade-offs between performance and consistency.</li>
+<li>
+<p><strong>Azure Database for PostgreSQL/MySQL with Geo-Replication:</strong></p>
+</li>
+<li>
+<p>You can use <strong>read replicas</strong> or <strong>geo-redundant backups</strong> to replicate databases across regions. Writes are handled in the primary region, and reads can be directed to the replicas.</p>
+</li>
+<li>
+<p><strong>Storage Replication for Blob and Table Storage:</strong></p>
+</li>
+<li>
+<p>Azure Storage provides <strong>geo-redundant storage (GRS)</strong> and <strong>read-access geo-redundant storage (RA-GRS)</strong> to replicate data asynchronously to a secondary region.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="ensuring-resilience-and-performance">Ensuring Resilience and Performance:<a class="headerlink" href="#ensuring-resilience-and-performance" title="Permanent link">&para;</a></h3>
+<p>To achieve high availability, low latency, and resilience in a cross-region setup, follow this structure:</p>
+<ul>
+<li><strong>Primary Region:</strong> Serve traffic from a region-local service and database. The database is the primary read/write instance.</li>
+<li><strong>Secondary Region(s):</strong> Set up services and replicated databases (e.g., using geo-replication) in the secondary region. The database acts as a backup or read replica under normal circumstances.</li>
+<li><strong>Failover:</strong> Use Azure Front Door to automatically redirect traffic to the secondary region if the primary region fails, and ensure that the database in the secondary region can take over write operations if needed.</li>
+<li><strong>Traffic Routing:</strong> Use Azure Front Door's performance or priority-based routing to ensure that users are always directed to their closest, healthy region.</li>
+</ul>
+<h3 id="conclusion_3">Conclusion:<a class="headerlink" href="#conclusion_3" title="Permanent link">&para;</a></h3>
+<p>In a cross-region architecture, using separate databases for each region is generally the best practice to avoid latency issues. Traffic should be routed to the same region’s database, and failover mechanisms should be in place for resilience. Synchronizing databases across regions ensures that even during failover, your application remains functional and users experience minimal disruption.</p>
+<p>4o</p>
+<h5 id="you-said_4">You said:<a class="headerlink" href="#you-said_4" title="Permanent link">&para;</a></h5>
+<p>How many regions are present in Australia</p>
+<h6 id="chatgpt-said_4">ChatGPT said:<a class="headerlink" href="#chatgpt-said_4" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Azure has <strong>three regions</strong> in Australia:</p>
+<ol>
+<li><strong>Australia East</strong> (located in New South Wales, typically around Sydney)</li>
+<li><strong>Australia Southeast</strong> (located in Victoria, typically around Melbourne)</li>
+<li><strong>Australia Central</strong> (located in Canberra, specifically designed for government and critical infrastructure use)</li>
+</ol>
+<p>The <strong>Australia Central</strong> region is split into two:</p>
+<ul>
+<li><strong>Australia Central 1</strong></li>
+<li><strong>Australia Central 2</strong></li>
+</ul>
+<p>The Australia Central regions are more restricted and are primarily available to government entities and critical infrastructure providers.</p>
+<p>Thus, if we include the restricted Australia Central regions, there are a total of <strong>four</strong> Azure regions in Australia.</p>
+<p>4o</p>
+<h5 id="you-said_5">You said:<a class="headerlink" href="#you-said_5" title="Permanent link">&para;</a></h5>
+<p>How far the two zones around Sydney and how fast is the network access between them</p>
+<h6 id="chatgpt-said_5">ChatGPT said:<a class="headerlink" href="#chatgpt-said_5" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>In the <strong>Australia East</strong> region (around Sydney), Azure Availability Zones are designed to be physically separate locations within the same metropolitan area but still close enough to offer <strong>low-latency, high-speed network access</strong> between them.</p>
+<h3 id="distance-between-zones-around-sydney"><strong>Distance Between Zones Around Sydney:</strong><a class="headerlink" href="#distance-between-zones-around-sydney" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The exact distance between Azure Availability Zones is not publicly disclosed due to security reasons, but generally, Availability Zones within a region are located in <strong>separate data centers</strong> that are geographically isolated by several kilometers (typically around 10-100 km apart).</li>
+<li>The goal of these distances is to ensure that each zone is protected from local failures like power outages, floods, or fires, but close enough to provide near real-time data replication and failover.</li>
+</ul>
+<h3 id="network-latency-and-speed-between-zones"><strong>Network Latency and Speed Between Zones:</strong><a class="headerlink" href="#network-latency-and-speed-between-zones" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Latency:</strong> The network latency between Availability Zones in the same region, such as in <strong>Australia East (Sydney)</strong>, is typically very low, often <strong>sub-millisecond</strong> (less than 1 ms). This allows for fast data transfer and real-time replication, making it suitable for high-availability architectures with synchronous data replication.</p>
+</li>
+<li>
+<p><strong>Network Speed:</strong> Azure leverages a high-speed, low-latency fiber-optic network between zones. The data centers are connected with redundant, high-bandwidth fiber links to ensure fast failover, data synchronization, and high throughput between zones.</p>
+</li>
+</ul>
+<h3 id="use-cases-for-low-latency-between-zones"><strong>Use Cases for Low-Latency Between Zones:</strong><a class="headerlink" href="#use-cases-for-low-latency-between-zones" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Synchronous Replication:</strong> With such low latency, it's feasible to implement synchronous data replication between zones for databases or storage, ensuring zero data loss in case of failure in one zone.</li>
+<li><strong>High-Availability Services:</strong> Services like Azure Virtual Machines (VMs) and Azure SQL Database use Availability Zones for deploying highly available solutions with minimal impact on performance.</li>
+</ul>
+<p>In summary, the distance between the zones in <strong>Australia East (Sydney)</strong> is designed to balance both physical separation for disaster recovery and very low network latency (often less than 1 ms) to support fast data replication and high availability.</p>
+<p>4o</p>
+<h5 id="you-said_6">You said:<a class="headerlink" href="#you-said_6" title="Permanent link">&para;</a></h5>
+<p>So is the network speed between two zones in the same region is very close to the network speed with in the same zone</p>
+<h6 id="chatgpt-said_6">ChatGPT said:<a class="headerlink" href="#chatgpt-said_6" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Yes, the <strong>network speed between two zones within the same Azure region</strong> is designed to be <strong>very close</strong> to the network speed within the same zone. Azure’s internal network architecture ensures that the connection between Availability Zones in the same region (e.g., Australia East in Sydney) is optimized for low-latency, high-speed communication.</p>
+<h3 id="key-points">Key Points:<a class="headerlink" href="#key-points" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Low Latency:</strong></p>
+<ul>
+<li>The latency between zones in the same region is typically <strong>sub-millisecond</strong> (less than 1 ms), similar to what you would experience within the same zone. While there may be a slight increase due to the physical separation of the data centers, the difference is usually negligible for most applications.</li>
+<li>
+<p><strong>High Throughput:</strong></p>
+</li>
+<li>
+<p>Azure uses <strong>high-bandwidth, fiber-optic connections</strong> between data centers in the same region, which means the network throughput (data transfer rates) between zones is extremely fast. This ensures that data replication, inter-zone communication, and high-availability workloads can operate efficiently, similar to what you would expect within a single zone.</p>
+</li>
+<li>
+<p><strong>Redundant, Low-Latency Network:</strong></p>
+</li>
+<li>
+<p>Azure’s backbone network between zones is built to be <strong>redundant and resilient</strong>, ensuring fast recovery and low latency even in case of failures. This network is optimized for enterprise-grade workloads that require consistent performance and availability.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="difference-between-same-zone-and-cross-zone-network-speed">Difference Between Same-Zone and Cross-Zone Network Speed:<a class="headerlink" href="#difference-between-same-zone-and-cross-zone-network-speed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>While the network latency within the <strong>same zone</strong> is typically a few microseconds (since the servers are in the same data center), the latency between <strong>different zones in the same region</strong> may add a few hundred microseconds to a millisecond due to the physical distance. However, this is still very fast and suitable for synchronous operations, real-time data processing, and high-availability architectures.</li>
+</ul>
+<h3 id="practical-implications">Practical Implications:<a class="headerlink" href="#practical-implications" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>For most applications</strong>, the network speed and latency between zones are close enough to those within the same zone that they have no noticeable impact on performance.</li>
+<li>This enables <strong>synchronous replication</strong> and <strong>high availability architectures</strong> to function efficiently across zones, with very little added overhead compared to running within a single zone.</li>
+</ul>
+<p>In summary, the network speed between zones in the same Azure region is <strong>very close</strong> to that within the same zone, and the difference in latency and throughput is minimal, making cross-zone communication suitable for even latency-sensitive applications.</p>
+<p>4o</p>
+<h5 id="you-said_7">You said:<a class="headerlink" href="#you-said_7" title="Permanent link">&para;</a></h5>
+<p>So Australia has NBN fiber optic system. Azure has laid its own fiber optic or it uses the same NBN which every one in Australia uses</p>
+<h6 id="chatgpt-said_7">ChatGPT said:<a class="headerlink" href="#chatgpt-said_7" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Azure (Microsoft) does not rely on the <strong>NBN (National Broadband Network)</strong> that is widely used by residential and business customers in Australia for its data center and inter-region connectivity. Instead, Azure uses its <strong>own private fiber-optic network</strong> for connecting its data centers and regions, ensuring high performance, reliability, and security.</p>
+<h3 id="azures-private-fiber-optic-network"><strong>Azure’s Private Fiber-Optic Network:</strong><a class="headerlink" href="#azures-private-fiber-optic-network" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Microsoft Global Network:</strong></p>
+<ul>
+<li>Microsoft operates one of the largest private fiber-optic networks in the world, connecting Azure data centers across regions globally. This network spans thousands of miles, connecting different regions with high-speed, low-latency, and redundant connections.</li>
+<li>The network is <strong>independent of public infrastructure like the NBN</strong>. It’s specifically designed for Microsoft’s cloud services (Azure, Office 365, etc.) to deliver enterprise-grade performance, resilience, and security.</li>
+<li>
+<p><strong>Inter-Data Center and Inter-Region Connectivity:</strong></p>
+</li>
+<li>
+<p>Within regions (such as <strong>Australia East</strong> in Sydney), Azure Availability Zones are connected via <strong>dedicated high-speed fiber</strong> to ensure minimal latency and maximum bandwidth for data replication, service communication, and failover operations.</p>
+</li>
+<li>Across regions (e.g., Australia East, Australia Southeast, and Australia Central), Azure uses dedicated, private, fiber-optic links to ensure fast data transfer and synchronization between these regions.</li>
+<li>
+<p><strong>Benefits of a Private Network:</strong></p>
+</li>
+<li>
+<p><strong>Low Latency and High Throughput:</strong> Azure’s private network ensures the lowest possible latency and highest throughput between its data centers. This is essential for supporting services like real-time replication, global load balancing, and enterprise-level applications.</p>
+</li>
+<li><strong>Reliability:</strong> Unlike public infrastructure, which can experience congestion or outages, Azure’s network is built with redundancy and fault tolerance to ensure continuous service availability.</li>
+<li><strong>Security:</strong> By using a private network, Azure can offer enhanced security and isolation, as data never passes over the public internet when moving between Microsoft data centers.</li>
+</ul>
+</li>
+</ol>
+<h3 id="nbn-vs-azure-private-network"><strong>NBN vs. Azure Private Network:</strong><a class="headerlink" href="#nbn-vs-azure-private-network" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>NBN:</strong> The NBN is Australia’s national public broadband network, designed to provide high-speed internet to homes and businesses across the country. While it offers high speeds (especially with fiber connections), it is a <strong>public network</strong>, subject to the same limitations as any large-scale ISP, including congestion, outages, and variable performance.</p>
+</li>
+<li>
+<p><strong>Azure Network:</strong> Azure’s private network is <strong>entirely separate</strong> from the NBN. It is optimized for cloud services and enterprise workloads, providing dedicated high-speed connectivity between Microsoft’s data centers and regions globally.</p>
+</li>
+</ul>
+<h3 id="conclusion_4">Conclusion:<a class="headerlink" href="#conclusion_4" title="Permanent link">&para;</a></h3>
+<p>Microsoft Azure does <strong>not use the NBN</strong> for its internal or cross-region connectivity. Instead, it has laid its own <strong>private fiber-optic infrastructure</strong> in Australia (and globally) to ensure fast, secure, and reliable communication between its data centers and regions. This allows Azure to offer the high performance, low latency, and resilience needed for cloud services, independent of the public networks like the NBN.</p>
+<p>4o</p>
+<h5 id="you-said_8">You said:<a class="headerlink" href="#you-said_8" title="Permanent link">&para;</a></h5>
+<p>So even between Australia and united states , Azure has its private infrastructure ?</p>
+<h6 id="chatgpt-said_8">ChatGPT said:<a class="headerlink" href="#chatgpt-said_8" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Yes, Microsoft Azure operates its <strong>own private infrastructure</strong> between Australia and the United States (and other global regions). This is part of Microsoft’s <strong>global private fiber-optic network</strong>, which spans multiple continents and connects Azure data centers around the world.</p>
+<h3 id="microsoft-global-network"><strong>Microsoft Global Network:</strong><a class="headerlink" href="#microsoft-global-network" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Private Subsea Cables:</strong></p>
+<ul>
+<li>Microsoft has invested heavily in building and owning subsea (undersea) fiber-optic cables that connect major continents, including routes between <strong>Australia and the United States</strong>.</li>
+<li>These private subsea cables are a critical part of Microsoft's global network infrastructure, providing <strong>high-speed, low-latency connections</strong> between regions across the globe.</li>
+<li>
+<p><strong>Key Subsea Cables Between Australia and the U.S.:</strong></p>
+</li>
+<li>
+<p>Microsoft is a participant in several subsea cable systems that connect <strong>Australia to the United States</strong>, including:</p>
+<ul>
+<li><strong>Hawaiki Cable:</strong> This cable connects Australia, New Zealand, and the U.S. (Hawaii and Oregon). It is a high-capacity cable providing low-latency connectivity between these regions.</li>
+<li><strong>JGA-S (Japan-Guam-Australia South):</strong> This cable connects Australia to Guam and onwards to Japan and the U.S. It is part of the broader Pacific network for high-performance data transfer.</li>
+<li><strong>Southern Cross Cable Network:</strong> This is another major cable that links Australia to the U.S. via the Pacific, providing resilience and redundancy for connections between the regions.</li>
+</ul>
+</li>
+<li>Microsoft has partnered with and invested in these cables to ensure its cloud services are connected over <strong>private, dedicated infrastructure</strong>, rather than relying on public internet traffic.</li>
+<li>
+<p><strong>Benefits of a Private Subsea Network:</strong></p>
+</li>
+<li>
+<p><strong>Low Latency:</strong> By using private, direct routes between continents, Microsoft can ensure minimal latency between its data centers in Australia and the United States, making cross-region replication and real-time applications possible.</p>
+</li>
+<li><strong>High Bandwidth:</strong> These subsea cables are designed to handle vast amounts of data, ensuring Azure can support the heavy demands of global enterprises.</li>
+<li><strong>Reliability and Redundancy:</strong> Microsoft’s global network includes <strong>multiple redundant paths</strong> across different subsea cables. This means that if one route experiences a failure, traffic can be rerouted through other cables, ensuring high availability and continuity of service.</li>
+<li><strong>Security:</strong> Since Microsoft controls its own network, it provides <strong>enhanced security</strong> by keeping data transfers within its private infrastructure, avoiding exposure to the public internet.</li>
+<li>
+<p><strong>Global Reach:</strong></p>
+</li>
+<li>
+<p>Microsoft’s global network interconnects its 60+ Azure regions and over 200 datacenters. It is one of the largest and most advanced global private networks, providing secure, high-performance, and reliable connectivity between its data centers, including between regions as far apart as <strong>Australia and the United States</strong>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="conclusion_5"><strong>Conclusion:</strong><a class="headerlink" href="#conclusion_5" title="Permanent link">&para;</a></h3>
+<p>Yes, Microsoft Azure maintains its <strong>own private network infrastructure</strong> between Australia and the United States, using dedicated subsea cables that it has invested in. This ensures <strong>low-latency, high-speed, secure</strong> data transfer between its Australian and U.S. data centers, independent of public internet infrastructure. This private network allows Azure to deliver the performance, reliability, and resilience that enterprise customers expect for cross-region workloads.</p>
+<p>4o</p>
+<h5 id="you-said_9">You said:<a class="headerlink" href="#you-said_9" title="Permanent link">&para;</a></h5>
+<p>So Azure regions across the globe never ever have to go through non Azure lines ?</p>
+<h6 id="chatgpt-said_9">ChatGPT said:<a class="headerlink" href="#chatgpt-said_9" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>While Microsoft Azure operates its own extensive <strong>private global network</strong> that connects its data centers and regions worldwide, including dedicated subsea cables and terrestrial fiber, it’s important to understand that there are some situations where <strong>non-Azure (third-party) lines</strong> may still be used. However, these instances are typically managed and controlled by Microsoft to ensure performance and reliability.</p>
+<p>Here’s how it works:</p>
+<h3 id="private-azure-network-overview"><strong>Private Azure Network Overview:</strong><a class="headerlink" href="#private-azure-network-overview" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Global Backbone:</strong></p>
+<ul>
+<li>Microsoft owns and operates one of the largest global <strong>private fiber-optic networks</strong>, which connects Azure regions across continents. This includes a combination of <strong>Microsoft-owned subsea cables</strong> and terrestrial fiber infrastructure that spans regions like the U.S., Europe, Asia, and Australia.</li>
+<li>This network ensures <strong>low latency, high bandwidth, and security</strong> by keeping traffic within Microsoft's infrastructure as much as possible, avoiding the public internet.</li>
+<li>
+<p><strong>Subsea and Terrestrial Cables:</strong></p>
+</li>
+<li>
+<p>Microsoft has invested in multiple subsea cables (either owning or co-investing with other companies) to ensure that major Azure regions are connected via <strong>private, high-performance infrastructure</strong>. For example, cables like the <strong>Hawaiki Cable</strong> and <strong>Marea Cable</strong> provide connectivity across oceans (such as between Australia and the U.S. or Europe).</p>
+</li>
+<li>
+<p><strong>Terrestrial Fiber Network:</strong></p>
+</li>
+<li>
+<p>Once the data reaches a continent (e.g., via a subsea cable landing station), Microsoft uses its own <strong>terrestrial fiber</strong> to route data between regions or to other Azure data centers within that continent.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="when-non-azure-third-party-lines-may-be-used"><strong>When Non-Azure (Third-Party) Lines May Be Used:</strong><a class="headerlink" href="#when-non-azure-third-party-lines-may-be-used" title="Permanent link">&para;</a></h3>
+<p>While Microsoft strives to keep all traffic on its private network, there are <strong>some cases</strong> where third-party lines may be used. However, even in these situations, Microsoft typically works with highly trusted <strong>telecom and data infrastructure providers</strong> to ensure optimal performance and security.</p>
+<ol>
+<li>
+<p><strong>Local Connectivity:</strong></p>
+<ul>
+<li>In regions where Microsoft does not have direct physical ownership of infrastructure or in certain remote areas, <strong>third-party local carriers</strong> may be used to carry traffic between a data center and the nearest Azure point of presence or cable landing station. However, these are carefully chosen partners to maintain Azure’s performance standards.</li>
+<li>
+<p><strong>Partnered Subsea and Terrestrial Lines:</strong></p>
+</li>
+<li>
+<p>While Microsoft has invested in and owns some subsea and terrestrial cables, it may also lease capacity on cables operated by other companies in regions where it doesn’t have direct infrastructure.</p>
+</li>
+<li>In such cases, Microsoft still has control over the routing and quality of service, but the physical infrastructure might be shared with other network traffic.</li>
+<li>
+<p><strong>Backup and Redundancy:</strong></p>
+</li>
+<li>
+<p>For reliability and redundancy, some traffic may be rerouted over <strong>third-party networks</strong> in case of failure or maintenance on the primary Microsoft-owned lines. These are often part of <strong>failover mechanisms</strong> that ensure continuity of service even in rare failure scenarios.</p>
+</li>
+<li>
+<p><strong>Peering and Interconnection Points:</strong></p>
+</li>
+<li>
+<p>Microsoft uses <strong>peering agreements</strong> with major global Internet Service Providers (ISPs) and telecom companies to ensure efficient, high-speed routing when traffic enters or exits the Azure network. This may involve <strong>third-party networks</strong> for routing traffic to and from customer on-premises networks or for reaching non-Azure destinations.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="ensuring-performance-and-security"><strong>Ensuring Performance and Security:</strong><a class="headerlink" href="#ensuring-performance-and-security" title="Permanent link">&para;</a></h3>
+<p>Even when third-party infrastructure is used:</p>
+<ul>
+<li><strong>Performance Standards:</strong> Microsoft has strict performance agreements with third-party providers to ensure the same level of speed, redundancy, and low-latency that its private network offers.</li>
+<li><strong>Security:</strong> Microsoft encrypts traffic between Azure regions and enforces security protocols even if data temporarily travels over non-Azure-owned lines.</li>
+</ul>
+<h3 id="conclusion_6"><strong>Conclusion:</strong><a class="headerlink" href="#conclusion_6" title="Permanent link">&para;</a></h3>
+<p>While Microsoft Azure primarily operates its <strong>own private global network</strong>, which covers most of its regions and data centers, there are occasional scenarios where <strong>non-Azure lines (third-party infrastructure)</strong> may be used. However, these are typically managed by trusted partners with strict performance and security controls. So, while traffic is generally kept within Azure's private network, some inter-region or local scenarios may involve third-party infrastructure, especially in remote or less connected areas.</p>
+<p>4o</p>
+<h5 id="you-said_10">You said:<a class="headerlink" href="#you-said_10" title="Permanent link">&para;</a></h5>
+<p>So google and AWs also have their own private infrastructure ?</p>
+<h6 id="chatgpt-said_10">ChatGPT said:<a class="headerlink" href="#chatgpt-said_10" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Yes, both <strong>Google Cloud</strong> and <strong>Amazon Web Services (AWS)</strong> also operate their own <strong>private global infrastructure</strong> to connect their data centers and regions across the world, similar to how Microsoft Azure operates its private network. Here's an overview of how both companies manage their global infrastructure:</p>
+<h3 id="google-clouds-private-global-network"><strong>Google Cloud's Private Global Network:</strong><a class="headerlink" href="#google-clouds-private-global-network" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Private Fiber-Optic Network:</strong></p>
+<ul>
+<li><strong>Google Cloud</strong> operates one of the world’s largest private fiber-optic networks, similar to Microsoft. This network connects Google’s data centers and regions globally, providing <strong>high-speed, low-latency connectivity</strong> between regions.</li>
+<li>Google uses this private network to carry traffic between its data centers and cloud regions, keeping traffic off the public internet whenever possible.</li>
+<li>
+<p><strong>Subsea Cables:</strong></p>
+</li>
+<li>
+<p>Google has invested in and owns several <strong>subsea cables</strong> that connect continents. Some of the major cables include:</p>
+<ul>
+<li><strong>Curie Cable</strong>: Connecting the U.S. to Chile.</li>
+<li><strong>Dunant Cable</strong>: Connecting the U.S. to France.</li>
+<li><strong>Equiano Cable</strong>: Connecting Europe to Africa.</li>
+<li><strong>Japan-Guam-Australia (JGA)</strong>: A cable that connects Japan, Guam, and Australia.</li>
+</ul>
+</li>
+<li>Google also participates in consortiums that co-own other subsea cables. These investments allow Google Cloud to have <strong>direct control</strong> over data traffic between regions.</li>
+<li>
+<p><strong>Global Network Edge:</strong></p>
+</li>
+<li>
+<p>Google’s private network also extends to over <strong>100 global network edge locations</strong>, where Google connects to other internet service providers. This allows Google Cloud to optimize traffic routing and minimize latency, even when interacting with external networks.</p>
+</li>
+<li>
+<p><strong>Speed and Performance:</strong></p>
+</li>
+<li>
+<p>Google's private network ensures <strong>high throughput, low latency, and reliability</strong>, making it ideal for global-scale applications such as streaming, cloud storage, and real-time data analytics.</p>
+</li>
+<li>
+<p><strong>Security and Traffic Isolation:</strong></p>
+</li>
+<li>
+<p>Like Azure, Google Cloud’s private network provides enhanced <strong>security</strong>, ensuring that data remains isolated from public internet traffic as much as possible, reducing the risk of external threats.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="amazon-web-services-aws-private-global-network"><strong>Amazon Web Services (AWS) Private Global Network:</strong><a class="headerlink" href="#amazon-web-services-aws-private-global-network" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>AWS Global Network Backbone:</strong></p>
+<ul>
+<li><strong>AWS</strong> also operates a <strong>global private network</strong> that connects its regions and data centers. This network is designed to handle the vast scale of AWS’s cloud services and provides <strong>high-speed, low-latency</strong> connectivity between AWS regions.</li>
+<li>AWS’s private backbone carries traffic between its data centers and cloud regions to optimize performance and maintain reliability across its global infrastructure.</li>
+<li>
+<p><strong>Subsea Cables and Data Centers:</strong></p>
+</li>
+<li>
+<p>AWS has <strong>invested in subsea cables</strong> and also partners with third-party providers to maintain connectivity between regions across different continents. Some subsea cable systems AWS is part of include:</p>
+<ul>
+<li><strong>Hawaiki Cable</strong>: Connecting Australia, New Zealand, and the U.S.</li>
+<li><strong>Marea Cable</strong>: Connecting the U.S. to Europe (jointly invested with Microsoft and Facebook).</li>
+</ul>
+</li>
+<li>These subsea cable investments allow AWS to directly manage and optimize global data transfer, ensuring <strong>redundancy</strong> and <strong>resilience</strong>.</li>
+<li>
+<p><strong>AWS Direct Connect:</strong></p>
+</li>
+<li>
+<p>AWS offers <strong>Direct Connect</strong>, a dedicated network service that allows customers to establish private connections between their on-premises infrastructure and AWS data centers. This avoids the public internet and leverages AWS’s private network for more <strong>secure and reliable</strong> data transfer.</p>
+</li>
+<li>
+<p><strong>Global Presence:</strong></p>
+</li>
+<li>
+<p>AWS has a massive global footprint, with <strong>data centers in more than 30 geographic regions</strong>. The AWS global network spans continents and includes <strong>transit centers</strong> and <strong>edge locations</strong> that route customer traffic efficiently between AWS data centers and regions.</p>
+</li>
+<li>
+<p><strong>Performance and Security:</strong></p>
+</li>
+<li>
+<p>AWS’s private network is engineered for <strong>high performance</strong> to support latency-sensitive and high-throughput workloads. The private infrastructure provides <strong>redundancy and fault tolerance</strong>, ensuring high availability even in the case of outages.</p>
+</li>
+<li>AWS applies strict <strong>security measures</strong> across its network infrastructure to isolate customer data from the public internet and external threats.</li>
+</ul>
+</li>
+</ol>
+<h3 id="comparative-overview"><strong>Comparative Overview:</strong><a class="headerlink" href="#comparative-overview" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><strong>Azure</strong></th>
+<th><strong>Google Cloud</strong></th>
+<th><strong>AWS</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Private Global Network</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Subsea Cables</strong></td>
+<td>Owns and co-invests in multiple</td>
+<td>Owns and co-invests in multiple</td>
+<td>Owns and co-invests in multiple</td>
+</tr>
+<tr>
+<td><strong>Private Traffic Routing</strong></td>
+<td>Yes, between regions and zones</td>
+<td>Yes, between regions and zones</td>
+<td>Yes, between regions and zones</td>
+</tr>
+<tr>
+<td><strong>Edge Locations</strong></td>
+<td>Extensive global edge locations</td>
+<td>100+ global edge locations</td>
+<td>Extensive global edge locations</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Enhanced traffic isolation</td>
+<td>Enhanced traffic isolation</td>
+<td>Enhanced traffic isolation</td>
+</tr>
+<tr>
+<td><strong>Latency Optimization</strong></td>
+<td>Yes, low-latency global network</td>
+<td>Yes, low-latency global network</td>
+<td>Yes, low-latency global network</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conclusion_7"><strong>Conclusion:</strong><a class="headerlink" href="#conclusion_7" title="Permanent link">&para;</a></h3>
+<p>Both <strong>Google Cloud</strong> and <strong>AWS</strong>, like <strong>Azure</strong>, operate their own <strong>private global infrastructure</strong>, including <strong>fiber-optic networks, subsea cables, and data centers</strong>, to ensure high-speed, low-latency, and secure data transfer across the globe. They invest heavily in these private networks to keep cloud traffic within their own infrastructure, reducing reliance on the public internet for critical operations, and ensuring better performance, security, and reliability.</p>
+<p>4o</p>
+<h5 id="you-said_11">You said:<a class="headerlink" href="#you-said_11" title="Permanent link">&para;</a></h5>
+<p>Which one of these has the biggest network ?</p>
+<h6 id="chatgpt-said_11">ChatGPT said:<a class="headerlink" href="#chatgpt-said_11" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>When it comes to the <strong>largest private global network</strong> among <strong>Microsoft Azure</strong>, <strong>Google Cloud</strong>, and <strong>Amazon Web Services (AWS)</strong>, <strong>AWS</strong> is widely considered to have the most extensive infrastructure. However, it’s important to note that all three cloud providers have significant global networks, and each has its strengths in different areas.</p>
+<h3 id="amazon-web-services-aws-largest-network"><strong>Amazon Web Services (AWS) – Largest Network:</strong><a class="headerlink" href="#amazon-web-services-aws-largest-network" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Global Presence:</strong> AWS is known for having the <strong>largest and most comprehensive global infrastructure</strong>. It operates in <strong>30 geographic regions</strong> with <strong>99 Availability Zones</strong>, and it continues to expand. AWS also offers over <strong>400 edge locations</strong> worldwide (these include Points of Presence for content delivery and edge computing).</li>
+<li><strong>Private Global Network:</strong> AWS's private backbone network spans multiple continents, providing connectivity between its data centers and regions. It has invested heavily in <strong>subsea cables</strong> and global fiber-optic infrastructure, giving it a significant edge in global reach.</li>
+<li><strong>Edge Locations and Latency:</strong> AWS has the largest number of <strong>Points of Presence (PoPs)</strong>, which are critical for reducing latency and improving performance for services like <strong>CloudFront</strong> (Amazon's CDN) and <strong>Direct Connect</strong>. This extensive global network is key for latency-sensitive applications.</li>
+<li><strong>Customer Base:</strong> Given AWS’s early entry into the cloud market and its massive customer base, it has built the infrastructure to support the widest range of global use cases.</li>
+</ul>
+<h3 id="microsoft-azure-strong-enterprise-network"><strong>Microsoft Azure – Strong Enterprise Network:</strong><a class="headerlink" href="#microsoft-azure-strong-enterprise-network" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Global Presence:</strong> Azure has <strong>60+ regions</strong> worldwide, making it the cloud provider with the <strong>most regions</strong>. However, it has slightly fewer <strong>Availability Zones</strong> compared to AWS. Azure has made a significant investment in global expansion, particularly in regions like <strong>Europe, the U.S., and Australia</strong>.</li>
+<li><strong>Private Global Network:</strong> Microsoft’s <strong>global WAN network</strong> connects its Azure data centers across continents via high-speed, low-latency fiber-optic infrastructure. Microsoft also has a large number of <strong>edge locations</strong> that help reduce latency for services like <strong>Azure Front Door</strong> and <strong>Azure Content Delivery Network (CDN)</strong>.</li>
+<li><strong>Subsea Cables:</strong> Microsoft has co-invested in and operates several <strong>subsea cables</strong> connecting its regions globally, such as the <strong>Marea</strong> cable connecting the U.S. and Europe. This network supports both Azure services and Microsoft’s other platforms, like Office 365 and Xbox Live.</li>
+<li><strong>Focus on Hybrid Cloud:</strong> Microsoft Azure is particularly strong in the <strong>enterprise sector</strong>, and its network has been built to support hybrid cloud use cases, with tools like <strong>Azure ExpressRoute</strong> to establish private connections between on-premises data centers and Azure.</li>
+</ul>
+<h3 id="google-cloud-strong-global-network-with-focus-on-performance"><strong>Google Cloud – Strong Global Network with Focus on Performance:</strong><a class="headerlink" href="#google-cloud-strong-global-network-with-focus-on-performance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Global Presence:</strong> Google Cloud has <strong>37 regions</strong> and <strong>112 zones</strong>, which is smaller in comparison to AWS and Azure. However, Google has a <strong>strong global network backbone</strong>, built on its expertise in search, ads, and video delivery (YouTube).</li>
+<li><strong>Private Global Network:</strong> Google Cloud uses the <strong>same global private network</strong> that supports its other services, like <strong>Google Search</strong>, <strong>YouTube</strong>, and <strong>Gmail</strong>. This network is one of the most efficient, particularly in terms of <strong>latency and bandwidth</strong>. Google’s network has been optimized for low-latency and high-performance applications, with data centers connected by fiber-optic cables.</li>
+<li><strong>Subsea Cables:</strong> Google has heavily invested in its own <strong>subsea cables</strong>, such as the <strong>Curie</strong> (U.S. to Chile), <strong>Dunant</strong> (U.S. to Europe), and <strong>Equiano</strong> (Europe to Africa) cables. Google is unique in that it owns or co-owns many of these cables outright, giving it <strong>direct control</strong> over the network.</li>
+<li><strong>Edge Locations:</strong> Google Cloud has a robust <strong>edge network</strong>, optimized for services like <strong>Cloud CDN</strong> and <strong>Google’s edge computing</strong> services.</li>
+</ul>
+<h3 id="comparison"><strong>Comparison:</strong><a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><strong>AWS</strong></th>
+<th><strong>Microsoft Azure</strong></th>
+<th><strong>Google Cloud</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Regions</strong></td>
+<td>30 regions, 99 Availability Zones</td>
+<td>60+ regions, fewer Availability Zones</td>
+<td>37 regions, 112 zones</td>
+</tr>
+<tr>
+<td><strong>Private Global Network</strong></td>
+<td>Extensive private network with 400+ edge locations</td>
+<td>Large private WAN network, strong in enterprise</td>
+<td>Highly efficient private network, optimized for speed</td>
+</tr>
+<tr>
+<td><strong>Subsea Cables</strong></td>
+<td>Co-invests in multiple subsea cables, broad reach</td>
+<td>Owns and co-invests in subsea cables like Marea</td>
+<td>Owns/co-owns several subsea cables (Curie, Dunant)</td>
+</tr>
+<tr>
+<td><strong>Edge Locations</strong></td>
+<td>400+ edge locations (CloudFront, Direct Connect)</td>
+<td>Large number of edge locations (Azure CDN, Front Door)</td>
+<td>100+ edge locations (Cloud CDN)</td>
+</tr>
+<tr>
+<td><strong>Global Expansion</strong></td>
+<td>Early and largest network infrastructure globally</td>
+<td>Most regions, strong hybrid cloud and enterprise focus</td>
+<td>Strong performance focus, smaller global footprint</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conclusion_8"><strong>Conclusion:</strong><a class="headerlink" href="#conclusion_8" title="Permanent link">&para;</a></h3>
+<p><strong>AWS</strong> has the largest overall network in terms of <strong>global infrastructure</strong>, <strong>regions</strong>, and <strong>edge locations</strong>. It provides the most comprehensive global reach and serves the widest range of workloads, making it the largest cloud provider in terms of both capacity and customer base.</p>
+<p><strong>Microsoft Azure</strong> is close behind with the <strong>most regions</strong> globally, and it is particularly strong in supporting hybrid cloud deployments and enterprise use cases. Azure’s network is robust and continues to grow, especially in key markets like Europe and Australia.</p>
+<p><strong>Google Cloud</strong> has a highly efficient global network with a focus on performance and low latency, leveraging its massive infrastructure built for Google’s consumer services. While it has fewer regions compared to AWS and Azure, Google Cloud’s network is highly optimized for speed, particularly in regions where it operates.</p>
+<p>In summary, <strong>AWS</strong> leads in terms of sheer size and global infrastructure, while <strong>Azure</strong> is strong in enterprise and hybrid cloud, and <strong>Google Cloud</strong> excels in network efficiency and performance.</p>
+<p>4o</p>
+<h5 id="you-said_12">You said:<a class="headerlink" href="#you-said_12" title="Permanent link">&para;</a></h5>
+<p>Oracle also has a cloud. So it also operates on its private network ?</p>
+<h6 id="chatgpt-said_12">ChatGPT said:<a class="headerlink" href="#chatgpt-said_12" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Memory updated</p>
+<p>Yes, <strong>Oracle Cloud</strong> also operates on its own <strong>private global network</strong>, similar to AWS, Azure, and Google Cloud. Oracle has developed a dedicated infrastructure to support its <strong>Oracle Cloud Infrastructure (OCI)</strong>, ensuring high-speed, low-latency, and secure connectivity between its data centers and regions.</p>
+<h3 id="key-aspects-of-oracle-clouds-private-network"><strong>Key Aspects of Oracle Cloud’s Private Network:</strong><a class="headerlink" href="#key-aspects-of-oracle-clouds-private-network" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Private Global Backbone:</strong></p>
+<ul>
+<li>Oracle operates a <strong>global private network</strong> that connects its data centers (called <strong>Oracle Cloud Regions</strong>) across multiple continents. This network ensures that traffic between Oracle’s regions is carried over <strong>dedicated, high-speed fiber-optic links</strong>, minimizing latency and optimizing performance.</li>
+<li>Oracle's global backbone spans North America, Europe, Asia-Pacific, and other regions, with continuous expansion to serve the growing demand for Oracle Cloud services.</li>
+<li>
+<p><strong>Subsea Cables and Data Centers:</strong></p>
+</li>
+<li>
+<p>Similar to other cloud providers, Oracle has made investments in <strong>subsea cable systems</strong> to connect its data centers across continents. These cables provide fast and secure links between Oracle Cloud Regions, enabling <strong>cross-region replication, failover, and disaster recovery</strong>.</p>
+</li>
+<li>Oracle Cloud also works with <strong>trusted partners</strong> to lease and utilize subsea cables where necessary, ensuring redundancy and fault tolerance.</li>
+<li>
+<p><strong>Oracle FastConnect:</strong></p>
+</li>
+<li>
+<p>Oracle offers <strong>FastConnect</strong>, a dedicated, private connection service that allows customers to connect their on-premises infrastructure directly to Oracle Cloud services without going through the public internet.</p>
+</li>
+<li>FastConnect provides <strong>dedicated bandwidth, low latency</strong>, and enhanced security, making it ideal for businesses that require consistent, high-performance access to Oracle Cloud.</li>
+<li>
+<p><strong>Global Reach and Regions:</strong></p>
+</li>
+<li>
+<p>Oracle Cloud operates in <strong>45+ cloud regions</strong> across North America, Europe, Asia, the Middle East, and other key markets. It also has <strong>government-focused regions</strong> for public sector customers.</p>
+</li>
+<li>Oracle continues to expand its cloud footprint to serve more geographic regions, catering to industries with <strong>high compliance and regulatory needs</strong> such as finance, healthcare, and government.</li>
+<li>
+<p><strong>Security and Isolation:</strong></p>
+</li>
+<li>
+<p>Oracle Cloud’s private global network provides <strong>enhanced security</strong> by ensuring that traffic remains isolated from the public internet when communicating between Oracle Cloud Regions. This helps reduce exposure to threats and ensures that sensitive data is handled securely.</p>
+</li>
+<li>Oracle has a strong focus on compliance and security, particularly for industries with strict data privacy requirements.</li>
+<li>
+<p><strong>Performance and Latency:</strong></p>
+</li>
+<li>
+<p>The <strong>latency and throughput</strong> on Oracle Cloud’s private network are optimized for enterprise applications, such as Oracle's own databases, ERP systems, and other cloud-native applications. This network supports <strong>high-performance computing (HPC)</strong> and <strong>real-time analytics</strong> across regions.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="conclusion_9"><strong>Conclusion:</strong><a class="headerlink" href="#conclusion_9" title="Permanent link">&para;</a></h3>
+<p>Oracle Cloud operates its own <strong>private global network</strong> infrastructure, much like AWS, Azure, and Google Cloud. It ensures <strong>low-latency, high-performance</strong>, and <strong>secure</strong> connectivity between its cloud regions through a combination of <strong>dedicated fiber-optic links</strong>, <strong>subsea cables</strong>, and <strong>FastConnect</strong> for private customer connections. Oracle Cloud is particularly focused on enterprise-grade applications, data security, and global compliance, leveraging this private network to support mission-critical workloads and industries with stringent regulatory requirements.</p>
+<p>4o</p>
+<h5 id="you-said_13">You said:<a class="headerlink" href="#you-said_13" title="Permanent link">&para;</a></h5>
+<p>When Azure Storage Queues can be used instead of Azure Service Bus Queues</p>
+<h6 id="chatgpt-said_13">ChatGPT said:<a class="headerlink" href="#chatgpt-said_13" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p><strong>Azure Storage Queues</strong> and <strong>Azure Service Bus Queues</strong> are both used for queuing messages in distributed systems, but they serve different purposes and are suited to different scenarios. Choosing between them depends on the specific requirements of your application. Here’s when <strong>Azure Storage Queues</strong> can be used instead of <strong>Azure Service Bus Queues</strong>:</p>
+<h3 id="when-to-use-azure-storage-queues-instead-of-azure-service-bus-queues"><strong>When to Use Azure Storage Queues Instead of Azure Service Bus Queues:</strong><a class="headerlink" href="#when-to-use-azure-storage-queues-instead-of-azure-service-bus-queues" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Simple Message Queueing:</strong></p>
+<ul>
+<li><strong>Azure Storage Queues</strong> are ideal for <strong>simple message queueing</strong> scenarios where you don't need advanced features like message ordering, transactions, or complex routing. For instance, when you only need to reliably send, store, and receive messages between application components in a basic queue setup.</li>
+<li>
+<p><strong>High Throughput and Large Scale:</strong></p>
+</li>
+<li>
+<p>Azure Storage Queues are designed for scenarios that require <strong>massive scalability</strong> with <strong>high throughput</strong>. They can handle <strong>millions of messages per queue</strong>, making them suitable for large-scale applications that need to process a very high volume of messages.</p>
+</li>
+<li>If your application generates a high volume of messages without complex transactional or routing needs, Storage Queues can handle it more efficiently.</li>
+<li>
+<p><strong>Cost Sensitivity:</strong></p>
+</li>
+<li>
+<p>Azure Storage Queues are <strong>less expensive</strong> than Azure Service Bus Queues. If your application has strict cost constraints and doesn't require the advanced features of Service Bus, Storage Queues are a more cost-effective choice.</p>
+</li>
+<li>Use cases where message reliability is important but cost is a significant concern (e.g., logging, auditing systems) would benefit from Storage Queues.</li>
+<li>
+<p><strong>Decoupled Applications with Basic Requirements:</strong></p>
+</li>
+<li>
+<p>If your application’s components are decoupled but you don’t need strict <strong>message ordering</strong>, <strong>sessions</strong>, or <strong>transactions</strong>, Storage Queues can be a good option. For example, background tasks, asynchronous workflows, or simple event processing where each task can be independently processed.</p>
+</li>
+<li>
+<p><strong>Large Message Volumes with Simpler Payloads:</strong></p>
+</li>
+<li>
+<p><strong>Message size</strong> in Storage Queues can go up to <strong>64 KB</strong> (Base64-encoded), and they can store a massive volume of messages (up to <strong>200 TB</strong> in total). If you're dealing with large volumes of messages with relatively simple content (like status updates, job processing notifications), Storage Queues can handle this without the need for the more complex capabilities of Service Bus.</p>
+</li>
+<li>
+<p><strong>Less Complex Message Processing:</strong></p>
+</li>
+<li>
+<p>If your scenario doesn't require <strong>dead-lettering</strong>, <strong>message expiration</strong>, or <strong>scheduled delivery</strong>, and if there are no strict ordering requirements, Storage Queues are a good choice. Storage Queues provide <strong>basic FIFO</strong> (First In, First Out) functionality, but it’s not guaranteed as strictly as with Service Bus.</p>
+</li>
+<li>
+<p><strong>Applications that Don’t Need Transactional Support:</strong></p>
+</li>
+<li>
+<p>Storage Queues do not support <strong>transactions</strong> like Service Bus does. If you don't need to group messages into atomic units (where either all messages are processed or none), Storage Queues can be simpler and more appropriate.</p>
+</li>
+<li>
+<p><strong>No Need for Advanced Messaging Features:</strong></p>
+</li>
+<li>
+<p><strong>Azure Service Bus Queues</strong> support advanced features like <strong>message sessions</strong>, <strong>dead-letter queues</strong>, <strong>duplicate detection</strong>, and <strong>auto-forwarding</strong>. If your application does not require these advanced messaging features, then Storage Queues provide a more lightweight and cost-effective option.</p>
+</li>
+<li>Storage Queues are simpler to manage and work well in scenarios where you don't need guaranteed processing order or complex pub/sub patterns.</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary-of-when-to-use-azure-storage-queues"><strong>Summary of When to Use Azure Storage Queues:</strong><a class="headerlink" href="#summary-of-when-to-use-azure-storage-queues" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Simple queuing scenarios</strong> with no need for advanced features.</li>
+<li><strong>High-throughput applications</strong> needing to handle millions of messages per day.</li>
+<li>Applications that are <strong>cost-sensitive</strong> and can’t justify the higher costs of Service Bus.</li>
+<li><strong>Decoupled systems</strong> that don’t require transactions or guaranteed message ordering.</li>
+<li>When the system processes <strong>large volumes of simpler messages</strong>.</li>
+<li>Use cases without the need for <strong>dead-lettering</strong>, <strong>message sessions</strong>, or <strong>complex routing</strong>.</li>
+</ul>
+<h3 id="when-azure-service-bus-queues-might-be-better"><strong>When Azure Service Bus Queues Might Be Better:</strong><a class="headerlink" href="#when-azure-service-bus-queues-might-be-better" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Message ordering</strong> and <strong>transactions</strong> are critical.</li>
+<li>You need <strong>advanced features</strong> like <strong>duplicate detection</strong>, <strong>dead-letter queues</strong>, or <strong>message sessions</strong>.</li>
+<li><strong>Pub/sub patterns</strong> or <strong>more complex routing</strong> requirements (e.g., multiple subscribers).</li>
+<li>You need to integrate with systems that require <strong>high reliability</strong> and <strong>guaranteed delivery</strong>.</li>
+</ul>
+<h3 id="conclusion_10">Conclusion:<a class="headerlink" href="#conclusion_10" title="Permanent link">&para;</a></h3>
+<p><strong>Azure Storage Queues</strong> should be used when you need a simple, cost-effective solution for <strong>high throughput, large-scale</strong> messaging scenarios without the need for advanced features. If you need <strong>advanced messaging capabilities</strong> like transactions, ordering, or dead-letter queues, then <strong>Azure Service Bus Queues</strong> would be the better choice.</p>
+<p>4o</p>
+<h5 id="you-said_14">You said:<a class="headerlink" href="#you-said_14" title="Permanent link">&para;</a></h5>
+<p>As Storage queues does not have dead letter queue then where a mexssage is kept after failure</p>
+<h6 id="chatgpt-said_14">ChatGPT said:<a class="headerlink" href="#chatgpt-said_14" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>In <strong>Azure Storage Queues</strong>, there is no built-in concept of a <strong>dead-letter queue</strong> like there is in <strong>Azure Service Bus Queues</strong>. However, Azure Storage Queues provide a mechanism to handle messages that repeatedly fail processing, allowing you to manually implement a dead-lettering strategy.</p>
+<p>Here’s what happens and how you can manage messages after repeated failures in <strong>Azure Storage Queues</strong>:</p>
+<h3 id="what-happens-to-messages-after-failures-in-azure-storage-queues"><strong>What Happens to Messages After Failures in Azure Storage Queues:</strong><a class="headerlink" href="#what-happens-to-messages-after-failures-in-azure-storage-queues" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Message Visibility Timeout:</strong></p>
+<ul>
+<li>When a message is retrieved from a Storage Queue, it becomes invisible to other consumers for a period called the <strong>visibility timeout</strong>. This prevents other consumers from processing the same message while it's being worked on.</li>
+<li>If the message is not successfully processed within this timeout period, the message reappears in the queue and can be retrieved again. This allows the message to be retried.</li>
+<li>
+<p><strong>Dequeue Count:</strong></p>
+</li>
+<li>
+<p>Each message in a Storage Queue has a <strong>dequeue count</strong> that tracks how many times the message has been retrieved for processing.</p>
+</li>
+<li>If a message is retrieved and not successfully processed (meaning it is not deleted), the dequeue count increments every time it is processed again.</li>
+<li>
+<p><strong>Message Expiration or Manual Handling:</strong></p>
+</li>
+<li>
+<p>If the <strong>dequeue count</strong> exceeds a predefined threshold that you set (e.g., after 5 or 10 retries), you can decide to manually handle the message as a "dead" message. Azure Storage Queues do not automatically move such messages to a dead-letter queue.</p>
+</li>
+<li>To handle this, you can:<ul>
+<li><strong>Move the message to a separate Storage Queue</strong> that acts as a manual <strong>dead-letter queue</strong>. You can create a queue dedicated to storing failed messages.</li>
+<li><strong>Log the failed message</strong> to a monitoring or logging system for further analysis or investigation.</li>
+<li><strong>Archive the message</strong> in Azure Blob Storage or a database for later inspection.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="manually-implementing-dead-letter-queuing-in-storage-queues"><strong>Manually Implementing Dead-Letter Queuing in Storage Queues:</strong><a class="headerlink" href="#manually-implementing-dead-letter-queuing-in-storage-queues" title="Permanent link">&para;</a></h3>
+<p>Because Azure Storage Queues do not have built-in dead-letter queues, you must implement your own logic to manage failed messages. Here’s how you can do this:</p>
+<h4 id="step-1-set-a-dequeue-count-threshold"><strong>Step 1: Set a Dequeue Count Threshold</strong><a class="headerlink" href="#step-1-set-a-dequeue-count-threshold" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Determine how many retries you want to allow for a message (e.g., 5 attempts). Monitor the message's <strong>dequeue count</strong> during processing.</li>
+</ul>
+<h4 id="step-2-implement-logic-for-failed-messages"><strong>Step 2: Implement Logic for Failed Messages</strong><a class="headerlink" href="#step-2-implement-logic-for-failed-messages" title="Permanent link">&para;</a></h4>
+<ul>
+<li>During message processing, check the <strong>dequeue count</strong>. If the dequeue count exceeds your threshold, the message is considered "failed."</li>
+<li>Instead of leaving the message in the queue, <strong>move it to a separate "dead-letter" queue</strong>. You can do this by:<ul>
+<li>Retrieving the message and placing its contents in a new queue designed for failed messages.</li>
+<li>Deleting the original message from the primary queue after it has been added to the dead-letter queue.</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-3-handle-the-dead-letter-queue"><strong>Step 3: Handle the Dead-Letter Queue</strong><a class="headerlink" href="#step-3-handle-the-dead-letter-queue" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The dead-letter queue can be periodically monitored, and appropriate actions can be taken to handle failed messages, such as:<ul>
+<li>Reviewing and analyzing the failed messages.</li>
+<li>Retrying the message after manual intervention.</li>
+<li>Sending notifications or alerts if a certain number of messages end up in the dead-letter queue.</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-workflow-for-handling-failed-messages"><strong>Example Workflow for Handling Failed Messages:</strong><a class="headerlink" href="#example-workflow-for-handling-failed-messages" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Message Retrieval:</strong></p>
+<ul>
+<li>A message is retrieved from the Storage Queue with a visibility timeout.</li>
+<li>
+<p><strong>Message Processing:</strong></p>
+</li>
+<li>
+<p>The message processing fails, so the message is not deleted from the queue.</p>
+</li>
+<li>
+<p><strong>Retry Logic:</strong></p>
+</li>
+<li>
+<p>The message becomes visible again after the visibility timeout expires, and is retrieved for processing again. The dequeue count increases.</p>
+</li>
+<li>
+<p><strong>Exceeding Dequeue Threshold:</strong></p>
+</li>
+<li>
+<p>If the dequeue count exceeds your threshold (e.g., 5 retries), you check the message's status.</p>
+</li>
+<li>If it’s deemed a failed message, it’s moved to a custom dead-letter queue (another Storage Queue) for further investigation or logging.</li>
+<li>
+<p><strong>Dead-Letter Queue Monitoring:</strong></p>
+</li>
+<li>
+<p>Monitor the dead-letter queue periodically, and analyze the failed messages or alert the operations team for troubleshooting.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary_1"><strong>Summary:</strong><a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Azure Storage Queues</strong> do not have a native dead-letter queue, so messages that fail repeatedly are simply retried until their <strong>dequeue count</strong> exceeds your defined limit.</li>
+<li>To handle failed messages, you must implement a <strong>custom dead-letter queue</strong> by monitoring the dequeue count and moving failed messages to another queue or storage for manual processing.</li>
+<li>This approach allows you to manually manage failed messages and ensures that they don’t remain stuck in the queue indefinitely.</li>
+</ul>
+<p>4o</p>
+<h5 id="you-said_15">You said:<a class="headerlink" href="#you-said_15" title="Permanent link">&para;</a></h5>
+<p>so every message from the Storage queues has to be deleted manually by the sonsumer ?</p>
+<h6 id="chatgpt-said_15">ChatGPT said:<a class="headerlink" href="#chatgpt-said_15" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Yes, in <strong>Azure Storage Queues</strong>, every message <strong>must be explicitly deleted</strong> by the consumer after successful processing. Azure Storage Queues do not automatically delete messages once they are processed; the consumer is responsible for indicating when a message has been successfully handled. Here's how it works:</p>
+<h3 id="azure-storage-queues-message-processing-flow"><strong>Azure Storage Queues Message Processing Flow:</strong><a class="headerlink" href="#azure-storage-queues-message-processing-flow" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Message Retrieval:</strong></p>
+<ul>
+<li>The consumer retrieves a message from the Storage Queue using a <strong>GetMessage</strong> or <strong>PeekMessage</strong> API call.</li>
+<li>When a message is retrieved, it becomes <strong>invisible</strong> to other consumers for a period specified by the <strong>visibility timeout</strong>. During this time, the consumer is expected to process the message.</li>
+<li>
+<p><strong>Message Processing:</strong></p>
+</li>
+<li>
+<p>The consumer processes the message during the visibility timeout period.</p>
+</li>
+<li>
+<p><strong>Message Deletion:</strong></p>
+</li>
+<li>
+<p>Once the message has been processed successfully, the consumer <strong>must explicitly delete the message</strong> from the queue using the <strong>DeleteMessage</strong> API.</p>
+</li>
+<li>This is done by referencing the <strong>message ID</strong> and a <strong>pop receipt</strong> that was returned when the message was retrieved.</li>
+</ul>
+<p>csharp</p>
+<p>Copy code</p>
+<p><code>queue.DeleteMessage(message.MessageId, message.PopReceipt);</code></p>
+</li>
+<li>
+<p><strong>If Processing Fails:</strong></p>
+<ul>
+<li>
+<p>If the consumer <strong>fails to process the message</strong> within the visibility timeout, the message becomes visible in the queue again after the timeout expires, allowing it to be retrieved by the same or another consumer.</p>
+</li>
+<li>
+<p>The message's <strong>dequeue count</strong> is incremented, and it can be retried.</p>
+</li>
+<li>
+<p>If the message fails repeatedly and exceeds the allowed dequeue count threshold, you might want to handle it by moving it to a custom dead-letter queue or taking other corrective actions.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="why-manual-deletion-is-necessary"><strong>Why Manual Deletion Is Necessary:</strong><a class="headerlink" href="#why-manual-deletion-is-necessary" title="Permanent link">&para;</a></h3>
+<p>The reason why Azure Storage Queues require manual deletion is to ensure <strong>reliability</strong> and <strong>fault tolerance</strong> in message processing. This ensures that:</p>
+<ul>
+<li><strong>Messages are not lost if processing fails:</strong> The message stays in the queue until it is successfully processed and deleted. If the consumer fails (e.g., crashes or experiences an error), the message is returned to the queue for retry.</li>
+<li><strong>Avoiding premature deletion:</strong> If Azure automatically deleted a message upon retrieval, and the consumer failed before processing it, the message would be lost. Manual deletion ensures that the message is only removed after successful processing.</li>
+</ul>
+<h3 id="summary_2"><strong>Summary:</strong><a class="headerlink" href="#summary_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In <strong>Azure Storage Queues</strong>, the consumer is responsible for <strong>deleting the message manually</strong> after it has been processed.</li>
+<li>If the message is not deleted during the <strong>visibility timeout</strong>, it becomes visible again for other consumers to pick up, ensuring messages are retried in case of processing failures.</li>
+</ul>
+<p>1/2</p>
+<p>4o</p>
+<h5 id="you-said_16">You said:<a class="headerlink" href="#you-said_16" title="Permanent link">&para;</a></h5>
+<p>So if it is not removed then it will keep appearing infinite time after failures</p>
+<h6 id="chatgpt-said_16">ChatGPT said:<a class="headerlink" href="#chatgpt-said_16" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>No, in <strong>Azure Storage Queues</strong>, a message will not keep reappearing infinitely after failures. Azure Storage Queues have a mechanism to prevent messages from being processed indefinitely in case of repeated failures. Specifically, you can use the <strong>Dequeue Count</strong> to manage this scenario.</p>
+<h3 id="how-it-works"><strong>How It Works:</strong><a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Dequeue Count:</strong></p>
+<ul>
+<li>Every time a message is retrieved from the queue for processing, its <strong>Dequeue Count</strong> is incremented. This count indicates how many times the message has been retrieved from the queue for processing.</li>
+<li>You can access the <strong>Dequeue Count</strong> for each message when you retrieve it from the queue.</li>
+<li>
+<p><strong>Manual Handling Based on Dequeue Count:</strong></p>
+</li>
+<li>
+<p>You can configure your application logic to check the <strong>Dequeue Count</strong> before processing a message. If the <strong>Dequeue Count</strong> exceeds a certain threshold (e.g., 5 attempts), you can consider the message as failed.</p>
+</li>
+<li>At this point, instead of letting the message continue reappearing in the queue, you can either:<ul>
+<li><strong>Move the message to a custom dead-letter queue</strong> for further investigation.</li>
+<li><strong>Log or notify</strong> that the message has failed too many times.</li>
+<li><strong>Delete the message</strong> if retrying is no longer useful.</li>
+</ul>
+</li>
+<li>
+<p><strong>Message Expiry (TTL):</strong></p>
+</li>
+<li>
+<p>You can also set a <strong>Time-to-Live (TTL)</strong> for messages when they are added to the queue. If a message is not processed and deleted before the TTL expires, it is automatically <strong>deleted from the queue</strong>.</p>
+</li>
+<li>The TTL can be defined at the time of message insertion, and it ensures that messages do not stay in the queue indefinitely.</li>
+</ul>
+</li>
+</ol>
+<h3 id="preventing-infinite-reappearing"><strong>Preventing Infinite Reappearing:</strong><a class="headerlink" href="#preventing-infinite-reappearing" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Dequeue Count Monitoring:</strong> Implement logic in your application to handle messages after a set number of retries (e.g., move the message to a dead-letter queue after 5 retries).</li>
+<li><strong>Message TTL:</strong> Set a <strong>Time-to-Live (TTL)</strong> for messages to ensure that they are eventually deleted if they are not processed successfully within a certain time frame.</li>
+</ul>
+<h3 id="example-scenario"><strong>Example Scenario:</strong><a class="headerlink" href="#example-scenario" title="Permanent link">&para;</a></h3>
+<ol>
+<li>A message is placed in the queue.</li>
+<li>The consumer retrieves the message but fails to process it. The message reappears in the queue after the visibility timeout, and its dequeue count is incremented.</li>
+<li>After, for example, 5 failed attempts (based on the dequeue count), the application logic detects that the message has failed too many times.</li>
+<li>The application moves the message to a <strong>custom dead-letter queue</strong> or logs the error and deletes the message from the queue.</li>
+</ol>
+<h3 id="summary_3"><strong>Summary:</strong><a class="headerlink" href="#summary_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A message will <strong>not keep reappearing infinitely</strong>. You can manage failed messages by monitoring the <strong>Dequeue Count</strong> and taking action when it exceeds a threshold (e.g., moving to a custom dead-letter queue).</li>
+<li>You can also set a <strong>TTL (Time-to-Live)</strong> for messages, ensuring they are automatically deleted after a specific period if they are not processed.</li>
+</ul>
+<p>By implementing these mechanisms, you can effectively prevent a message from being retried indefinitely in Azure Storage Queues.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Basics/Regions%20in%20Australia.%20AvZones%20in%20Australia/" class="btn btn-neutral float-left" title="Regions in Australia. AvZones in Australia"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Cloud%20Adoption%20vs%20Well%20Architected%20Framework/Key%20Differences/" class="btn btn-neutral float-right" title="Key Differences">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Basics/Regions%20in%20Australia.%20AvZones%20in%20Australia/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Cloud%20Adoption%20vs%20Well%20Architected%20Framework/Key%20Differences/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

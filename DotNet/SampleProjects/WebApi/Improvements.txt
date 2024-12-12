@@ -1,0 +1,12 @@
+datetime or datetimeoffset
+logging
+swagger could have been configured
+Base result could have been abstract
+input validation
+with Data base result
+logging
+when new vehciles added then we still have to handle concurrency
+tell them about distributed lock using DB/Redis cache
+
+
+curl -X GET "https://localhost:5001/api/vehicles/availability?PickupDate=2024-12-01T10:00:00&ReturnDate=2024-12-10T10:00:00

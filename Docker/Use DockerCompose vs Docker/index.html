@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Use DockerCompose vs Docker - Notes</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Use DockerCompose vs Docker";
+        var mkdocs_page_input_path = "Docker\\Use DockerCompose vs Docker.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../Power%20Shell/">Power Shell</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AWS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AWS/SignUp/">AWS Customer Agreement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/CQRS/">CQRS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Diagrams%20included%20in%20HLD/">DiagramsIncludedInHLD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Event%20Sourcing/">Event Sourcing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/GraphQL%20vs%20OData/">GraphQL vs OData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/GraphQL%20vs%20Rest/">GraphQL vs Rest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Onion%20Architecture/">Onion Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Transactional%20Saga%20Patterns/">Transactional Saga Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/modular%20monolith/">Modular monolith</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Driven Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Event%20Driven%20Architecture/One/">One</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Interview</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Interview/Interview%20Story/">Interview Story</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Interview/Monolith%20Structure/">Monolith Structure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Interview/tags/">InterviewStorySolutionArchitect</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Microservices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Microservices/Deployment%20issues%20of%20monolith/">Deployment issues of monolith</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Microservices/Granularity/">Granularity</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >TransactionSagas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/TransactionSagas/Saga%20names/">Saga names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Patterns</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Architecture/TransactionSagas/Patterns/Epic%20Saga%20-%20Synchronous%20Atomic%20Orchestrated/">Epic Saga   Synchronous Atomic Orchestrated</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Architecture/TransactionSagas/Patterns/Phone%20Tag%20Sag%20-%20Synchronous%20Atomic%20Choreographed/">Phone Tag Sag   Synchronous Atomic Choreographed</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Automapper</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Automapper/Anti%20Automapper%20Argument/">Anti Automapper Argument</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Azure</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/AppService%20and%20AzureFunction/">AppService and AzureFunction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Azure%20Charts/">Azure Charts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Azure%20SQL%20High%20Availability%20and%20Fail%20Over/">FailOverAzureSQL #HighAvailabilityAzureSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Install%20Azure%20CLI/">Install Azure CLI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Kafka%20vs%20EventStoreDB%20%283rd-Party%20Tool%29/">Kafka vs EventStoreDB (3rd Party Tool)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >AKS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/AKS/AKS%20Samples/">AKS-Code-Samples</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/AKS/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/AKS/Diagram%20Deployment%20on%20AKS%20Cluster/">Diagram Deployment on AKS Cluster</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/URLs/">URLs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/Why%20CAF%20WAF%20and%20Azure%20Architecture%20Center%20are%20grouped%20together/">Why CAF WAF and Azure Architecture Center are grouped together</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Authentication</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Authentication/Azure%20OpenID%20Connect%20%28OIDC%29/">Azure OpenID Connect (OIDC)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Basics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Basics/Azure%20Management%20Infrastructure/">Azure Management Infrastructure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Basics/Regions%20in%20Australia.%20AvZones%20in%20Australia/">Regions in Australia. AvZones in Australia</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ChatGPT</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/ChatGPT/Azure%20Front%20Door%20vs%20Load%20Balancer/">Azure Front Door vs Load Balancer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Cloud Adoption vs Well Architected Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Cloud%20Adoption%20vs%20Well%20Architected%20Framework/Key%20Differences/">Key Differences</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Cloud%20Adoption%20vs%20Well%20Architected%20Framework/When%20to%20Use%20Which%20Framework/">When to Use Which Framework</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Sourcing</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Azure%20Event%20Sourcing/">Azure Event Sourcing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Blob%20Storage/">Kafka vs Azure Blob Storage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Cosmos%20DB/">Kafka vs Azure Cosmos DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Event%20Hubs/">Kafka vs Azure Event Hubs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Service%20Bus/">Kafka vs Azure Service Bus</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Landing Zone</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Landing%20Zone/Azure%20Landing%20Zone/">Azure Landing Zone</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Messaging</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Azure%20Event%20Grid%20VS%20Kafka/">Azure Event Grid VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Azure%20Service%20Bus%20VS%20Kafka/">Azure Service Bus VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Azure%20Service%20Bus%20With%20Sessions/">Azure Service Bus With Sessions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Event%20Grid%20vs%20Service%20Bus%20Pub%20Sub/">Event Grid vs Service Bus Pub Sub</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Kafka%20is%20push%20or%20pull/">Kafka is push or pull</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SSL Termination</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/AG%20and%20AGIC/">AGandAGIC-TLS-SSL-Termination</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/AGIC%20vs%20NGINX%20Ingress%20Controller/">AGIC vs NGINX Ingress Controller</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/Pods%20cant%20Terminate%20with%20AG%20AGIC/">Pods cant Terminate with AG AGIC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/What%20AGIC%20can%20do%20but%20NGINX%20cant/">What AGIC can do but NGINX cant</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/What%20NGINX%20can%20do%20which%20AGIC%20cant/">What NGINX can do which AGIC cant</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cloud</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Cloud/Landing%20Zone/">Landing Zone</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Container Orchestration Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Rancher%20TerraForm%20K3up/">Rancher TerraForm K3up</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Docker Swarm</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Docker%20Swarm/Why/">Why</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >K8S</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Dashboard/">AKS Dashboard</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Node/">AKS Node</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Pods/">AKS Pods</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Agents/">Agents</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Check%20container%20in%20AKS%20or%20Docker/">Check container in AKS or Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/DevOps%20Pipelines%20Flow/">DevOps Pipelines Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Docker%20Compose%20vs%20Swarm%20vs%20Kubernetis/">Docker Compose vs Swarm vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Docker%20vs%20Kubernetis/">Docker vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm%20%2B%20Docker/">Helm + Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm%20AKS%20to%20EKS/">Helm AKS to EKS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/K3S%20vs%20K8S/">K3S vs K8S</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/One%20Container%20Per%20Pod/">One Container Per Pod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Port%20Mapping/">Port Mapping</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Temp/">Temp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Commands</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/AKS%20stuck%20pod%20fix/">AKS stuck pod fix</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20Alias%20in%20PowerShell%20Profile/">Create K8S Alias in PowerShell Profile</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20service%20account/">Create K8S service account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20ServiceAccount%20With%20Service%20Admin%20Role/">Create the Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Get%20Token%20of%20Service%20Account/">Get Token of Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Give%20Cluster%20Wide%20Read%20Access/">Give Cluster Wide Read Access</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Command%20alias/">K8S Command alias</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Commands%20in%20Table/">K8S Commands in Table</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ForDevelopersCourse PluralSights</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" >MyNotes</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/2%20-%20Core%20Concepts/">2   Core Concepts</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/3-%20Pods/">3  Pods</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Helm</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/1-%20What%20is%20Helm%20Charts/">1  What is Helm Charts</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/2-%20Helm%20Chart%20Templates/">2  Helm Chart Templates</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/3-%20Helm%20Install/">3  Helm Install</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.0%20Helm%20Template%20to%20Kubernetes%20manifest/">4.0 Helm Template to Kubernetes manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.1%20Helms%20Templates%20Processing%20Order/">4.1 Helms Templates Processing Order</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.2%20Viewing%20the%20Combined%20Manifest/">4.2 Viewing the Combined Manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.3%20Order%20in%20which%20resources%20are%20created%20by%20Kubernetes/">4.3 Order in which resources are created by Kubernetes</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Probes</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/AKS%20Liveness%20vs%20Readiness/">AKS Liveness vs Readiness</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Effect%20of%20failing%20probes/">Effect of failing probes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Kubelet/">Kubelet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Minimum%20implementation/">Minimum implementation</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Startup%20Probe/">Startup Probe</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Setup Environment</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Docker-Desktop%20vs%20Minikube/">Docker Desktop vs Minikube</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/First%20Build/">First Build</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Identify%20K8S%20Environment/">Identify K8S Environment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Min%20Resources%20for%20deployment/">Min Resources for deployment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Options%20to%20run%20K8S%20locally/">Options to run K8S locally</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Setup%20K8S%20dashboard%20on%20DockerDesktop/">Setup K8S dashboard on DockerDesktop</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DDD</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/DomainEvent%20vs%20DomainActivity/">DomainEvent vs DomainActivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Elephant%20Analogy/">Elephant Analogy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Entity%20vs%20Aggregate/">Entity vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Life%20inside%20aggergate%20root/">Life inside an Aggregate Root, part 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Problems%20Solved%20By%20DDD/">Problems Solved By DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Repository%20in%20DDD/">RepositoryDDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Transaction%20Across%20Aggregrates%20in%20DDD/">Transaction Across Aggregrates in DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Value%20vs%20Aggregate/">Value vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Value%20vs%20Entity%20Object/">Value vs Entity Object</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Bounded Context</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DDD/Bounded%20Context/Identify%20Bounded%20Context%20-%20ChatGpt/">Identify Bounded Context   ChatGpt</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DDD/Bounded%20Context/Sub%20Domain%20VS%20Bounded%20Context/">Sub Domain VS Bounded Context</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DailySheet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-04/">2024 11 04</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-14/">2024 11 14</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-21/">2024 11 21</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Design Pattern</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Design%20Pattern/4%20Mistakes%20In%20Repository%20Pattern/">4 Mistakes In Repository Pattern</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diagrams</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Context%20Diagram/">Context Diagram</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Diagrame%20Tool%20Names/">Diagrame Tool Names</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Feature%20Comparison/">Feature Comparison</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Highlevel%20design%20document/">Highlevel design document</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Mermaid%20DiagramsNet%20App%20vs%20Web/">Mermaid DiagramsNet App vs Web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Mermaid%20and%20Diagram.net%20together/">Mermaid and Diagram.net together</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/UML%20Diagrams/">UML Diagrams</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Docker</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Docker%20Commands/">Docker Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Docker%20File/">Docker File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Docker%20file%20network%20tools/">Install necessary tools</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Use DockerCompose vs Docker</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Common Build Issues</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Common%20Build%20Issues/Context%20Issue/">Context Issue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Common%20Build%20Issues/NuGet%20Package%20Download%20Issue/">NuGet Package Download Issue</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DotNet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Anonymous%20Types%20vs%20Dynamic%20vs%20Tuple/">Anonymous Types vs Dynamic vs Tuple</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Collections/">Collections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Net%20Release%20Cycle/">Net Release Cycle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Net%20SDK%20Web%20vs%20Worker/">Net SDK Web vs Worker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/NetCore%203.1%20Application%20Start/">NetCore 3.1 Application Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ASPNET</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/ASPNET/Minimum%20Code%20to%20access%20a%20controller/">Minimum Code to access a controller</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Collections</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Collections/Class%20Hierarchy/">Class Hierarchy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Collections/IEnumerable%20vs%20IQureyable/">IEnumerable vs IQureyable</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF 8</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >Migrations</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/Add%20Migration/">Add Migration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/Update%20EF%20Tools/">Update EF Tools</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/add-migration%20vs%20dotnet%20ef/">Add migration vs dotnet ef</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >HangFire</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/HangFire/DEL/">DEL</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/HangFire/HangFire%20Job%20Chaining%20HangFire%20Job%20Waiting/">HangFire Job Chaining HangFire Job Waiting</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Net 6 vs Net 3.1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/ActionResult%20T%20sets%20StatusCode%20to%20200/">ActionResult sets StatusCode to 200</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Net%206%20vs%203.1/">Net 6 vs 3.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Hosting</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/GenericHost%20code%20vs%20WebApplication/">GenericHost code vs WebApplication</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20GenericHost/">WebApi code using GenericHost</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20WebApplication/">WebApi code using WebApplication</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SampleProjects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/SampleProjects/Sample%20Console%20Project/">SampleConsoleProject</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >WebApi</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/API%20Testing/">WebApiResponses</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/GPT/">GPT</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/Sample%20Batch%20File%20Text/">Sample Batch File Text</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/Tags/">sampleprojectwebapi #sampleprojectrestapi #sampleprojectDotNetwebapi</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/git/">Git</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tasks</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Async/">Async</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/More%20Info/">More Info</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.Run%20vs%20AsyncAwait%20vs%20Thread/">Task.Run vs AsyncAwait vs Thread</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.Run/">Task.Run</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.WhenAll%20Exception/">Task.WhenAll Exception</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integrations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Integrations/Mulesoft%20VS%20Azure%20Service%20Bus/">Mulesoft VS Azure Service Bus</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LocalSetup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../LocalSetup/Git%20Extensions/">Git Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../LocalSetup/MS%20SQL%20Server/">MS SQL Server</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MicroServices</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MicroServices/Granularity/">Granularity</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">NoSQL DB</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Azure CosmosDB</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../NoSQL%20DB/Azure%20CosmosDB/Useful%20Queries/">Useful Queries</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Plus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Plus/Discontinued%20Google%20Products/">Discontinued Google Products</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Plus/List/">List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Adobe Stock</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Plus/Adobe%20Stock/Adobe%20Stock/">Adobe Stock</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Agile</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Project%20Management/Agile/Issue%20Hierarchy/">Issue Hierarchy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Phases</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Project%20Phases/Budgeting/">Budgeting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Project%20Phases/Phase%20wise%20role%20engagement/">RoleInvolvement #ProjectPhaseNeededRoles #RolesInvolvedConceptualization #PhaseWiseRoleEngagement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Roles</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Roles/Systems%20Engineering/">SystemEngineering #SystemEngineerVSArchitect</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Site Reliability Engineer SRE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/SRE%20vs%20DevOps/">SREVSDevOps #SiteReliabiltyEnginnerVSDevops #RoleComparison</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Site%20Reliability%20Engineer%20vs%20Architect%20vs%20QA/">Site Reliability Engineer vs Architect vs QA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Some%20Tasks%20of%20SRE/">ChaosEnginnering #ScalabilityTesting #SRETasks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Who%20is%20an%20SRE/">Who is an SRE</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQL Server</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../SQL%20Server/View%20in%20Complex%20Query/">View in Complex Query</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/DBContext%20Scoped/">DBContext Scoped</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/DBContext%20Transient%20%28Didnt%20work%29/">DBContext Transient (Didnt work)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/EFCore.BulkExtensions/">EFCore.BulkExtensions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >General Queries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/Data%20Insertion%20Rate/">Data Insertion Rate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/SET%20ANSI_NULLS/">SET ANSI NULLS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/Test%20Data%20Cleanup/">Test Data Cleanup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/find%20a%20table%20having%20column/">Find a table having column</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Search</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Elastic%20Search%20Perdictability/">Elastic Search Perdictability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Elastic%20Search%20vs%20NoSQL/">Elastic Search vs NoSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Elastic%20Search/">Elastic Search</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Elastic%20VS%20OpenSearch/">Elastic VS OpenSearch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/GreyLog/">GreyLog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/KQL%20VS%20DSL/">KQL VS DSL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Kibana/">Kibana</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Security</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Auth0%20vs%20MS%20Entra%20Id/">Auth0 vs MS Entra Id</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/M2M%20vs%20UserToken%20Usage%20Scenerio/">M2M vs UserToken Usage Scenerio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/OpenID%20Connect%20%28OIDC%29/">OpenID Connect (OIDC)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Relevance%20of%20scopes%20in%20M2M%20tokens/">Relevance of scopes in M2M tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Roles%20vs%20Scopes/">Roles vs Scopes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/SSL%20HTTPS%20and%20TLS/">SSL HTTPS and TLS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Auth0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Access%20Token%20Validation/">Access Token Validation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/AppMetaData%20vs%20UserMetaData/">AppMetaData vs UserMetaData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Auth0%20Applications%20vs%20APIs/">Auth0 Applications vs APIs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%201%20-%20Machine%20to%20Machine%20Client%20Credential%20Flow/">Flow 1   Machine to Machine Client Credential Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%202A%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE/">Flow 2A   SPA Authorization Code Flow with PKCE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%202B%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE%20Detail/">Flow 2B   SPA Authorization Code Flow with PKCE Detail</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flows%20in%20Auth0/">Flows in Auth0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/How%20to%20handle%20stolen%20access%20tokens/">How to handle stolen access tokens</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/How%20to%20handle%20stolen%20refresh%20token/">How to handle stolen refresh token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Id%20Token/">Id Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Refresh%20Token/">Refresh Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Token%20Best%20Practices/">Token Best Practices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/What%20can%20be%20stored%20in%20Auth0%20DB/">What can be stored in Auth0 DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/When%20not%20to%20add%20application%20for%20an%20API/">When not to add application for an API</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TerraForm</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../TerraForm/Terraform%20Does%20or%20DoesNot%20for%20AKS/">Terraform Does or DoesNot for AKS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >KodeCloud Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/2-%20Types%20of%20IAC%20Tools/">2  Types of IAC Tools</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/3-%20Terraform/">3  Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/4-%20Installing%20Terraform/">4  Installing Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/5-%20HCL%20Basics/">5  HCL Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/6-%20Labs/">6  Labs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Test</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/Functional%20Tests/">Functional Tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/In%20NET%206%2B/">In NET 6+</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/Log%20Console.WriteLine/">Log Console.WriteLine</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/TestExplorer%20not%20showing%20tests/">TestExplorer not showing tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/TheUnit/">TheUnit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >xUnit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20Packages/">XUnit Packages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20VS%20MSTest/">XUnit VS MSTest</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20and%20Mocking/">XUnit and Mocking</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ubuntu</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Ubuntu/Debian%20vs%20Ubuntu%20Hardening/">Debian vs Ubuntu Hardening</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Ubuntu/Snap%20vs%20Apt/">Snap vs Apt</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">VS Help</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../VS%20Help/Get%20Json%20during%20debugging/">Get Json during debugging</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Docker</li>
+      <li class="breadcrumb-item active">Use DockerCompose vs Docker</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>While you can manage everything in a <code>Dockerfile</code> for a single service, using Docker Compose can provide benefits even for one service:</p>
+<ul>
+<li><strong>Readability</strong>: <code>docker-compose.yml</code> can be easier to read and manage, especially as your configuration grows.</li>
+<li><strong>Simplified Commands</strong>: You can start your service and define environment variables, volumes, and networks all in one command (<code>docker-compose up</code>).</li>
+<li><strong>Future Scalability</strong>: If you plan to expand your application to include more services in the future, starting with Docker Compose can make that transition smoother.</li>
+</ul>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>For a single service, you can manage everything in the <code>Dockerfile</code>, but using Docker Compose provides more flexibility and ease of management, especially as your application grows.</p>
+<h3 id="more-info">More Info<a class="headerlink" href="#more-info" title="Permanent link">&para;</a></h3>
+<p>No, <strong>Docker Compose does not run containers in the same pod</strong>. Docker Compose and Kubernetes (which uses pods) are different container orchestration tools with different architectures.</p>
+<p>Here's how they differ:</p>
+<ol>
+<li>
+<p><strong>Docker Compose</strong>:</p>
+<ul>
+<li>Docker Compose is designed to manage multi-container applications on a single Docker host.</li>
+<li>Each service defined in a <code>docker-compose.yml</code> file creates an independent container. Even if they are part of the same project and network, each container runs separately.</li>
+<li>Containers can communicate with each other over a shared network, but they are not grouped into a single unit like a pod.</li>
+<li>
+<p><strong>Kubernetes (Pods)</strong>:</p>
+</li>
+<li>
+<p>In Kubernetes, a <strong>pod</strong> is the smallest deployable unit and can contain one or more tightly coupled containers.</p>
+</li>
+<li>Containers in the same pod share the same network namespace (including IP address) and storage volumes, allowing them to communicate easily and share resources as if they were on the same "host."</li>
+<li>
+<p><strong>Differences in Isolation</strong>:</p>
+</li>
+<li>
+<p>Docker Compose containers are isolated by default and communicate over a Docker-defined network.</p>
+</li>
+<li>In Kubernetes, containers in the same pod are more tightly integrated, as they share network and storage resources within the pod.</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Docker Compose</strong> does not group containers into a single pod. Each service in <code>docker-compose.yml</code> is a separate container.</li>
+<li>To run multiple containers as a single unit (pod), <strong>Kubernetes</strong> is the tool designed for that purpose.</li>
+</ul>
+<p>4o</p>
+<h5 id="you-said">You said:<a class="headerlink" href="#you-said" title="Permanent link">&para;</a></h5>
+<p>whatb is the max number of containers docker compose can run ?</p>
+<h6 id="chatgpt-said">ChatGPT said:<a class="headerlink" href="#chatgpt-said" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Docker Compose does not impose a strict upper limit on the number of containers it can run. However, practical limits depend on a combination of factors:</p>
+<ol>
+<li>
+<p><strong>Host Machine Resources</strong>:</p>
+<ul>
+<li>CPU, memory, and storage resources of the host machine play a significant role. The more containers you run, the more resources each will consume, and eventually, you’ll hit the limits of your hardware.</li>
+<li>
+<p><strong>Docker Engine Limitations</strong>:</p>
+</li>
+<li>
+<p>Docker itself has limitations based on the capabilities of the Docker Engine and the underlying OS. While Docker can theoretically handle thousands of containers, performance may degrade significantly as you approach high numbers (hundreds or thousands).</p>
+</li>
+<li>
+<p><strong>Network Overhead</strong>:</p>
+</li>
+<li>
+<p>Docker Compose sets up networks for containers to communicate. As the number of containers increases, the complexity of network communication and potential port conflicts can affect performance and reliability.</p>
+</li>
+<li>
+<p><strong>File Descriptor and Process Limits</strong>:</p>
+</li>
+<li>
+<p>Most operating systems have a limit on the number of file descriptors and processes that can be open at once. Each container adds to this count, so high container counts may require adjusting OS limits.</p>
+</li>
+<li>
+<p><strong>Practical Considerations</strong>:</p>
+</li>
+<li>
+<p>In typical usage, Docker Compose can comfortably handle <strong>dozens to low hundreds of containers</strong> on a well-configured machine. For workloads involving hundreds or thousands of containers, an orchestrator like <strong>Kubernetes</strong> is usually more suitable.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h3>
+<p>While Docker Compose has no fixed limit on container count, practical performance limits are determined by the host's resources and OS configurations. Generally, Docker Compose is ideal for running <strong>tens to low hundreds of containers</strong> on a single host, while larger deployments benefit from more advanced orchestrators like Kubernetes.</p>
+<p>4o</p>
+<h5 id="you-said_1">You said:<a class="headerlink" href="#you-said_1" title="Permanent link">&para;</a></h5>
+<p>can docker compose scale across machines ?</p>
+<h6 id="chatgpt-said_1">ChatGPT said:<a class="headerlink" href="#chatgpt-said_1" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>No, <strong>Docker Compose cannot natively scale across multiple machines</strong>. Docker Compose is designed primarily to manage multi-container applications on a <strong>single host</strong>. Here are some key points about Docker Compose and multi-host scaling:</p>
+<ol>
+<li>
+<p><strong>Single-Host Limitation</strong>:</p>
+<ul>
+<li>Docker Compose runs and manages containers on a single machine, where all services are isolated but networked within the same host. It does not have built-in support for distributing containers across multiple machines.</li>
+<li>
+<p><strong>Docker Swarm</strong>:</p>
+</li>
+<li>
+<p>Docker Swarm, Docker's native clustering and orchestration tool, allows you to scale containers across multiple hosts. You can use Docker Compose files with Docker Swarm by deploying the Compose file as a stack. In Swarm mode, Docker distributes services defined in the Compose file across multiple nodes in a cluster.</p>
+</li>
+<li>To use this, you can initialize a Docker Swarm cluster, add nodes, and then deploy your <code>docker-compose.yml</code> file with <code>docker stack deploy</code>. This way, you can achieve multi-host scaling.</li>
+<li>
+<p><strong>Kubernetes</strong>:</p>
+</li>
+<li>
+<p>Kubernetes is another solution that supports scaling containers across multiple nodes. Kubernetes has its own configuration format (YAML files) similar to Docker Compose, and tools like <strong>Kompose</strong> can help convert Docker Compose files into Kubernetes configuration files if you want to migrate.</p>
+</li>
+<li>
+<p><strong>Third-Party Orchestrators</strong>:</p>
+</li>
+<li>
+<p>Other orchestrators, such as <strong>Nomad</strong> by HashiCorp, can also run containers across multiple nodes and can use Docker containers. However, these tools require different configuration formats and are separate from Docker Compose.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary_2">Summary<a class="headerlink" href="#summary_2" title="Permanent link">&para;</a></h3>
+<p>Out of the box, Docker Compose does not support multi-host scaling. To achieve distributed scaling across multiple machines, you would need to use <strong>Docker Swarm</strong> or <strong>Kubernetes</strong>, which provide clustering and orchestration features across multiple hosts.</p>
+<p>4o</p>
+<h5 id="you-said_2">You said:<a class="headerlink" href="#you-said_2" title="Permanent link">&para;</a></h5>
+<p>so docker compose can only be used for testing and on Dev machines</p>
+<h6 id="chatgpt-said_2">ChatGPT said:<a class="headerlink" href="#chatgpt-said_2" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Yes, Docker Compose is generally best suited for <strong>development</strong>, <strong>testing</strong>, and <strong>local environments</strong> where single-host setups are sufficient. However, Docker Compose can also be used for certain <strong>production environments</strong> if the application requirements align with its limitations. Here’s a breakdown:</p>
+<h3 id="primary-use-cases-for-docker-compose">Primary Use Cases for Docker Compose<a class="headerlink" href="#primary-use-cases-for-docker-compose" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Development and Testing</strong>:</p>
+<ul>
+<li>Compose is ideal for quickly spinning up multiple containers and simulating service dependencies on a local or single-host setup. It allows developers to test, debug, and iterate on applications in an environment similar to production without needing a complex multi-host infrastructure.</li>
+<li>
+<p><strong>Small-Scale Production Deployments</strong>:</p>
+</li>
+<li>
+<p>For small-scale applications that don’t require high availability, load balancing, or scaling across multiple hosts, Docker Compose can handle production deployments. Examples include self-hosted tools, personal projects, or small applications running on a single server.</p>
+</li>
+<li>Compose can be used in production for simple setups where you don’t need orchestration or distributed clustering, and where a single server meets the performance and resilience requirements.</li>
+<li>
+<p><strong>Single-Node Production Environments</strong>:</p>
+</li>
+<li>
+<p>Docker Compose can be useful in edge environments, IoT applications, or on devices like Raspberry Pi, where applications are expected to run on a single node with limited requirements for scaling and failover.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="when-to-move-beyond-docker-compose">When to Move Beyond Docker Compose<a class="headerlink" href="#when-to-move-beyond-docker-compose" title="Permanent link">&para;</a></h3>
+<p>For applications needing <strong>scalability</strong>, <strong>high availability</strong>, <strong>automated failover</strong>, or <strong>multi-host orchestration</strong>, Docker Compose is typically not sufficient. In these cases, alternatives include:</p>
+<ul>
+<li><strong>Docker Swarm</strong>: For projects that can benefit from Docker’s native clustering capabilities while still using Docker Compose-like configurations.</li>
+<li><strong>Kubernetes</strong>: For large-scale, complex, or highly distributed applications requiring advanced orchestration features.</li>
+<li><strong>Nomad or Other Orchestrators</strong>: For environments that need specific orchestration capabilities beyond what Docker Swarm and Kubernetes offer.</li>
+</ul>
+<h3 id="summary_3">Summary<a class="headerlink" href="#summary_3" title="Permanent link">&para;</a></h3>
+<p>Docker Compose is excellent for development, testing, and small-scale production on a single machine. For larger, multi-host, or highly available setups, orchestrators like <strong>Docker Swarm</strong> or <strong>Kubernetes</strong> are more appropriate.</p>
+<p>4o</p>
+<h5 id="you-said_3">You said:<a class="headerlink" href="#you-said_3" title="Permanent link">&para;</a></h5>
+<p>Docker, DockerCompose and DockerSwarm are from same company ?</p>
+<h6 id="chatgpt-said_3">ChatGPT said:<a class="headerlink" href="#chatgpt-said_3" title="Permanent link">&para;</a></h6>
+<p>ChatGPT</p>
+<p>Yes, <strong>Docker, Docker Compose, and Docker Swarm</strong> were all originally developed by <strong>Docker, Inc.</strong> and are part of the Docker ecosystem, but they serve different purposes within containerization:</p>
+<ol>
+<li>
+<p><strong>Docker</strong>:</p>
+<ul>
+<li>Docker itself is the core technology, a platform that enables you to build, package, and run containers. It includes the Docker Engine (runtime), Docker CLI, and the foundational tools for managing container images and containerized applications.</li>
+<li>
+<p><strong>Docker Compose</strong>:</p>
+</li>
+<li>
+<p>Docker Compose is a tool specifically designed to manage multi-container applications on a single Docker host. It allows you to define services, networks, and volumes for multiple containers in a <code>docker-compose.yml</code> file, making it easier to orchestrate and test multi-service applications locally.</p>
+</li>
+<li>
+<p><strong>Docker Swarm</strong>:</p>
+</li>
+<li>
+<p>Docker Swarm is Docker’s native clustering and orchestration solution. It allows multiple Docker hosts (nodes) to join a <strong>Swarm cluster</strong> and enables services to be deployed across them. Docker Swarm uses <code>docker-compose.yml</code> files to deploy services as stacks across nodes in the cluster, making it easier to scale applications across multiple hosts.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>While they all originated from Docker, Inc., Docker Swarm has seen less development in recent years, especially with the rise of Kubernetes as the primary orchestration solution in the industry. Docker, Inc. now collaborates with Kubernetes, and Docker Desktop even includes a Kubernetes option for development environments, but all three tools are still part of the Docker ecosystem.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Docker%20file%20network%20tools/" class="btn btn-neutral float-left" title="Install necessary tools"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Common%20Build%20Issues/Context%20Issue/" class="btn btn-neutral float-right" title="Context Issue">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Docker%20file%20network%20tools/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Common%20Build%20Issues/Context%20Issue/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

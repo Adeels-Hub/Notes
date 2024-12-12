@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>FailOverAzureSQL #HighAvailabilityAzureSQL - Notes</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FailOverAzureSQL #HighAvailabilityAzureSQL";
+        var mkdocs_page_input_path = "Azure\\Azure SQL High Availability and Fail Over.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../Power%20Shell/">Power Shell</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AWS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AWS/SignUp/">AWS Customer Agreement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/CQRS/">CQRS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Diagrams%20included%20in%20HLD/">DiagramsIncludedInHLD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Event%20Sourcing/">Event Sourcing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/GraphQL%20vs%20OData/">GraphQL vs OData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/GraphQL%20vs%20Rest/">GraphQL vs Rest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Onion%20Architecture/">Onion Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Transactional%20Saga%20Patterns/">Transactional Saga Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Architecture/modular%20monolith/">Modular monolith</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Driven Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Event%20Driven%20Architecture/One/">One</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Interview</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Interview/Interview%20Story/">Interview Story</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Interview/Monolith%20Structure/">Monolith Structure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Interview/tags/">InterviewStorySolutionArchitect</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Microservices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Microservices/Deployment%20issues%20of%20monolith/">Deployment issues of monolith</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/Microservices/Granularity/">Granularity</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >TransactionSagas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Architecture/TransactionSagas/Saga%20names/">Saga names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Patterns</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Architecture/TransactionSagas/Patterns/Epic%20Saga%20-%20Synchronous%20Atomic%20Orchestrated/">Epic Saga   Synchronous Atomic Orchestrated</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Architecture/TransactionSagas/Patterns/Phone%20Tag%20Sag%20-%20Synchronous%20Atomic%20Choreographed/">Phone Tag Sag   Synchronous Atomic Choreographed</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Automapper</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Automapper/Anti%20Automapper%20Argument/">Anti Automapper Argument</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Azure</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../AppService%20and%20AzureFunction/">AppService and AzureFunction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Azure%20Charts/">Azure Charts</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">FailOverAzureSQL #HighAvailabilityAzureSQL</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-primary-secondary-master-slave-setup">1. Primary-Secondary (Master-Slave) Setup:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-database-mirroring-or-always-on-availability-groups">2. Database Mirroring or Always On Availability Groups:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-load-balancer-in-sql-server">3. Load Balancer in SQL Server:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-failover-and-automatic-failover">4. Failover and Automatic Failover:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#key-considerations">Key Considerations:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#in-summary">In Summary:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#you-said">You said:</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#chatgpt-said">ChatGPT said:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-synchronous-vs-asynchronous-replication">1. Synchronous vs. Asynchronous Replication:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-sql-server-replication-monitoring-and-alerts">2. SQL Server Replication Monitoring and Alerts:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-transaction-log-shipping">3. Transaction Log Shipping:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-network-optimization-and-bandwidth">4. Network Optimization and Bandwidth:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-automatic-failover-always-on-availability-groups">5. Automatic Failover (Always On Availability Groups):</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-replication-latency-and-performance-optimization">6. Replication Latency and Performance Optimization:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-replication-performance-settings">7. Replication Performance Settings:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-data-consistency">8. Data Consistency:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#you-said_1">You said:</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#chatgpt-said_1">ChatGPT said:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-azure-sql-database-single-database-or-elastic-pool">1. Azure SQL Database (Single Database or Elastic Pool)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-azure-sql-managed-instance">2. Azure SQL Managed Instance</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#summary">Summary:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#you-said_2">You said:</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#chatgpt-said_2">ChatGPT said:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-synchronous-replication-with-azure-sql">1. Synchronous Replication (with Azure SQL)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-azure-sql-managed-instance-with-auto-failover-groups">2. Azure SQL Managed Instance with Auto-Failover Groups</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-potential-issues-with-asynchronous-replication">3. Potential Issues with Asynchronous Replication</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-azures-design-for-handling-failover-without-data-loss">4. Azure’s Design for Handling Failover Without Data Loss</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-latency-and-failover-impact-in-high-traffic-systems">5. Latency and Failover Impact in High-Traffic Systems</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-disaster-recovery-geo-replication">6. Disaster Recovery (Geo-Replication)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-managing-failover-scenarios">7. Managing Failover Scenarios</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion_1">Conclusion:</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Install%20Azure%20CLI/">Install Azure CLI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Kafka%20vs%20EventStoreDB%20%283rd-Party%20Tool%29/">Kafka vs EventStoreDB (3rd Party Tool)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >AKS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../AKS/AKS%20Samples/">AKS-Code-Samples</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../AKS/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../AKS/Diagram%20Deployment%20on%20AKS%20Cluster/">Diagram Deployment on AKS Cluster</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Architecture/URLs/">URLs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Architecture/Why%20CAF%20WAF%20and%20Azure%20Architecture%20Center%20are%20grouped%20together/">Why CAF WAF and Azure Architecture Center are grouped together</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Authentication</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Authentication/Azure%20OpenID%20Connect%20%28OIDC%29/">Azure OpenID Connect (OIDC)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Basics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Basics/Azure%20Management%20Infrastructure/">Azure Management Infrastructure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Basics/Regions%20in%20Australia.%20AvZones%20in%20Australia/">Regions in Australia. AvZones in Australia</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ChatGPT</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../ChatGPT/Azure%20Front%20Door%20vs%20Load%20Balancer/">Azure Front Door vs Load Balancer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Cloud Adoption vs Well Architected Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Cloud%20Adoption%20vs%20Well%20Architected%20Framework/Key%20Differences/">Key Differences</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Cloud%20Adoption%20vs%20Well%20Architected%20Framework/When%20to%20Use%20Which%20Framework/">When to Use Which Framework</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Sourcing</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Event%20Sourcing/Azure%20Event%20Sourcing/">Azure Event Sourcing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Event%20Sourcing/Kafka%20vs%20Azure%20Blob%20Storage/">Kafka vs Azure Blob Storage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Event%20Sourcing/Kafka%20vs%20Azure%20Cosmos%20DB/">Kafka vs Azure Cosmos DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Event%20Sourcing/Kafka%20vs%20Azure%20Event%20Hubs/">Kafka vs Azure Event Hubs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Event%20Sourcing/Kafka%20vs%20Azure%20Service%20Bus/">Kafka vs Azure Service Bus</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Landing Zone</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Landing%20Zone/Azure%20Landing%20Zone/">Azure Landing Zone</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Messaging</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Messaging/Azure%20Event%20Grid%20VS%20Kafka/">Azure Event Grid VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Messaging/Azure%20Service%20Bus%20VS%20Kafka/">Azure Service Bus VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Messaging/Azure%20Service%20Bus%20With%20Sessions/">Azure Service Bus With Sessions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Messaging/Event%20Grid%20vs%20Service%20Bus%20Pub%20Sub/">Event Grid vs Service Bus Pub Sub</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Messaging/Kafka%20is%20push%20or%20pull/">Kafka is push or pull</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SSL Termination</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../SSL%20Termination/AG%20and%20AGIC/">AGandAGIC-TLS-SSL-Termination</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../SSL%20Termination/AGIC%20vs%20NGINX%20Ingress%20Controller/">AGIC vs NGINX Ingress Controller</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../SSL%20Termination/Pods%20cant%20Terminate%20with%20AG%20AGIC/">Pods cant Terminate with AG AGIC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../SSL%20Termination/What%20AGIC%20can%20do%20but%20NGINX%20cant/">What AGIC can do but NGINX cant</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../SSL%20Termination/What%20NGINX%20can%20do%20which%20AGIC%20cant/">What NGINX can do which AGIC cant</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cloud</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Cloud/Landing%20Zone/">Landing Zone</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Container Orchestration Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Rancher%20TerraForm%20K3up/">Rancher TerraForm K3up</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Docker Swarm</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Docker%20Swarm/Why/">Why</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >K8S</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Dashboard/">AKS Dashboard</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Node/">AKS Node</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Pods/">AKS Pods</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Agents/">Agents</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Check%20container%20in%20AKS%20or%20Docker/">Check container in AKS or Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/DevOps%20Pipelines%20Flow/">DevOps Pipelines Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Docker%20Compose%20vs%20Swarm%20vs%20Kubernetis/">Docker Compose vs Swarm vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Docker%20vs%20Kubernetis/">Docker vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm%20%2B%20Docker/">Helm + Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm%20AKS%20to%20EKS/">Helm AKS to EKS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/K3S%20vs%20K8S/">K3S vs K8S</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/One%20Container%20Per%20Pod/">One Container Per Pod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Port%20Mapping/">Port Mapping</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Temp/">Temp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Commands</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/AKS%20stuck%20pod%20fix/">AKS stuck pod fix</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20Alias%20in%20PowerShell%20Profile/">Create K8S Alias in PowerShell Profile</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20service%20account/">Create K8S service account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20ServiceAccount%20With%20Service%20Admin%20Role/">Create the Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Get%20Token%20of%20Service%20Account/">Get Token of Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Give%20Cluster%20Wide%20Read%20Access/">Give Cluster Wide Read Access</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Command%20alias/">K8S Command alias</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Commands%20in%20Table/">K8S Commands in Table</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ForDevelopersCourse PluralSights</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" >MyNotes</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/2%20-%20Core%20Concepts/">2   Core Concepts</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/3-%20Pods/">3  Pods</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Helm</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/1-%20What%20is%20Helm%20Charts/">1  What is Helm Charts</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/2-%20Helm%20Chart%20Templates/">2  Helm Chart Templates</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/3-%20Helm%20Install/">3  Helm Install</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.0%20Helm%20Template%20to%20Kubernetes%20manifest/">4.0 Helm Template to Kubernetes manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.1%20Helms%20Templates%20Processing%20Order/">4.1 Helms Templates Processing Order</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.2%20Viewing%20the%20Combined%20Manifest/">4.2 Viewing the Combined Manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.3%20Order%20in%20which%20resources%20are%20created%20by%20Kubernetes/">4.3 Order in which resources are created by Kubernetes</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Probes</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/AKS%20Liveness%20vs%20Readiness/">AKS Liveness vs Readiness</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Effect%20of%20failing%20probes/">Effect of failing probes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Kubelet/">Kubelet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Minimum%20implementation/">Minimum implementation</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Startup%20Probe/">Startup Probe</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Setup Environment</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Docker-Desktop%20vs%20Minikube/">Docker Desktop vs Minikube</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/First%20Build/">First Build</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Identify%20K8S%20Environment/">Identify K8S Environment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Min%20Resources%20for%20deployment/">Min Resources for deployment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Options%20to%20run%20K8S%20locally/">Options to run K8S locally</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Setup%20K8S%20dashboard%20on%20DockerDesktop/">Setup K8S dashboard on DockerDesktop</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DDD</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/DomainEvent%20vs%20DomainActivity/">DomainEvent vs DomainActivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Elephant%20Analogy/">Elephant Analogy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Entity%20vs%20Aggregate/">Entity vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Life%20inside%20aggergate%20root/">Life inside an Aggregate Root, part 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Problems%20Solved%20By%20DDD/">Problems Solved By DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Repository%20in%20DDD/">RepositoryDDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Transaction%20Across%20Aggregrates%20in%20DDD/">Transaction Across Aggregrates in DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Value%20vs%20Aggregate/">Value vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Value%20vs%20Entity%20Object/">Value vs Entity Object</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Bounded Context</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DDD/Bounded%20Context/Identify%20Bounded%20Context%20-%20ChatGpt/">Identify Bounded Context   ChatGpt</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DDD/Bounded%20Context/Sub%20Domain%20VS%20Bounded%20Context/">Sub Domain VS Bounded Context</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DailySheet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-04/">2024 11 04</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-14/">2024 11 14</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-21/">2024 11 21</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Design Pattern</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Design%20Pattern/4%20Mistakes%20In%20Repository%20Pattern/">4 Mistakes In Repository Pattern</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diagrams</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Context%20Diagram/">Context Diagram</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Diagrame%20Tool%20Names/">Diagrame Tool Names</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Feature%20Comparison/">Feature Comparison</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Highlevel%20design%20document/">Highlevel design document</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Mermaid%20DiagramsNet%20App%20vs%20Web/">Mermaid DiagramsNet App vs Web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Mermaid%20and%20Diagram.net%20together/">Mermaid and Diagram.net together</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/UML%20Diagrams/">UML Diagrams</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Docker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/Docker%20Commands/">Docker Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/Docker%20File/">Docker File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/Docker%20file%20network%20tools/">Install necessary tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/Use%20DockerCompose%20vs%20Docker/">Use DockerCompose vs Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Common Build Issues</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Docker/Common%20Build%20Issues/Context%20Issue/">Context Issue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Docker/Common%20Build%20Issues/NuGet%20Package%20Download%20Issue/">NuGet Package Download Issue</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DotNet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Anonymous%20Types%20vs%20Dynamic%20vs%20Tuple/">Anonymous Types vs Dynamic vs Tuple</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Collections/">Collections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Net%20Release%20Cycle/">Net Release Cycle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Net%20SDK%20Web%20vs%20Worker/">Net SDK Web vs Worker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/NetCore%203.1%20Application%20Start/">NetCore 3.1 Application Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ASPNET</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/ASPNET/Minimum%20Code%20to%20access%20a%20controller/">Minimum Code to access a controller</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Collections</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Collections/Class%20Hierarchy/">Class Hierarchy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Collections/IEnumerable%20vs%20IQureyable/">IEnumerable vs IQureyable</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF 8</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >Migrations</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/Add%20Migration/">Add Migration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/Update%20EF%20Tools/">Update EF Tools</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/add-migration%20vs%20dotnet%20ef/">Add migration vs dotnet ef</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >HangFire</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/HangFire/DEL/">DEL</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/HangFire/HangFire%20Job%20Chaining%20HangFire%20Job%20Waiting/">HangFire Job Chaining HangFire Job Waiting</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Net 6 vs Net 3.1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/ActionResult%20T%20sets%20StatusCode%20to%20200/">ActionResult sets StatusCode to 200</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Net%206%20vs%203.1/">Net 6 vs 3.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Hosting</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/GenericHost%20code%20vs%20WebApplication/">GenericHost code vs WebApplication</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20GenericHost/">WebApi code using GenericHost</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20WebApplication/">WebApi code using WebApplication</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SampleProjects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/SampleProjects/Sample%20Console%20Project/">SampleConsoleProject</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >WebApi</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/API%20Testing/">WebApiResponses</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/GPT/">GPT</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/Sample%20Batch%20File%20Text/">Sample Batch File Text</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/Tags/">sampleprojectwebapi #sampleprojectrestapi #sampleprojectDotNetwebapi</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/git/">Git</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tasks</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Async/">Async</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/More%20Info/">More Info</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.Run%20vs%20AsyncAwait%20vs%20Thread/">Task.Run vs AsyncAwait vs Thread</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.Run/">Task.Run</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.WhenAll%20Exception/">Task.WhenAll Exception</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integrations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Integrations/Mulesoft%20VS%20Azure%20Service%20Bus/">Mulesoft VS Azure Service Bus</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LocalSetup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../LocalSetup/Git%20Extensions/">Git Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../LocalSetup/MS%20SQL%20Server/">MS SQL Server</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MicroServices</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MicroServices/Granularity/">Granularity</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">NoSQL DB</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Azure CosmosDB</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../NoSQL%20DB/Azure%20CosmosDB/Useful%20Queries/">Useful Queries</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Plus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Plus/Discontinued%20Google%20Products/">Discontinued Google Products</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Plus/List/">List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Adobe Stock</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Plus/Adobe%20Stock/Adobe%20Stock/">Adobe Stock</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Agile</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Project%20Management/Agile/Issue%20Hierarchy/">Issue Hierarchy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Phases</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Project%20Phases/Budgeting/">Budgeting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Project%20Phases/Phase%20wise%20role%20engagement/">RoleInvolvement #ProjectPhaseNeededRoles #RolesInvolvedConceptualization #PhaseWiseRoleEngagement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Roles</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Roles/Systems%20Engineering/">SystemEngineering #SystemEngineerVSArchitect</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Site Reliability Engineer SRE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/SRE%20vs%20DevOps/">SREVSDevOps #SiteReliabiltyEnginnerVSDevops #RoleComparison</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Site%20Reliability%20Engineer%20vs%20Architect%20vs%20QA/">Site Reliability Engineer vs Architect vs QA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Some%20Tasks%20of%20SRE/">ChaosEnginnering #ScalabilityTesting #SRETasks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Who%20is%20an%20SRE/">Who is an SRE</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQL Server</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../SQL%20Server/View%20in%20Complex%20Query/">View in Complex Query</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/DBContext%20Scoped/">DBContext Scoped</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/DBContext%20Transient%20%28Didnt%20work%29/">DBContext Transient (Didnt work)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/EFCore.BulkExtensions/">EFCore.BulkExtensions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >General Queries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/Data%20Insertion%20Rate/">Data Insertion Rate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/SET%20ANSI_NULLS/">SET ANSI NULLS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/Test%20Data%20Cleanup/">Test Data Cleanup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/find%20a%20table%20having%20column/">Find a table having column</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Search</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Elastic%20Search%20Perdictability/">Elastic Search Perdictability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Elastic%20Search%20vs%20NoSQL/">Elastic Search vs NoSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Elastic%20Search/">Elastic Search</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Elastic%20VS%20OpenSearch/">Elastic VS OpenSearch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/GreyLog/">GreyLog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/KQL%20VS%20DSL/">KQL VS DSL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/Kibana/">Kibana</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Security</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Auth0%20vs%20MS%20Entra%20Id/">Auth0 vs MS Entra Id</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/M2M%20vs%20UserToken%20Usage%20Scenerio/">M2M vs UserToken Usage Scenerio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/OpenID%20Connect%20%28OIDC%29/">OpenID Connect (OIDC)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Relevance%20of%20scopes%20in%20M2M%20tokens/">Relevance of scopes in M2M tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Roles%20vs%20Scopes/">Roles vs Scopes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/SSL%20HTTPS%20and%20TLS/">SSL HTTPS and TLS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Auth0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Access%20Token%20Validation/">Access Token Validation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/AppMetaData%20vs%20UserMetaData/">AppMetaData vs UserMetaData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Auth0%20Applications%20vs%20APIs/">Auth0 Applications vs APIs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%201%20-%20Machine%20to%20Machine%20Client%20Credential%20Flow/">Flow 1   Machine to Machine Client Credential Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%202A%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE/">Flow 2A   SPA Authorization Code Flow with PKCE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%202B%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE%20Detail/">Flow 2B   SPA Authorization Code Flow with PKCE Detail</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flows%20in%20Auth0/">Flows in Auth0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/How%20to%20handle%20stolen%20access%20tokens/">How to handle stolen access tokens</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/How%20to%20handle%20stolen%20refresh%20token/">How to handle stolen refresh token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Id%20Token/">Id Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Refresh%20Token/">Refresh Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Token%20Best%20Practices/">Token Best Practices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/What%20can%20be%20stored%20in%20Auth0%20DB/">What can be stored in Auth0 DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/When%20not%20to%20add%20application%20for%20an%20API/">When not to add application for an API</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TerraForm</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../TerraForm/Terraform%20Does%20or%20DoesNot%20for%20AKS/">Terraform Does or DoesNot for AKS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >KodeCloud Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/2-%20Types%20of%20IAC%20Tools/">2  Types of IAC Tools</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/3-%20Terraform/">3  Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/4-%20Installing%20Terraform/">4  Installing Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/5-%20HCL%20Basics/">5  HCL Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/6-%20Labs/">6  Labs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Test</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/Functional%20Tests/">Functional Tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/In%20NET%206%2B/">In NET 6+</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/Log%20Console.WriteLine/">Log Console.WriteLine</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/TestExplorer%20not%20showing%20tests/">TestExplorer not showing tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/TheUnit/">TheUnit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >xUnit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20Packages/">XUnit Packages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20VS%20MSTest/">XUnit VS MSTest</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20and%20Mocking/">XUnit and Mocking</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ubuntu</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Ubuntu/Debian%20vs%20Ubuntu%20Hardening/">Debian vs Ubuntu Hardening</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Ubuntu/Snap%20vs%20Apt/">Snap vs Apt</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">VS Help</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../VS%20Help/Get%20Json%20during%20debugging/">Get Json during debugging</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Azure</li>
+      <li class="breadcrumb-item active">FailOverAzureSQL #HighAvailabilityAzureSQL</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="failoverazuresql-highavailabilityazuresql">FailOverAzureSQL #HighAvailabilityAzureSQL<a class="headerlink" href="#failoverazuresql-highavailabilityazuresql" title="Permanent link">&para;</a></h1>
+<ol>
+<li>
+<p>When two SQL Servers are running behind a load balancer, the architecture typically follows a <strong>primary-secondary</strong> or <strong>master-slave</strong> model, but this setup is dependent on how the SQL Server clustering, replication, or high-availability is configured. In most cases:</p>
+<h3 id="1-primary-secondary-master-slave-setup">1. <strong>Primary-Secondary (Master-Slave) Setup</strong>:<a class="headerlink" href="#1-primary-secondary-master-slave-setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Master (Primary)</strong>: The <strong>primary server</strong> (also called the <strong>master</strong> in some contexts) handles all <strong>write operations</strong>. This is where the main data updates and changes occur.</li>
+<li><strong>Slave (Secondary)</strong>: The <strong>secondary server</strong> (also called the <strong>slave</strong>) is typically set up to <strong>replicate data</strong> from the master server. The secondary server handles <strong>read operations</strong> (queries), but any write or modification operations are directed to the primary server.</li>
+</ul>
+<p>In such configurations, there is generally one active master (primary) server that handles all write operations and one or more secondary (replica, slave) servers that handle read operations. This is often used for <strong>read scaling</strong> and <strong>high availability</strong>.</p>
+<h3 id="2-database-mirroring-or-always-on-availability-groups">2. <strong>Database Mirroring or Always On Availability Groups</strong>:<a class="headerlink" href="#2-database-mirroring-or-always-on-availability-groups" title="Permanent link">&para;</a></h3>
+<ul>
+<li>SQL Server supports different configurations like <strong>Database Mirroring</strong>, <strong>Always On Availability Groups</strong>, or <strong>Log Shipping</strong> for replication and high availability. In these setups:<ul>
+<li>One server is the <strong>primary</strong> (master) node that is actively handling <strong>writes</strong>.</li>
+<li>The other server is the <strong>secondary</strong> (slave) that replicates the data from the master but does not accept writes directly. The secondary server can be configured for <strong>read-only</strong> queries.</li>
+<li>In some cases, the secondary server can be promoted to a primary server in case of failover.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-load-balancer-in-sql-server">3. <strong>Load Balancer in SQL Server</strong>:<a class="headerlink" href="#3-load-balancer-in-sql-server" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>load balancer</strong> itself does not inherently know how to handle database replication. Typically, a load balancer can distribute traffic based on rules such as:<ul>
+<li><strong>Read/Write Split</strong>: The load balancer routes <strong>read queries</strong> to the secondary (slave) and <strong>write queries</strong> to the master (primary).</li>
+<li><strong>Failover</strong>: In case the primary server goes down, the load balancer can reroute traffic to the secondary server, which may need to be promoted to master depending on the replication setup.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-failover-and-automatic-failover">4. <strong>Failover and Automatic Failover</strong>:<a class="headerlink" href="#4-failover-and-automatic-failover" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In an <strong>automatic failover</strong> setup (e.g., <strong>Always On Availability Groups</strong>), the secondary server can automatically be promoted to primary in case the master goes down.</li>
+<li>In a <strong>manual failover</strong> setup (e.g., <strong>Database Mirroring</strong>), a DBA might have to manually promote the secondary server to primary in case of failure.</li>
+</ul>
+<h3 id="key-considerations">Key Considerations:<a class="headerlink" href="#key-considerations" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Write Operations</strong>: All write operations should be directed to the <strong>master</strong> SQL Server, as the slave (secondary) is typically in a read-only state. Load balancers can help route traffic to the correct server based on the type of operation.</li>
+<li><strong>Replication</strong>: The secondary server receives <strong>replica</strong> data from the master server and stays in sync with it, ensuring that the data is consistent.</li>
+<li><strong>High Availability</strong>: The primary-slave setup is often used for <strong>high availability</strong> and <strong>disaster recovery</strong> scenarios, ensuring that the system remains operational even if the primary server fails.</li>
+</ul>
+<h3 id="in-summary">In Summary:<a class="headerlink" href="#in-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Master-Slave</strong> configuration typically applies in <strong>replication scenarios</strong>, where one SQL Server (master) handles writes and the other (slave) handles reads.</li>
+<li>The <strong>load balancer</strong> will typically route read queries to the slave and write queries to the master, but the specifics depend on the SQL Server configuration (such as Always On Availability Groups, Database Mirroring, etc.).</li>
+</ul>
+</li>
+<li>
+<h5 id="you-said">You said:<a class="headerlink" href="#you-said" title="Permanent link">&para;</a></h5>
+<p>how it is ensured that replica is not falling behind</p>
+</li>
+<li>
+<h6 id="chatgpt-said">ChatGPT said:<a class="headerlink" href="#chatgpt-said" title="Permanent link">&para;</a></h6>
+<p>To ensure that a <strong>replica</strong> (or <strong>secondary server</strong>) in a SQL Server environment does not fall behind the <strong>master</strong> (or <strong>primary server</strong>), several mechanisms are put in place, depending on the replication method you're using. These mechanisms focus on ensuring that the replication process is <strong>efficient</strong>, <strong>synchronous</strong>, and <strong>resilient</strong> to failures or delays. Below are the common strategies to ensure the replica stays in sync:</p>
+<h3 id="1-synchronous-vs-asynchronous-replication">1. <strong>Synchronous vs. Asynchronous Replication</strong>:<a class="headerlink" href="#1-synchronous-vs-asynchronous-replication" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Synchronous Replication</strong>:</p>
+<ul>
+<li>In this setup, every write operation to the primary server is <strong>immediately replicated</strong> to the secondary replica before the transaction is considered committed. This ensures that the primary and secondary servers are <strong>always in sync</strong> and prevents the replica from lagging behind.</li>
+<li><strong>Example</strong>: <strong>Always On Availability Groups</strong> can be configured for synchronous commit, where the secondary replica receives the transaction log from the primary server, and only once the secondary acknowledges the transaction can the primary proceed.</li>
+</ul>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>No lag between primary and replica.</li>
+<li>Ensures high availability since both servers have the same data at any point in time.</li>
+</ul>
+<p><strong>Drawbacks</strong>:</p>
+<ul>
+<li><strong>Performance Overhead</strong>: Synchronous replication introduces some performance overhead, as the primary server must wait for the secondary to acknowledge receipt of data.</li>
+<li>
+<p><strong>Network Latency</strong>: In geographically distributed environments, network latency could cause delays, affecting performance.</p>
+<ul>
+<li><strong>Asynchronous Replication</strong>:</li>
+</ul>
+</li>
+<li>
+<p>In this setup, the primary server does not wait for the secondary to acknowledge receipt of the transaction log before committing the transaction. This can lead to <strong>replica lag</strong> (i.e., the replica falling behind the primary server), but it offers better performance since the primary does not have to wait for the secondary.</p>
+</li>
+</ul>
+<p><strong>Example</strong>: <strong>Always On Availability Groups</strong> can also be configured in asynchronous commit mode, where the replica might lag slightly behind the primary server depending on network conditions and load.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li><strong>Better performance</strong> because the primary doesn't need to wait for the replica.</li>
+<li>Can scale better in distributed environments.</li>
+</ul>
+<p><strong>Drawbacks</strong>:</p>
+<ul>
+<li>The replica may lag behind, and there is a risk of data loss in case of a failover.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-sql-server-replication-monitoring-and-alerts">2. <strong>SQL Server Replication Monitoring and Alerts</strong>:<a class="headerlink" href="#2-sql-server-replication-monitoring-and-alerts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Transaction Log Monitoring</strong>: SQL Server keeps track of how much data is waiting to be replicated through the transaction log. You can monitor the <strong>transaction log lag</strong> to determine if the replica is falling behind.</li>
+<li><strong>Log Shipping or Always On Monitoring</strong>: Both <strong>Log Shipping</strong> and <strong>Always On Availability Groups</strong> provide built-in monitoring tools that show the replication status. You can set up alerts to notify administrators if the replica falls behind by a significant margin.</li>
+<li><strong>SQL Server Management Studio (SSMS)</strong> provides a <strong>Replication Monitor</strong> tool that can help you track replication performance and identify issues that might cause lag.</li>
+</ul>
+<h3 id="3-transaction-log-shipping">3. <strong>Transaction Log Shipping</strong>:<a class="headerlink" href="#3-transaction-log-shipping" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In <strong>log shipping</strong>, the transaction log from the primary server is periodically copied to the secondary replica. To ensure the replica doesn’t fall behind:<ul>
+<li>The transaction logs are <strong>applied to the secondary server</strong> as soon as they are received.</li>
+<li><strong>Frequent backups</strong>: A short time window between backups and transfers can help reduce lag.</li>
+<li><strong>Scripting and Automation</strong>: Automation scripts can ensure that log backups and restores are happening in near real-time.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-network-optimization-and-bandwidth">4. <strong>Network Optimization and Bandwidth</strong>:<a class="headerlink" href="#4-network-optimization-and-bandwidth" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Low Latency</strong>: To prevent lag, the network connection between the primary and secondary must be fast enough to handle the transaction logs being generated. If there’s a <strong>high-latency network</strong>, it might cause the replica to fall behind.</li>
+<li><strong>Compression and Efficient Log Transport</strong>: SQL Server supports <strong>log compression</strong> during replication, which can reduce the time it takes to transfer logs between servers.</li>
+<li><strong>Ensuring Sufficient Bandwidth</strong>: Ensure that the network bandwidth is sufficient for the volume of data being replicated.</li>
+</ul>
+<h3 id="5-automatic-failover-always-on-availability-groups">5. <strong>Automatic Failover (Always On Availability Groups)</strong>:<a class="headerlink" href="#5-automatic-failover-always-on-availability-groups" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Automatic Failover</strong> is a feature of <strong>Always On Availability Groups</strong> that automatically promotes a secondary replica to be the primary server in case the primary fails. This ensures that there is minimal downtime and that the replica does not fall behind, provided that the failover criteria are met (i.e., the replica has been kept up-to-date and is within an acceptable lag threshold).</li>
+<li><strong>Quorum</strong>: Always On uses a quorum mechanism to ensure that a primary replica only fails over if the secondary is synchronized enough to take over without causing data loss.</li>
+</ul>
+<h3 id="6-replication-latency-and-performance-optimization">6. <strong>Replication Latency and Performance Optimization</strong>:<a class="headerlink" href="#6-replication-latency-and-performance-optimization" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Replication Latency Analysis</strong>: Use monitoring tools like <strong>SQL Server Profiler</strong>, <strong>Extended Events</strong>, and <strong>Performance Monitor</strong> to analyze replication latency.</li>
+<li><strong>Index Optimization</strong>: Proper indexing on the secondary replica can help speed up the replication process, reducing lag.</li>
+<li><strong>Read-Only Replica Optimization</strong>: If the replica is used for read-only workloads, ensure that queries on the secondary are optimized to avoid putting unnecessary load on the replica.</li>
+</ul>
+<h3 id="7-replication-performance-settings">7. <strong>Replication Performance Settings</strong>:<a class="headerlink" href="#7-replication-performance-settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Adjusting Replication Settings</strong>: In environments where replication lag is a concern, you can adjust settings such as <strong>replication delay</strong> and <strong>commit thresholds</strong>. These settings control how often replication occurs and can help you fine-tune performance to minimize lag.</li>
+</ul>
+<h3 id="8-data-consistency">8. <strong>Data Consistency</strong>:<a class="headerlink" href="#8-data-consistency" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Consistent Replication</strong>: Ensuring that the replication process maintains data consistency is crucial. <strong>SQL Server</strong> uses mechanisms like <strong>checksums</strong> and <strong>checks</strong> to ensure data consistency between the primary and secondary servers. Replicas that fall too far behind may cause replication errors or fail to synchronize properly.</li>
+</ul>
+<h3 id="conclusion">Conclusion:<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>To prevent a replica from falling behind, you can use <strong>synchronous replication</strong> for real-time consistency or <strong>monitoring</strong> mechanisms that detect lag and alert administrators. Using appropriate <strong>network optimizations</strong>, <strong>performance tuning</strong>, and <strong>automatic failover</strong> mechanisms (where applicable) helps maintain the integrity and performance of the replica, ensuring it stays close to the primary server.</p>
+<p>2/2</p>
+</li>
+<li>
+<h5 id="you-said_1">You said:<a class="headerlink" href="#you-said_1" title="Permanent link">&para;</a></h5>
+<p>in Azure SQL Server, replice is in the same availability xone or separate availality zone</p>
+</li>
+<li>
+<h6 id="chatgpt-said_1">ChatGPT said:<a class="headerlink" href="#chatgpt-said_1" title="Permanent link">&para;</a></h6>
+<p>In <strong>Azure SQL Database</strong> and <strong>Azure SQL Managed Instance</strong>, the <strong>replica</strong> (secondary) can be configured to either be in the <strong>same Availability Zone</strong> or a <strong>separate Availability Zone</strong>, depending on the <strong>high availability</strong> configuration and the type of service being used.</p>
+<h3 id="1-azure-sql-database-single-database-or-elastic-pool">1. <strong>Azure SQL Database (Single Database or Elastic Pool)</strong><a class="headerlink" href="#1-azure-sql-database-single-database-or-elastic-pool" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Active Geo-Replication</strong>:</p>
+<ul>
+<li>With <strong>Active Geo-Replication</strong>, you can configure <strong>replicas</strong> in <strong>different Azure regions</strong>. This is a feature primarily used for <strong>disaster recovery</strong> and <strong>global high availability</strong>.</li>
+<li><strong>Availability Zones</strong>: When configuring <strong>high availability</strong> in the same region, you can choose to place the replica in a <strong>different Availability Zone</strong> within the same region for better fault tolerance. This ensures that your replica can withstand failures of an entire Availability Zone in the region.</li>
+<li>
+<p><strong>Same Availability Zone</strong>: By default, when you create a SQL database, the primary and replica can be in the same Availability Zone, but this may limit high availability in case of a zone failure.</p>
+<ul>
+<li><strong>Zone-Redundant Configuration</strong>:</li>
+</ul>
+</li>
+<li>
+<p>Azure SQL Database can be configured with <strong>Zone-Redundant</strong> high availability, where the <strong>primary and secondary replicas</strong> are spread across <strong>separate Availability Zones</strong>. This is beneficial for improving fault tolerance and protecting against zone-level outages within the same region.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-azure-sql-managed-instance">2. <strong>Azure SQL Managed Instance</strong><a class="headerlink" href="#2-azure-sql-managed-instance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Auto-failover Groups</strong>:<ul>
+<li>In <strong>Azure SQL Managed Instance</strong>, <strong>Auto-failover groups</strong> can be used to configure <strong>automatic failover</strong> between the primary instance and its replica.</li>
+<li><strong>Availability Zones</strong>: You can configure <strong>replicas</strong> in <strong>separate Availability Zones</strong> within the same region. This provides better fault tolerance against an entire Availability Zone going down. The replica is kept in sync with the primary and automatically becomes the active instance in case of a failure.</li>
+<li><strong>Zone-Redundant Deployments</strong>: Azure SQL Managed Instance supports <strong>zone-redundant configurations</strong>, where the primary and replica are located in different Availability Zones for high availability and disaster recovery. This ensures that your data is protected and your database continues to be available in the event of a zone failure.</li>
+</ul>
+</li>
+</ul>
+<h3 id="summary">Summary:<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In <strong>Azure SQL Database</strong>, you can configure replicas to be in <strong>separate Availability Zones</strong> for high availability, especially using <strong>Zone-Redundant</strong> configurations. You can also use <strong>Active Geo-Replication</strong> for replicas across different Azure regions.</li>
+<li>In <strong>Azure SQL Managed Instance</strong>, <strong>Auto-failover Groups</strong> allow you to configure replicas across <strong>separate Availability Zones</strong> within the same region for enhanced fault tolerance and availability.</li>
+</ul>
+<p>For optimal high availability and disaster recovery, it is recommended to place the replica in <strong>separate Availability Zones</strong> to protect against zone-level failures.</p>
+</li>
+<li>
+<h5 id="you-said_2">You said:<a class="headerlink" href="#you-said_2" title="Permanent link">&para;</a></h5>
+<p>For high taffic systems, it looks impossible to keep replica in separate av zone updated with master as replica will always be slightl;y behind the master. So then how fail over can happen with out data loss</p>
+</li>
+<li>
+<h6 id="chatgpt-said_2">ChatGPT said:<a class="headerlink" href="#chatgpt-said_2" title="Permanent link">&para;</a></h6>
+<p>In high-traffic systems, maintaining consistency between a <strong>primary</strong> (master) and <strong>secondary</strong> (replica) in separate <strong>Availability Zones (AZs)</strong> can be challenging due to the inherent replication lag in asynchronous replication or due to network latencies, especially during <strong>high write loads</strong>. However, there are <strong>high-availability</strong> strategies and technologies designed to minimize or eliminate data loss during failover, even when replicas are slightly behind the master. Here's how failover can occur without data loss:</p>
+<h3 id="1-synchronous-replication-with-azure-sql">1. <strong>Synchronous Replication (with Azure SQL)</strong><a class="headerlink" href="#1-synchronous-replication-with-azure-sql" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Synchronous replication</strong> ensures that the primary and secondary replicas are always in sync. In this setup, before the transaction is considered committed on the <strong>primary</strong>, it must be successfully written to the <strong>secondary replica</strong> as well.</li>
+<li>Azure SQL supports <strong>Zone-Redundant</strong> high availability, where synchronous replication between the <strong>primary</strong> and <strong>replica</strong> occurs across <strong>separate Availability Zones</strong>.</li>
+<li><strong>Failover with Zero Data Loss</strong>: With <strong>synchronous replication</strong>, because the <strong>secondary replica</strong> is in sync with the primary, failover can happen <strong>instantaneously</strong> without any data loss, as the secondary replica already has the exact same data as the primary at the time of the failure.</li>
+</ul>
+<h3 id="2-azure-sql-managed-instance-with-auto-failover-groups">2. <strong>Azure SQL Managed Instance with Auto-Failover Groups</strong><a class="headerlink" href="#2-azure-sql-managed-instance-with-auto-failover-groups" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Auto-Failover Groups</strong> in <strong>Azure SQL Managed Instance</strong> provide <strong>automatic failover</strong> between a primary instance and a secondary replica in a different <strong>Availability Zone</strong>.</li>
+<li><strong>Synchronous Commit</strong>: In an <strong>Auto-Failover Group</strong>, the replication is <strong>synchronous</strong>, so the replica is kept up-to-date with the primary. The primary and secondary instances are <strong>in sync</strong>, meaning that if the primary instance fails, the secondary replica can immediately be promoted to <strong>primary</strong> without data loss.</li>
+</ul>
+<p><strong>Key Consideration</strong>:</p>
+<ul>
+<li><strong>Failover occurs only when the replica is in sync</strong> with the master. If there is a lag, the system ensures that failover does not happen until the replica is caught up to the master, preventing potential data loss.</li>
+</ul>
+<h3 id="3-potential-issues-with-asynchronous-replication">3. <strong>Potential Issues with Asynchronous Replication</strong><a class="headerlink" href="#3-potential-issues-with-asynchronous-replication" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Asynchronous replication</strong> (often used in geo-replicated setups) can lead to slight lag between the master and the replica, especially in <strong>high-traffic systems</strong>. This lag could cause a situation where some transactions on the master are not replicated to the secondary when a failover occurs, leading to data loss.</p>
+</li>
+<li>
+<p>To mitigate this issue, <strong>Azure SQL</strong> provides <strong>"readable secondary replicas"</strong> for read-heavy workloads, where the replica is lagging behind slightly but doesn't affect the primary's ability to serve writes. However, failover in <strong>asynchronous replication</strong> setups may still result in data loss due to the lag.</p>
+</li>
+</ul>
+<h3 id="4-azures-design-for-handling-failover-without-data-loss">4. <strong>Azure’s Design for Handling Failover Without Data Loss</strong><a class="headerlink" href="#4-azures-design-for-handling-failover-without-data-loss" title="Permanent link">&para;</a></h3>
+<p>Azure has designed high-availability features to <strong>mitigate replication lag</strong> and ensure failovers with minimal to no data loss:</p>
+<ul>
+<li><strong>Always On Availability Groups (AOAG)</strong>: Azure SQL supports this feature, which enables <strong>synchronous</strong> replication between primary and secondary instances.</li>
+<li><strong>Transaction Log Shipping</strong>: Azure SQL ensures that transaction logs are replicated continuously to the secondary, and in the case of a failover, the transaction logs are fully applied to the replica.</li>
+<li><strong>Automatic Health Checks</strong>: Before performing a failover, <strong>Azure SQL</strong> performs a <strong>health check</strong> to ensure the secondary is up-to-date and can handle the workload without data loss.</li>
+</ul>
+<h3 id="5-latency-and-failover-impact-in-high-traffic-systems">5. <strong>Latency and Failover Impact in High-Traffic Systems</strong><a class="headerlink" href="#5-latency-and-failover-impact-in-high-traffic-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Impact of Latency</strong>: Even with synchronous replication, high-traffic systems may experience network latencies, especially if replicas are in separate Availability Zones or regions. This can <strong>introduce delays</strong> in committing transactions across replicas.</li>
+<li><strong>Azure SQL's Handling of Latency</strong>: Azure SQL ensures <strong>low-latency</strong> replication through <strong>optimized networking</strong> and <strong>advanced replication algorithms</strong> to handle high traffic and reduce lag. However, network bottlenecks or spikes in traffic could still cause short lags.</li>
+<li><strong>Failover Management</strong>: In cases of <strong>high latency</strong>, failovers are <strong>delayed</strong> until the secondary replica is fully caught up with the primary, thereby ensuring that no transactions are lost during the failover process.</li>
+</ul>
+<h3 id="6-disaster-recovery-geo-replication">6. <strong>Disaster Recovery (Geo-Replication)</strong><a class="headerlink" href="#6-disaster-recovery-geo-replication" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Geo-Replication</strong>: In scenarios where high availability is required across regions (e.g., global applications), Azure provides <strong>Geo-Replication</strong> capabilities. This allows SQL Server to have a <strong>primary</strong> in one region and a <strong>replica</strong> in another region, typically with asynchronous replication.</li>
+<li><strong>Manual Failover for Geo-Replication</strong>: Failover in geo-replication is <strong>manual</strong> to avoid data loss from the asynchronous lag. You can initiate a failover to the secondary region if needed, but there may be a risk of <strong>data loss</strong> if transactions have not been replicated in the secondary region at the time of failover.</li>
+</ul>
+<h3 id="7-managing-failover-scenarios">7. <strong>Managing Failover Scenarios</strong><a class="headerlink" href="#7-managing-failover-scenarios" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Delay Replication to Prevent Failover</strong>: Some systems implement <strong>replication delay</strong> (intentional lag) to prevent failovers from happening during periods of high traffic, thus ensuring the system can handle the failover with no data loss. This is a tradeoff between <strong>availability</strong> and <strong>data consistency</strong>.</li>
+<li><strong>Transaction Acknowledgement</strong>: In scenarios where <strong>asynchronous replication</strong> is in use, SQL Server can be configured to require <strong>acknowledgement</strong> of the transaction logs by the replica before considering the transaction committed. This reduces the risk of lag and data loss.</li>
+</ul>
+<h3 id="conclusion_1">Conclusion:<a class="headerlink" href="#conclusion_1" title="Permanent link">&para;</a></h3>
+<p>For high-traffic systems, <strong>synchronous replication</strong> across <strong>separate Availability Zones</strong> is the best approach to ensure that replicas are always up-to-date with the master, thus preventing data loss during failovers. <strong>Azure SQL</strong> ensures minimal to no data loss during failover when using synchronous replication or <strong>Always On Availability Groups</strong>. In contrast, <strong>asynchronous replication</strong> introduces the potential for lag, which can cause data loss during a failover if the secondary replica is not fully synchronized.</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Azure%20Charts/" class="btn btn-neutral float-left" title="Azure Charts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Install%20Azure%20CLI/" class="btn btn-neutral float-right" title="Install Azure CLI">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Azure%20Charts/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Install%20Azure%20CLI/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
