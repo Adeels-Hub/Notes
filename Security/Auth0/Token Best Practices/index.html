@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Token Best Practices - Notes</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Token Best Practices";
+        var mkdocs_page_input_path = "Security\\Auth0\\Token Best Practices.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../Power%20Shell/">Power Shell</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AWS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../AWS/SignUp/">AWS Customer Agreement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Architecture</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/CQRS/">CQRS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Diagrams%20included%20in%20HLD/">DiagramsIncludedInHLD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Event%20Sourcing/">Event Sourcing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/GraphQL%20vs%20OData/">GraphQL vs OData</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/GraphQL%20vs%20Rest/">GraphQL vs Rest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Onion%20Architecture/">Onion Architecture</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Transactional%20Saga%20Patterns/">Transactional Saga Patterns</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Architecture/modular%20monolith/">Modular monolith</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Driven Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Event%20Driven%20Architecture/One/">One</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Interview</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Interview/Interview%20Story/">Interview Story</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Interview/Monolith%20Structure/">Monolith Structure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Interview/tags/">InterviewStorySolutionArchitect</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Microservices</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Microservices/Deployment%20issues%20of%20monolith/">Deployment issues of monolith</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/Microservices/Granularity/">Granularity</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >TransactionSagas</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Architecture/TransactionSagas/Saga%20names/">Saga names</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Patterns</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Architecture/TransactionSagas/Patterns/Epic%20Saga%20-%20Synchronous%20Atomic%20Orchestrated/">Epic Saga   Synchronous Atomic Orchestrated</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Architecture/TransactionSagas/Patterns/Phone%20Tag%20Sag%20-%20Synchronous%20Atomic%20Choreographed/">Phone Tag Sag   Synchronous Atomic Choreographed</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Automapper</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Automapper/Anti%20Automapper%20Argument/">Anti Automapper Argument</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Azure</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Azure/AppService%20and%20AzureFunction/">AppService and AzureFunction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Azure/Azure%20Charts/">Azure Charts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Azure/Azure%20SQL%20High%20Availability%20and%20Fail%20Over/">FailOverAzureSQL #HighAvailabilityAzureSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Azure/Install%20Azure%20CLI/">Install Azure CLI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Azure/Kafka%20vs%20EventStoreDB%20%283rd-Party%20Tool%29/">Kafka vs EventStoreDB (3rd Party Tool)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >AKS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/AKS/AKS%20Samples/">AKS-Code-Samples</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/AKS/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/AKS/Diagram%20Deployment%20on%20AKS%20Cluster/">Diagram Deployment on AKS Cluster</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Architecture/URLs/">URLs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Architecture/Why%20CAF%20WAF%20and%20Azure%20Architecture%20Center%20are%20grouped%20together/">Why CAF WAF and Azure Architecture Center are grouped together</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Authentication</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Authentication/Azure%20OpenID%20Connect%20%28OIDC%29/">Azure OpenID Connect (OIDC)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Basics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Basics/Azure%20Management%20Infrastructure/">Azure Management Infrastructure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Basics/Regions%20in%20Australia.%20AvZones%20in%20Australia/">Regions in Australia. AvZones in Australia</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ChatGPT</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/ChatGPT/Azure%20Front%20Door%20vs%20Load%20Balancer/">Azure Front Door vs Load Balancer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Cloud Adoption vs Well Architected Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Cloud%20Adoption%20vs%20Well%20Architected%20Framework/Key%20Differences/">Key Differences</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Cloud%20Adoption%20vs%20Well%20Architected%20Framework/When%20to%20Use%20Which%20Framework/">When to Use Which Framework</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Sourcing</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Event%20Sourcing/Azure%20Event%20Sourcing/">Azure Event Sourcing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Blob%20Storage/">Kafka vs Azure Blob Storage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Cosmos%20DB/">Kafka vs Azure Cosmos DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Event%20Hubs/">Kafka vs Azure Event Hubs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Service%20Bus/">Kafka vs Azure Service Bus</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Landing Zone</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Landing%20Zone/Azure%20Landing%20Zone/">Azure Landing Zone</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Messaging</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Messaging/Azure%20Event%20Grid%20VS%20Kafka/">Azure Event Grid VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Messaging/Azure%20Service%20Bus%20VS%20Kafka/">Azure Service Bus VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Messaging/Azure%20Service%20Bus%20With%20Sessions/">Azure Service Bus With Sessions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Messaging/Event%20Grid%20vs%20Service%20Bus%20Pub%20Sub/">Event Grid vs Service Bus Pub Sub</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/Messaging/Kafka%20is%20push%20or%20pull/">Kafka is push or pull</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SSL Termination</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/SSL%20Termination/AG%20and%20AGIC/">AGandAGIC-TLS-SSL-Termination</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/SSL%20Termination/AGIC%20vs%20NGINX%20Ingress%20Controller/">AGIC vs NGINX Ingress Controller</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/SSL%20Termination/Pods%20cant%20Terminate%20with%20AG%20AGIC/">Pods cant Terminate with AG AGIC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/SSL%20Termination/What%20AGIC%20can%20do%20but%20NGINX%20cant/">What AGIC can do but NGINX cant</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Azure/SSL%20Termination/What%20NGINX%20can%20do%20which%20AGIC%20cant/">What NGINX can do which AGIC cant</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cloud</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Cloud/Landing%20Zone/">Landing Zone</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Container Orchestration Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/Rancher%20TerraForm%20K3up/">Rancher TerraForm K3up</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Docker Swarm</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/Docker%20Swarm/Why/">Why</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >K8S</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/AKS%20Dashboard/">AKS Dashboard</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/AKS%20Node/">AKS Node</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/AKS%20Pods/">AKS Pods</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Agents/">Agents</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Check%20container%20in%20AKS%20or%20Docker/">Check container in AKS or Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/DevOps%20Pipelines%20Flow/">DevOps Pipelines Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Docker%20Compose%20vs%20Swarm%20vs%20Kubernetis/">Docker Compose vs Swarm vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Docker%20vs%20Kubernetis/">Docker vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm%20%2B%20Docker/">Helm + Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm%20AKS%20to%20EKS/">Helm AKS to EKS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/K3S%20vs%20K8S/">K3S vs K8S</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/One%20Container%20Per%20Pod/">One Container Per Pod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Port%20Mapping/">Port Mapping</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Temp/">Temp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Commands</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/AKS%20stuck%20pod%20fix/">AKS stuck pod fix</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20Alias%20in%20PowerShell%20Profile/">Create K8S Alias in PowerShell Profile</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20service%20account/">Create K8S service account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Create%20ServiceAccount%20With%20Service%20Admin%20Role/">Create the Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Get%20Token%20of%20Service%20Account/">Get Token of Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/Give%20Cluster%20Wide%20Read%20Access/">Give Cluster Wide Read Access</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Command%20alias/">K8S Command alias</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Commands%20in%20Table/">K8S Commands in Table</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ForDevelopersCourse PluralSights</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" >MyNotes</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/2%20-%20Core%20Concepts/">2   Core Concepts</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/3-%20Pods/">3  Pods</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Helm</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/1-%20What%20is%20Helm%20Charts/">1  What is Helm Charts</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/2-%20Helm%20Chart%20Templates/">2  Helm Chart Templates</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/3-%20Helm%20Install/">3  Helm Install</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/4.0%20Helm%20Template%20to%20Kubernetes%20manifest/">4.0 Helm Template to Kubernetes manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/4.1%20Helms%20Templates%20Processing%20Order/">4.1 Helms Templates Processing Order</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/4.2%20Viewing%20the%20Combined%20Manifest/">4.2 Viewing the Combined Manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Helm/4.3%20Order%20in%20which%20resources%20are%20created%20by%20Kubernetes/">4.3 Order in which resources are created by Kubernetes</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Probes</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/AKS%20Liveness%20vs%20Readiness/">AKS Liveness vs Readiness</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/Effect%20of%20failing%20probes/">Effect of failing probes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/Kubelet/">Kubelet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/Minimum%20implementation/">Minimum implementation</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Probes/Startup%20Probe/">Startup Probe</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Setup Environment</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Docker-Desktop%20vs%20Minikube/">Docker Desktop vs Minikube</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/First%20Build/">First Build</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Identify%20K8S%20Environment/">Identify K8S Environment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Min%20Resources%20for%20deployment/">Min Resources for deployment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Options%20to%20run%20K8S%20locally/">Options to run K8S locally</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Setup%20K8S%20dashboard%20on%20DockerDesktop/">Setup K8S dashboard on DockerDesktop</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DDD</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/DomainEvent%20vs%20DomainActivity/">DomainEvent vs DomainActivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Elephant%20Analogy/">Elephant Analogy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Entity%20vs%20Aggregate/">Entity vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Life%20inside%20aggergate%20root/">Life inside an Aggregate Root, part 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Problems%20Solved%20By%20DDD/">Problems Solved By DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Repository%20in%20DDD/">RepositoryDDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Transaction%20Across%20Aggregrates%20in%20DDD/">Transaction Across Aggregrates in DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Value%20vs%20Aggregate/">Value vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DDD/Value%20vs%20Entity%20Object/">Value vs Entity Object</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Bounded Context</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DDD/Bounded%20Context/Identify%20Bounded%20Context%20-%20ChatGpt/">Identify Bounded Context   ChatGpt</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DDD/Bounded%20Context/Sub%20Domain%20VS%20Bounded%20Context/">Sub Domain VS Bounded Context</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DailySheet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DailySheet/2024-11-04/">2024 11 04</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DailySheet/2024-11-14/">2024 11 14</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DailySheet/2024-11-21/">2024 11 21</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Design Pattern</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Design%20Pattern/4%20Mistakes%20In%20Repository%20Pattern/">4 Mistakes In Repository Pattern</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diagrams</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Context%20Diagram/">Context Diagram</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Diagrame%20Tool%20Names/">Diagrame Tool Names</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Feature%20Comparison/">Feature Comparison</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Highlevel%20design%20document/">Highlevel design document</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Mermaid%20DiagramsNet%20App%20vs%20Web/">Mermaid DiagramsNet App vs Web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/Mermaid%20and%20Diagram.net%20together/">Mermaid and Diagram.net together</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Diagrams/UML%20Diagrams/">UML Diagrams</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Docker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Docker/Docker%20Commands/">Docker Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Docker/Docker%20File/">Docker File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Docker/Docker%20file%20network%20tools/">Install necessary tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Docker/Use%20DockerCompose%20vs%20Docker/">Use DockerCompose vs Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Common Build Issues</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Docker/Common%20Build%20Issues/Context%20Issue/">Context Issue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Docker/Common%20Build%20Issues/NuGet%20Package%20Download%20Issue/">NuGet Package Download Issue</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DotNet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/Anonymous%20Types%20vs%20Dynamic%20vs%20Tuple/">Anonymous Types vs Dynamic vs Tuple</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/Collections/">Collections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/Net%20Release%20Cycle/">Net Release Cycle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/Net%20SDK%20Web%20vs%20Worker/">Net SDK Web vs Worker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../DotNet/NetCore%203.1%20Application%20Start/">NetCore 3.1 Application Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ASPNET</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/ASPNET/Minimum%20Code%20to%20access%20a%20controller/">Minimum Code to access a controller</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Collections</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Collections/Class%20Hierarchy/">Class Hierarchy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Collections/IEnumerable%20vs%20IQureyable/">IEnumerable vs IQureyable</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF 8</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >Migrations</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/EF%208/Migrations/Add%20Migration/">Add Migration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/EF%208/Migrations/Update%20EF%20Tools/">Update EF Tools</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/EF%208/Migrations/add-migration%20vs%20dotnet%20ef/">Add migration vs dotnet ef</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >HangFire</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/HangFire/DEL/">DEL</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/HangFire/HangFire%20Job%20Chaining%20HangFire%20Job%20Waiting/">HangFire Job Chaining HangFire Job Waiting</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Net 6 vs Net 3.1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/ActionResult%20T%20sets%20StatusCode%20to%20200/">ActionResult sets StatusCode to 200</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/Net%206%20vs%203.1/">Net 6 vs 3.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Hosting</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/Hosting/GenericHost%20code%20vs%20WebApplication/">GenericHost code vs WebApplication</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20GenericHost/">WebApi code using GenericHost</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20WebApplication/">WebApi code using WebApplication</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SampleProjects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/SampleProjects/Sample%20Console%20Project/">SampleConsoleProject</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >WebApi</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/API%20Testing/">WebApiResponses</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/GPT/">GPT</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/Sample%20Batch%20File%20Text/">Sample Batch File Text</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/Tags/">sampleprojectwebapi #sampleprojectrestapi #sampleprojectDotNetwebapi</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../DotNet/SampleProjects/WebApi/git/">Git</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tasks</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/Async/">Async</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/More%20Info/">More Info</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/Task.Run%20vs%20AsyncAwait%20vs%20Thread/">Task.Run vs AsyncAwait vs Thread</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/Task.Run/">Task.Run</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../DotNet/Tasks/Task.WhenAll%20Exception/">Task.WhenAll Exception</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integrations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Integrations/Mulesoft%20VS%20Azure%20Service%20Bus/">Mulesoft VS Azure Service Bus</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LocalSetup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../LocalSetup/Git%20Extensions/">Git Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../LocalSetup/MS%20SQL%20Server/">MS SQL Server</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MicroServices</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../MicroServices/Granularity/">Granularity</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">NoSQL DB</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Azure CosmosDB</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../NoSQL%20DB/Azure%20CosmosDB/Useful%20Queries/">Useful Queries</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Plus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Plus/Discontinued%20Google%20Products/">Discontinued Google Products</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Plus/List/">List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Adobe Stock</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Plus/Adobe%20Stock/Adobe%20Stock/">Adobe Stock</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Agile</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Project%20Management/Agile/Issue%20Hierarchy/">Issue Hierarchy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Phases</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Project%20Phases/Budgeting/">Budgeting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Project%20Phases/Phase%20wise%20role%20engagement/">RoleInvolvement #ProjectPhaseNeededRoles #RolesInvolvedConceptualization #PhaseWiseRoleEngagement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Roles</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Roles/Systems%20Engineering/">SystemEngineering #SystemEngineerVSArchitect</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Site Reliability Engineer SRE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Roles/Site%20Reliability%20Engineer%20SRE/SRE%20vs%20DevOps/">SREVSDevOps #SiteReliabiltyEnginnerVSDevops #RoleComparison</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Roles/Site%20Reliability%20Engineer%20SRE/Site%20Reliability%20Engineer%20vs%20Architect%20vs%20QA/">Site Reliability Engineer vs Architect vs QA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Roles/Site%20Reliability%20Engineer%20SRE/Some%20Tasks%20of%20SRE/">ChaosEnginnering #ScalabilityTesting #SRETasks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Roles/Site%20Reliability%20Engineer%20SRE/Who%20is%20an%20SRE/">Who is an SRE</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQL Server</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../SQL%20Server/View%20in%20Complex%20Query/">View in Complex Query</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/EF/DBContext%20Scoped/">DBContext Scoped</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/EF/DBContext%20Transient%20%28Didnt%20work%29/">DBContext Transient (Didnt work)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/EF/EFCore.BulkExtensions/">EFCore.BulkExtensions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >General Queries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/General%20Queries/Data%20Insertion%20Rate/">Data Insertion Rate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/General%20Queries/SET%20ANSI_NULLS/">SET ANSI NULLS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/General%20Queries/Test%20Data%20Cleanup/">Test Data Cleanup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../SQL%20Server/General%20Queries/find%20a%20table%20having%20column/">Find a table having column</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Search</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Elastic%20Search%20Perdictability/">Elastic Search Perdictability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Elastic%20Search%20vs%20NoSQL/">Elastic Search vs NoSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Elastic%20Search/">Elastic Search</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Elastic%20VS%20OpenSearch/">Elastic VS OpenSearch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/GreyLog/">GreyLog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/KQL%20VS%20DSL/">KQL VS DSL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Search/Kibana/">Kibana</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Security</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../Auth0%20vs%20MS%20Entra%20Id/">Auth0 vs MS Entra Id</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../M2M%20vs%20UserToken%20Usage%20Scenerio/">M2M vs UserToken Usage Scenerio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../OpenID%20Connect%20%28OIDC%29/">OpenID Connect (OIDC)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Relevance%20of%20scopes%20in%20M2M%20tokens/">Relevance of scopes in M2M tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Roles%20vs%20Scopes/">Roles vs Scopes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../SSL%20HTTPS%20and%20TLS/">SSL HTTPS and TLS</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Auth0</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Access%20Token%20Validation/">Access Token Validation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../AppMetaData%20vs%20UserMetaData/">AppMetaData vs UserMetaData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Auth0%20Applications%20vs%20APIs/">Auth0 Applications vs APIs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Flow%201%20-%20Machine%20to%20Machine%20Client%20Credential%20Flow/">Flow 1   Machine to Machine Client Credential Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Flow%202A%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE/">Flow 2A   SPA Authorization Code Flow with PKCE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Flow%202B%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE%20Detail/">Flow 2B   SPA Authorization Code Flow with PKCE Detail</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Flows%20in%20Auth0/">Flows in Auth0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../How%20to%20handle%20stolen%20access%20tokens/">How to handle stolen access tokens</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../How%20to%20handle%20stolen%20refresh%20token/">How to handle stolen refresh token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Id%20Token/">Id Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Refresh%20Token/">Refresh Token</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Token Best Practices</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../What%20can%20be%20stored%20in%20Auth0%20DB/">What can be stored in Auth0 DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../When%20not%20to%20add%20application%20for%20an%20API/">When not to add application for an API</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TerraForm</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../TerraForm/Terraform%20Does%20or%20DoesNot%20for%20AKS/">Terraform Does or DoesNot for AKS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >KodeCloud Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/2-%20Types%20of%20IAC%20Tools/">2  Types of IAC Tools</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/3-%20Terraform/">3  Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/4-%20Installing%20Terraform/">4  Installing Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/5-%20HCL%20Basics/">5  HCL Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TerraForm/KodeCloud-Tutorial/6-%20Labs/">6  Labs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Test</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/Functional%20Tests/">Functional Tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/In%20NET%206%2B/">In NET 6+</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/Log%20Console.WriteLine/">Log Console.WriteLine</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/TestExplorer%20not%20showing%20tests/">TestExplorer not showing tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Test/TheUnit/">TheUnit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >xUnit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Test/xUnit/XUnit%20Packages/">XUnit Packages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Test/xUnit/XUnit%20VS%20MSTest/">XUnit VS MSTest</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Test/xUnit/XUnit%20and%20Mocking/">XUnit and Mocking</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ubuntu</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Ubuntu/Debian%20vs%20Ubuntu%20Hardening/">Debian vs Ubuntu Hardening</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Ubuntu/Snap%20vs%20Apt/">Snap vs Apt</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">VS Help</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../VS%20Help/Get%20Json%20during%20debugging/">Get Json during debugging</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Security</li>
+          <li class="breadcrumb-item">Auth0</li>
+      <li class="breadcrumb-item active">Token Best Practices</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Here are some basic considerations to keep in mind when using tokens:</p>
+<ul>
+<li>
+<p><strong>Keep it secret. Keep it safe</strong>: The signing key should be treated like any other credential and revealed only to services that need it.</p>
+</li>
+<li>
+<p><strong>Do not add sensitive data to the payload</strong>: Tokens are signed to protect against manipulation and are easily decoded. Add the bare minimum number of claims to the payload for best performance and security.</p>
+</li>
+<li>
+<p><strong>Give tokens an expiration</strong>: Technically, once a token is signed, it is valid forever—unless the signing key is changed or expiration explicitly set. This could pose potential issues so have a strategy for expiring and/or revoking tokens.</p>
+</li>
+<li>
+<p><strong>Embrace HTTPS</strong>: Do not send tokens over non-HTTPS connections as those requests can be intercepted and tokens compromised.</p>
+</li>
+<li>
+<p><strong>Consider all of your authorization use cases</strong>: Adding a secondary token verification system that ensures tokens were generated from your server may be necessary to meet your requirements.</p>
+</li>
+<li>
+<p><strong>Store and reuse:</strong> Reduce unnecessary roundtrips that extend your application's attack surface, and optimize plan token limits (where applicable) by storing access tokens obtained from the authorization server. Rather than requesting a new token, use the stored token during future calls until it expires. How you store tokens will depend on the characteristics of your application: typical solutions include databases (for apps that need to perform API calls regardless of the presence of a session) and HTTP sessions (for apps that have an activity window limited to an interactive session). For an example of server-side storage and token reuse, see <a href="https://auth0.com/docs/secure/security-guidance/data-security/token-storage">Token Storage</a>.</p>
+</li>
+</ul>
+<h2 id="tokens-vs-cookies">Tokens vs. Cookies<a class="headerlink" href="#tokens-vs-cookies" title="Permanent link">&para;</a></h2>
+<p>Typically, single-page apps (such as React, Vue, and AngularJS + Node), native mobile apps (such as iOS and Android), and web APIs (written in Node, Ruby, ASP.NET, or a mix of those) benefit most from token-based authentication. Traditional, server-side web applications have traditionally used cookie-based authentication.</p>
+<p>Token-based authentication is implemented by generating a token when the user authenticates and then setting that token in the <code>Authorization</code> header of each subsequent request to your API. You want that token to be something standard, like JSON web tokens since you will find libraries in most of the platforms and you don't want to do your own crypto.</p>
+<p>With both approaches, you can get the same amount of information from the user. That's controlled by the <code>scope</code> parameter sent in the login request (either using the Lock, our JavaScript library or a plain link). The <code>scope</code> is a parameter of the <code>.signin({scope: 'openid name email'})</code> method which ends up being part of the query string in the login request.</p>
+<p>By default, we use <code>scope=openid</code> in token-based authentication to avoid having a huge token. You can control any standard OpenID Connect (OIDC) claims that you want to get in the token by adding them as scope values. For example, <code>scope=openid name email family_name address phone_number</code>. To learn more, see<a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">Standard Claims on openid.net</a>.</p>
+<p>You can mix token-based authentication with cookie-based authentication. Take into account that cookies will work just fine if the web app and the API are served from the same domain, so you might not need token based authentication. If you need to, we also return a JWT on the web app flow. Each of our SDKs will do it differently. If you want to call your APIs from JavaScript(instead of using the existing cookie), then you have to set the access tokens using Web Workers or JavaScript closures to handle token transmissions and storage. To learn more, read the Browser in-memory scenarios section of our <a href="https://auth0.com/docs/secure/security-guidance/data-security/token-storage">Token Storage</a> page.</p>
+<h2 id="refresh-token-usage">Refresh token usage<a class="headerlink" href="#refresh-token-usage" title="Permanent link">&para;</a></h2>
+<p>You can only get a Refresh token if you are implementing the following flows:</p>
+<ul>
+<li>
+<p><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow/add-login-auth-code-flow">Authorization Code Flow</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce/add-login-using-the-authorization-code-flow-with-pkce">Authorization Code Flow with Proof Key for Code Exchange (PKCE)</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/resource-owner-password-flow">Resource Owner Password Flow</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/device-authorization-flow">Device Authorization Flow</a></p>
+</li>
+</ul>
+<p>If you limit offline access to your API, a safeguard configured via the <strong>Allow Offline Access</strong> switch at <a href="https://manage.auth0.com/#/apis">Auth0 Dashboard &gt; Applications &gt; APIs &gt; Settings</a>, Auth0 will not return a Refresh Token for the API (even if you include the <code>offline_access</code> scope in your request).</p>
+<p>Rules will run for the refresh token exchange. To execute special logic, you can look at the <code>context.protocol</code> property in your rule. If the value is <code>oauth2-refresh-token</code>, then the rule is running during the exchange.</p>
+<p>When trying to get a refresh token, the audience parameter is not available on the Rules context object. If you receive an error when attempting to add the audience parameter, verify that you do not have it set on the token.</p>
+<p>If you try to do a redirect with <code>context.redirect</code>, the authentication flow will return an error.</p>
+<p>If you have added custom claims to your tokens using a rule, the custom claims will appear in new tokens issued when using a refresh token for as long as your rule is in place. Although new tokens do not automatically inherit custom claims, rules run during the refresh token flow, so the same code will be executed. This allows you to add or change custom claims in newly-issued tokens without forcing previously-authorized applications to obtain a new refresh token.</p>
+<h3 id="refresh-token-limits">Refresh token limits<a class="headerlink" href="#refresh-token-limits" title="Permanent link">&para;</a></h3>
+<p>Auth0 limits the amount of active refresh tokens to 200 tokens per user per application. This limit only applies to active tokens. If the limit is reached and a new refresh token is created, the system revokes and deletes the oldest token for that user and application. Revoked tokens and expired tokens do not count against the limit.</p>
+<h4 id="automated-tests">Automated tests<a class="headerlink" href="#automated-tests" title="Permanent link">&para;</a></h4>
+<p>Refresh tokens accumulate due to automated tests and are generally used for the test lifetime. To avoid a token stockpile subject to refresh token limits, you can use the Auth0 Management API to remove unnecessary refresh tokens.</p>
+<ol>
+<li>
+<p><a href="https://auth0.com/docs/api/management/v2#!/Users/post_users">Create a user</a> with Management API. You will use this user for testing.</p>
+</li>
+<li>
+<p>The response returns a <code>user_id</code> that you need to persist during tests to be used later.</p>
+</li>
+<li>
+<p>Once tests are complete, <a href="https://auth0.com/docs/api/management/v2#!/Users/delete_users_by_id">delete the user</a> through Management API. When the test user is deleted, the associated artifacts are also removed, including refresh tokens.</p>
+</li>
+</ol>
+<p>For this use case, we don’t recommend using a static user ID. We do not recommended that you keep test users and artifacts, or cleaning the refresh tokens using the device credential endpoints as you could hit rate limits on the Management API. To learn more, read <a href="https://auth0.com/docs/support/policies/rate-limit-policy/management-api-endpoint-rate-limits">Management API Endpoint Rate Limits.</a></p>
+<p>If you want to keep the test user for future testing:</p>
+<ol>
+<li>
+<p>List the user’s refresh tokens using <a href="https://auth0.com/docs/api/management/v2#!/Device_Credentials/get_device_credentials">Management API's device credential endpoint</a>. The endpoint will return a maximum of 1000 tokens without specific order regardless of accumulated tokens or the use of pagination.</p>
+</li>
+<li>
+<p>Delete those credentials <a href="https://auth0.com/docs/api/management/v2#!/Device_Credentials/delete_device_credentials_by_id">using the DELETE</a> method.</p>
+</li>
+<li>
+<p>If the user has more than 1k tokens, repeat listing and deleting tokens until no more tokens left for the user.</p>
+</li>
+</ol>
+<h4 id="configure-expiring-refresh-tokens">Configure Expiring Refresh Tokens<a class="headerlink" href="#configure-expiring-refresh-tokens" title="Permanent link">&para;</a></h4>
+<p>When users log into your application with Auth0, and when the <code>offline_access</code> is requested in the authorization request, a new refresh token is issued to the user. In the case users log out and in again with the same device, a new refresh token is issued. Depending on how your application stores and uses refresh tokens, the old refresh token from the first login might become obsolete, and your application will most likely use the new refresh tokens if both tokens are issued with the same audience. To learn more, read <a href="https://auth0.com/docs/secure/security-guidance/data-security/token-storage">Token Storage</a>.</p>
+<p>To avoid accumulating obsolete refresh tokens, even though the refresh token limit removes the oldest token first, we recommend you configure refresh token expiration. Both rotating and non-rotating (or reusable) refresh tokens can be configured to expire with either idle or absolute expiry values. Both expiration values help remove tokens that are not in active use and avoid accumulating tokens for the user. To learn more, read <a href="https://auth0.com/docs/secure/tokens/refresh-tokens/configure-refresh-token-expiration">Configure Refresh Token Expiration</a>.</p>
+<h2 id="jwt-validation">JWT validation<a class="headerlink" href="#jwt-validation" title="Permanent link">&para;</a></h2>
+<p>We strongly recommend that you use middleware or one of the existing open source third-party libraries to parse and validate JWTs. At <a href="https://jwt.io/#libraries-io">JWT.io</a>, you can find libraries for various platforms and languages, such as .NET, Python, Java, Ruby, Objective-C, Swift, and PHP.</p>
+<h2 id="signing-algorithms">Signing algorithms<a class="headerlink" href="#signing-algorithms" title="Permanent link">&para;</a></h2>
+<p>The algorithm used to sign tokens issued for your application or API. A signature is part of a JWT and is used to verify that the sender of the token is who it says it is and to ensure that the message wasn't changed along the way. To learn more about JWTs, read <a href="https://auth0.com/docs/secure/tokens/json-web-tokens">JSON Web Tokens</a>. To learn more about signatures, read <a href="https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-token-structure">JSON Web Token Structure</a>.</p>
+<p>You can select from the following signing algorithms:</p>
+<ul>
+<li>
+<p><strong>RS256</strong> (RSA Signature with SHA-256): An asymmetric algorithm, which means that there are two keys: one public key and one private key that must be kept secret. Auth0 has the private key used to generate the signature, and the consumer of the JWT retrieves a public key from the Metadata endpoints provided by Auth0 and uses it to <a href="https://auth0.com/docs/secure/tokens/json-web-tokens/validate-json-web-tokens">validate the JWT signature</a>.</p>
+</li>
+<li>
+<p><strong>HS256</strong> (HMAC with SHA-256): A symmetric algorithm, which means that there is only one private key that must be kept secret, and it is shared between the two parties. Since the same key is used both to generate the signature and to validate it, care must be taken to ensure that the key is not compromised. This private key (or secret) is created when you register your Application (<strong>Client Secret</strong>) or API (<strong>Signing Secret</strong>) and choose the HS256 signing algorithm.</p>
+</li>
+</ul>
+<p>The most secure practice, and our recommendation, is to use <strong>RS256</strong> because:</p>
+<ul>
+<li>
+<p>With RS256, you are sure that only the holder of the private key (Auth0) can sign tokens, while anyone can check if the token is valid using the public key.</p>
+</li>
+<li>
+<p>With RS256, you can request a token that is valid for multiple audiences.</p>
+</li>
+<li>
+<p>With RS256, if the private key is compromised, you can implement key rotation without having to re-deploy your application or API with the new secret (which you would have to do if using HS256).</p>
+</li>
+<li>
+<p>With HS256, if the secret key is compromised you would have to redeploy the API with the new secret.</p>
+</li>
+</ul>
+<h2 id="signing-keys">Signing keys<a class="headerlink" href="#signing-keys" title="Permanent link">&para;</a></h2>
+<p>It's good practice to assume that multiple signing keys could be present in your JWKS. This may seem unnecessary since the Auth0 JWKS endpoint typically contains a single signing key; however, multiple keys can be found in the JWKS when rotating signing certificates.</p>
+<p>We recommend that you cache your signing keys to improve application performance and avoid running into rate limits, but you will want to make sure that if decoding a token fails, you invalidate the cache and retrieve new signing keys before trying <strong>only one</strong> more time.</p>
+<h2 id="learn-more">Learn more<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
+<h1 id="tokenbestpractices">TokenBestPractices<a class="headerlink" href="#tokenbestpractices" title="Permanent link">&para;</a></h1>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Refresh%20Token/" class="btn btn-neutral float-left" title="Refresh Token"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../What%20can%20be%20stored%20in%20Auth0%20DB/" class="btn btn-neutral float-right" title="What can be stored in Auth0 DB">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Refresh%20Token/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../What%20can%20be%20stored%20in%20Auth0%20DB/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
