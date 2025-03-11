@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>MuleSoft - Notes</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "MuleSoft";
+        var mkdocs_page_input_path = "Integrations\\MuleSoft.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Notes
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../Power%20Shell/">Power Shell</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AI Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AI%20Tools/Cursor%20vs%20CoPilot/">Cursor vs CoPilot</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">AWS</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AWS/Cloud%20Native%20Services%20-%20AWS/">Cloud Native Services   AWS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AWS/Non%20Cloud%20Native%20-%20AWS/">Non Cloud Native   AWS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../AWS/SignUp/">AWS Customer Agreement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Automapper</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Automapper/Anti%20Automapper%20Argument/">Anti Automapper Argument</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Azure</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/APIM%20AAG%20AFD%20NGINX/">APIM AAG AFD NGINX</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/AppService%20and%20AzureFunction/">AppService and AzureFunction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/AppService%20vs%20Azure%20Function/">AppService vs Azure Function</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Azure%20Charts/">Azure Charts</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Azure%20SQL%20High%20Availability%20and%20Fail%20Over/">FailOverAzureSQL #HighAvailabilityAzureSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Choose%20the%20right%20integration%20and%20automation%20services%20in%20Azure/">Choose the right integration and automation services in Azure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Install%20Azure%20CLI/">Install Azure CLI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/Kafka%20vs%20EventStoreDB%20%283rd-Party%20Tool%29/">Kafka vs EventStoreDB (3rd Party Tool)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/PaaS%20vs%20SaaS/">PaaS vs SaaS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Azure/azure-services-Categories/">azure services Categories</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >AKS</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/AKS/AKS%20Samples/">AKS-Code-Samples</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/AKS/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/AKS/Diagram%20Deployment%20on%20AKS%20Cluster/">Diagram Deployment on AKS Cluster</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Architecture</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/CQRS/">CQRS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/Diagrams%20included%20in%20HLD/">DiagramsIncludedInHLD</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/Event%20Sourcing/">Event Sourcing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/GraphQL%20vs%20OData/">GraphQL vs OData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/GraphQL%20vs%20Rest/">GraphQL vs Rest</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/Onion%20Architecture/">Onion Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/React%20Architecture/">React Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/Transactional%20Saga%20Patterns/">Transactional Saga Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/URLs/">URLs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/Why%20CAF%20WAF%20and%20Azure%20Architecture%20Center%20are%20grouped%20together/">Why CAF WAF and Azure Architecture Center are grouped together</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Architecture/modular%20monolith/">Modular monolith</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Event Driven Architecture</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Azure/Architecture/Event%20Driven%20Architecture/One/">One</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Interview</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Azure/Architecture/Interview/Interview%20Story/">Interview Story</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Azure/Architecture/Interview/Monolith%20Structure/">Monolith Structure</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Azure/Architecture/Interview/tags/">InterviewStorySolutionArchitect</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Microservices</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Azure/Architecture/Microservices/Deployment%20issues%20of%20monolith/">Deployment issues of monolith</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Azure/Architecture/Microservices/Granularity/">Granularity</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >TransactionSagas</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Azure/Architecture/TransactionSagas/Saga%20names/">Saga names</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" >Patterns</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Azure/Architecture/TransactionSagas/Patterns/Epic%20Saga%20-%20Synchronous%20Atomic%20Orchestrated/">Epic Saga   Synchronous Atomic Orchestrated</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Azure/Architecture/TransactionSagas/Patterns/Phone%20Tag%20Sag%20-%20Synchronous%20Atomic%20Choreographed/">Phone Tag Sag   Synchronous Atomic Choreographed</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Authentication</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Authentication/Azure%20OpenID%20Connect%20%28OIDC%29/">Azure OpenID Connect (OIDC)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Basics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Basics/Azure%20Management%20Infrastructure/">Azure Management Infrastructure</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Basics/Regions%20in%20Australia.%20AvZones%20in%20Australia/">Regions in Australia. AvZones in Australia</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ChatGPT</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/ChatGPT/Azure%20Front%20Door%20vs%20Load%20Balancer/">Azure Front Door vs Load Balancer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Cloud Adoption vs Well Architected Framework</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Cloud%20Adoption%20vs%20Well%20Architected%20Framework/Key%20Differences/">Key Differences</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Cloud%20Adoption%20vs%20Well%20Architected%20Framework/When%20to%20Use%20Which%20Framework/">When to Use Which Framework</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Event Sourcing</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Azure%20Event%20Sourcing/">Azure Event Sourcing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Blob%20Storage/">Kafka vs Azure Blob Storage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Cosmos%20DB/">Kafka vs Azure Cosmos DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Event%20Hubs/">Kafka vs Azure Event Hubs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Event%20Sourcing/Kafka%20vs%20Azure%20Service%20Bus/">Kafka vs Azure Service Bus</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Landing Zone</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Landing%20Zone/Azure%20Landing%20Zone/">Azure Landing Zone</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Messaging</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Azure%20Event%20Grid%20VS%20Kafka/">Azure Event Grid VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Azure%20Service%20Bus%20VS%20Kafka/">Azure Service Bus VS Kafka</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Azure%20Service%20Bus%20With%20Sessions/">Azure Service Bus With Sessions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Event%20Grid%20vs%20Service%20Bus%20Pub%20Sub/">Event Grid vs Service Bus Pub Sub</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/Messaging/Kafka%20is%20push%20or%20pull/">Kafka is push or pull</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SSL Termination</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/AG%20and%20AGIC/">AGandAGIC-TLS-SSL-Termination</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/AGIC%20vs%20NGINX%20Ingress%20Controller/">AGIC vs NGINX Ingress Controller</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/Pods%20cant%20Terminate%20with%20AG%20AGIC/">Pods cant Terminate with AG AGIC</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/What%20AGIC%20can%20do%20but%20NGINX%20cant/">What AGIC can do but NGINX cant</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Azure/SSL%20Termination/What%20NGINX%20can%20do%20which%20AGIC%20cant/">What NGINX can do which AGIC cant</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cloud</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Cloud/Landing%20Zone/">Landing Zone</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Container Orchestration Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Kubernetes%20vs%20AzureAppService/">Kubernetes vs AzureAppService</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Rancher%20TerraForm%20K3up/">Rancher TerraForm K3up</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Azure App Service</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Azure%20App%20Service/Automatic%20scaling%20in%20Azure%20App%20Service/">Automatic scaling in Azure App Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Azure%20App%20Service/Azure%20App%20Service%20Limitations/">Azure App Service Limitations</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Azure%20App%20Service/Run%20background%20tasks%20with%20WebJobs%20in%20Azure%20App%20Service/">Run background tasks with WebJobs in Azure App Service</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Docker Swarm</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/Docker%20Swarm/Why/">Why</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >K8S</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Dashboard/">AKS Dashboard</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Node/">AKS Node</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20Pods/">AKS Pods</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/AKS%20is%20PaaS%20or%20IaaS/">AKS is PaaS or IaaS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Agents/">Agents</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Check%20container%20in%20AKS%20or%20Docker/">Check container in AKS or Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Containers%20on%20Control%20Plane%20Node/">Containers on Control Plane Node</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/DevOps%20Pipelines%20Flow/">DevOps Pipelines Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Docker%20Compose%20vs%20Swarm%20vs%20Kubernetis/">Docker Compose vs Swarm vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Docker%20vs%20Kubernetis/">Docker vs Kubernetis</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm%20%2B%20Docker/">Helm + Docker</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm%20AKS%20to%20EKS/">Helm AKS to EKS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/K3S%20vs%20K8S/">K3S vs K8S</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/K8S%20at%20Plural%20Sites/">K8S-at-Plural-Sites-Kubernetes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Kubernetes%20Basics/">Kubernetes Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Learn/">Learn</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/One%20Container%20Per%20Pod/">One Container Per Pod</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Port%20Mapping/">Port Mapping</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Temp/">Temp</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Commands</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/AKS%20stuck%20pod%20fix/">AKS stuck pod fix</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20Alias%20in%20PowerShell%20Profile/">Create K8S Alias in PowerShell Profile</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20K8S%20service%20account/">Create K8S service account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Create%20ServiceAccount%20With%20Service%20Admin%20Role/">Create the Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Get%20Token%20of%20Service%20Account/">Get Token of Service Account</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/Give%20Cluster%20Wide%20Read%20Access/">Give Cluster Wide Read Access</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Command%20alias/">K8S Command alias</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Commands/K8S%20Commands%20in%20Table/">K8S Commands in Table</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ForDevelopersCourse PluralSights</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" >MyNotes</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/2%20-%20Core%20Concepts/">2   Core Concepts</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/ForDevelopersCourse-PluralSights/MyNotes/3-%20Pods/">3  Pods</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Helm</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/1-%20What%20is%20Helm%20Charts/">1  What is Helm Charts</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/2-%20Helm%20Chart%20Templates/">2  Helm Chart Templates</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/3-%20Helm%20Install/">3  Helm Install</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.0%20Helm%20Template%20to%20Kubernetes%20manifest/">4.0 Helm Template to Kubernetes manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.1%20Helms%20Templates%20Processing%20Order/">4.1 Helms Templates Processing Order</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.2%20Viewing%20the%20Combined%20Manifest/">4.2 Viewing the Combined Manifest</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Helm/4.3%20Order%20in%20which%20resources%20are%20created%20by%20Kubernetes/">4.3 Order in which resources are created by Kubernetes</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Probes</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/AKS%20Liveness%20vs%20Readiness/">AKS Liveness vs Readiness</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Effect%20of%20failing%20probes/">Effect of failing probes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Kubelet/">Kubelet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Minimum%20implementation/">Minimum implementation</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Probes/Startup%20Probe/">Startup Probe</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Setup Environment</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/ControlPlane%20VS%20%20Work%20load%20Node/">ControlPlane VS  Work load Node</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Docker-Desktop%20vs%20Minikube/">Docker Desktop vs Minikube</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/First%20Build/">First Build</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Identify%20K8S%20Environment/">Identify K8S Environment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Min%20Resources%20for%20deployment/">Min Resources for deployment</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Options%20to%20run%20K8S%20locally/">Options to run K8S locally</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Container%20Orchestration%20Tools/K8S/Setup%20Environment/Setup%20K8S%20dashboard%20on%20DockerDesktop/">Setup K8S dashboard on DockerDesktop</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Crypto</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Crypto/Untitled/">Untitled</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DDD</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/DomainEvent%20vs%20DomainActivity/">DomainEvent vs DomainActivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Elephant%20Analogy/">Elephant Analogy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Entity%20vs%20Aggregate/">Entity vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/How%20to%20Identify%20Value%20Objects/">How to Identify Value Objects</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/How%20to%20identify%20Entity%20in%20DDD/">How to identify Entity in DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Life%20inside%20aggergate%20root/">Life inside an Aggregate Root, part 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Problems%20Solved%20By%20DDD/">Problems Solved By DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Repository%20in%20DDD/">RepositoryDDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Transaction%20Across%20Aggregrates%20in%20DDD/">Transaction Across Aggregrates in DDD</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Value%20vs%20Aggregate/">Value vs Aggregate</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DDD/Value%20vs%20Entity%20Object/">Value vs Entity Object</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Bounded Context</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DDD/Bounded%20Context/Identify%20Bounded%20Context%20-%20ChatGpt/">Identify Bounded Context   ChatGpt</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DDD/Bounded%20Context/Sub%20Domain%20VS%20Bounded%20Context/">Sub Domain VS Bounded Context</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DailySheet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-04/">2024 11 04</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-14/">2024 11 14</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DailySheet/2024-11-21/">2024 11 21</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Design Pattern</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Design%20Pattern/4%20Mistakes%20In%20Repository%20Pattern/">4 Mistakes In Repository Pattern</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DevOps</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DevOps/Networking%20Basics/">Networking Basics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diagrams</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Context%20Diagram/">Context Diagram</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Diagrame%20Tool%20Names/">Diagrame Tool Names</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Feature%20Comparison/">Feature Comparison</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Highlevel%20design%20document/">Highlevel design document</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Mermaid%20DiagramsNet%20App%20vs%20Web/">Mermaid DiagramsNet App vs Web</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/Mermaid%20and%20Diagram.net%20together/">Mermaid and Diagram.net together</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Diagrams/UML%20Diagrams/">UML Diagrams</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Docker</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/Docker%20Commands/">Docker Commands</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/Docker%20File/">Docker File</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/Docker%20file%20network%20tools/">Install necessary tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Docker/Use%20DockerCompose%20vs%20Docker/">Use DockerCompose vs Docker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Common Build Issues</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Docker/Common%20Build%20Issues/Context%20Issue/">Context Issue</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Docker/Common%20Build%20Issues/NuGet%20Package%20Download%20Issue/">NuGet Package Download Issue</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">DotNet</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Anonymous%20Types%20vs%20Dynamic%20vs%20Tuple/">Anonymous Types vs Dynamic vs Tuple</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Collections/">Collections</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Net%208%20vs%20Net%206/">WhatIsNewInNet8</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Net%20Release%20Cycle/">Net Release Cycle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/Net%20SDK%20Web%20vs%20Worker/">Net SDK Web vs Worker</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DotNet/NetCore%203.1%20Application%20Start/">NetCore 3.1 Application Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >ASPNET</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/ASPNET/Minimum%20Code%20to%20access%20a%20controller/">Minimum Code to access a controller</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/ASPNET/Return%20errors%20from%20Apis/">return-error-from-api</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >C#</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/C%23/C%20Sharp%20along%20with%20.Net%20version/">C Sharp along with .Net version</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/C%23/Top%2010%20Features%20in%20C%20sharp%2010/">Top 10 Features in C sharp 10</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Collections</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Collections/Class%20Hierarchy/">Class Hierarchy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Collections/IEnumerable%20vs%20IQureyable/">IEnumerable vs IQureyable</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF 8</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >Migrations</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/Add%20Migration/">Add Migration</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/Update%20EF%20Tools/">Update EF Tools</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/EF%208/Migrations/add-migration%20vs%20dotnet%20ef/">Add migration vs dotnet ef</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >HangFire</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/HangFire/DEL/">DEL</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/HangFire/HangFire%20Job%20Chaining%20HangFire%20Job%20Waiting/">HangFire Job Chaining HangFire Job Waiting</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Net 6 vs Net 3.1</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/ActionResult%20T%20sets%20StatusCode%20to%20200/">ActionResult sets StatusCode to 200</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Net%206%20vs%203.1/">WhatIsNewInNet6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Hosting</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/GenericHost%20code%20vs%20WebApplication/">GenericHost code vs WebApplication</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20GenericHost/">WebApi code using GenericHost</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/Net%206%20vs%20Net%203.1/Hosting/WebApi%20code%20using%20WebApplication/">WebApi code using WebApplication</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >SampleProjects</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/SampleProjects/Sample%20Console%20Project/">SampleConsoleProject</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >WebApi</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/API%20Testing/">WebApiResponses</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/Sample%20Batch%20File%20Text/">Sample Batch File Text</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/Tags/">sampleprojectwebapi #sampleprojectrestapi #sampleprojectDotNetwebapi</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../DotNet/SampleProjects/WebApi/git/">Git</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tasks</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Async/">Async</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/More%20Info/">More Info</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.Run%20vs%20AsyncAwait%20vs%20Thread/">Task.Run vs AsyncAwait vs Thread</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.Run/">Task.Run</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../DotNet/Tasks/Task.WhenAll%20Exception/">Task.WhenAll Exception</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">FrontEnd</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../FrontEnd/Build%20for%20development/">Build for development</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../FrontEnd/Caret%20and%20Tilda%20in%20Package.json/">Caret and Tilda in Package.json</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../FrontEnd/HTML5%20is%20not%20relevant%20now/">HTML5 is not relevant now</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../FrontEnd/Package.Lock.Json/">Package.Lock.Json</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../FrontEnd/Why%20Not%20Always%20Use%20Exact%20Versions%20in%20Package.json/">Why Not Always Use Exact Versions in Package.json</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >JS Essentials</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/JS%20Essentials/Axios%20vs%20Fetch%28%29/">Axios vs Fetch()</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/JS%20Essentials/Axios_Guide-GPT/">🚀 Axios in JavaScript and React</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/JS%20Essentials/Default%20vs%20Named%20Export/">Default vs Named Export</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/JS%20Essentials/preventDefault/">preventDefault</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >React</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/Code%20Reuse/">Code Reuse</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/HTML5%20validation%20in%20React/">HTML5 validation in React</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/Handling%20of%20Packages.Lock.json/">Handling of Packages.Lock.json</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/Libs%20Used%20In%20React/">Libs Used In React</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/Local%20State%20vs%20Context%20API/">React State Management: Local State vs Context API</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/React%20Architecture%20Patterns/">React Architecture Patterns</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/React%20versions/">React versions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/Start%20React%20Project/">Start React Project</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/Steps%20to%20Handle%20Vulnerabilities%20in%20npm/">Steps to Handle Vulnerabilities in npm</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/Vite%20and%20esbuild/">Vite and esbuild</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../FrontEnd/React/Well%20known%20errors/">Well known errors</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Basics</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../FrontEnd/React/Basics/Render%20examples/">ReactRender</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../FrontEnd/React/Basics/Why%20react-router-dom%20a%20Separate%20Package/">Why react router dom a Separate Package</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Hooks</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../FrontEnd/React/Hooks/Builtin%20Hooks/">Builtin Hooks</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../FrontEnd/React/Hooks/Custom%20Hooks/">Custom Hooks</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../FrontEnd/React/Hooks/Differences%20Between%20Built-in%20and%20Custom%20Hooks/">Differences Between Built in and Custom Hooks</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../FrontEnd/React/Hooks/React%20Hooks/">React Hooks</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integrations</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">MuleSoft</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#chatgpt-said">ChatGPT said:</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Mulesoft%20VS%20Azure%20Service%20Bus/">Mulesoft VS Azure Service Bus</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">LocalSetup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../LocalSetup/Git%20Extensions/">Git Extensions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../LocalSetup/MS%20SQL%20Server/">MS SQL Server</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">MicroServices</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MicroServices/Architecture%20Qualitative%20and%20quantitative%20analysis/">Architecture Qualitative and quantitative analysis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../MicroServices/Granularity/">Granularity</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Linux</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >Secure Debian Linux</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Misc/Linux/Secure%20Debian%20Linux/Debian%20Secure%20Bydefault/">DebianSecureBydefault #LinuxSecureBydefault</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Misc/Linux/Secure%20Debian%20Linux/Kali%20Linux%20-%20Penetration%20Testing/">Kali Linux   Penetration Testing</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Misc/Linux/Secure%20Debian%20Linux/Parrot%20Home%20Edition/">Parrot Home Edition</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >QH Repairs</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Misc/QH%20Repairs/Dec-2024/">Dec 2024</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Windows</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Misc/Windows/ScreenShot%20ScreenCapture/">ScreenShot #ScreenCapture</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">NoSQL DB</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Azure CosmosDB</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../NoSQL%20DB/Azure%20CosmosDB/Useful%20Queries/">Useful Queries</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Plus</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Plus/Discontinued%20Google%20Products/">Discontinued Google Products</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Plus/List/">List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Adobe Stock</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Plus/Adobe%20Stock/Adobe%20Stock/">Adobe Stock</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Management</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Agile</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Project%20Management/Agile/Issue%20Hierarchy/">Issue Hierarchy</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Project Phases</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Project%20Phases/Budgeting/">Budgeting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Project%20Phases/Phase%20wise%20role%20engagement/">RoleInvolvement #ProjectPhaseNeededRoles #RolesInvolvedConceptualization #PhaseWiseRoleEngagement</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Roles</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Roles/Systems%20Engineering/">SystemEngineering #SystemEngineerVSArchitect</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Site Reliability Engineer SRE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/SRE%20vs%20DevOps/">SREVSDevOps #SiteReliabiltyEnginnerVSDevops #RoleComparison</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Site%20Reliability%20Engineer%20vs%20Architect%20vs%20QA/">Site Reliability Engineer vs Architect vs QA</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Some%20Tasks%20of%20SRE/">ChaosEnginnering #ScalabilityTesting #SRETasks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Site%20Reliability%20Engineer%20SRE/Who%20is%20an%20SRE/">Who is an SRE</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">SQL Server</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../SQL%20Server/View%20in%20Complex%20Query/">View in Complex Query</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >EF</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/DBContext%20Scoped/">DBContext Scoped</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/DBContext%20Transient%20%28Didnt%20work%29/">DBContext Transient (Didnt work)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/EF/EFCore.BulkExtensions/">EFCore.BulkExtensions</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >General Queries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/Data%20Insertion%20Rate/">Data Insertion Rate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/SET%20ANSI_NULLS/">SET ANSI NULLS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/Test%20Data%20Cleanup/">Test Data Cleanup</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../SQL%20Server/General%20Queries/find%20a%20table%20having%20column/">Find a table having column</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Security</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Auth0%20vs%20MS%20Entra%20Id/">Auth0 vs MS Entra Id</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/M2M%20vs%20UserToken%20Usage%20Scenerio/">M2M vs UserToken Usage Scenerio</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/OpenID%20Connect%20%28OIDC%29/">OpenID Connect (OIDC)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Relevance%20of%20scopes%20in%20M2M%20tokens/">Relevance of scopes in M2M tokens</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/Roles%20vs%20Scopes/">Roles vs Scopes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Security/SSL%20HTTPS%20and%20TLS/">SSL HTTPS and TLS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Auth0</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Access%20Token%20Validation/">Access Token Validation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/AppMetaData%20vs%20UserMetaData/">AppMetaData vs UserMetaData</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Auth0%20Applications%20vs%20APIs/">Auth0 Applications vs APIs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%201%20-%20Machine%20to%20Machine%20Client%20Credential%20Flow/">Flow 1   Machine to Machine Client Credential Flow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%202A%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE/">Flow 2A   SPA Authorization Code Flow with PKCE</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flow%202B%20-%20SPA%20Authorization%20Code%20Flow%20with%20PKCE%20Detail/">Flow 2B   SPA Authorization Code Flow with PKCE Detail</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Flows%20in%20Auth0/">Flows in Auth0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/How%20to%20handle%20stolen%20access%20tokens/">How to handle stolen access tokens</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/How%20to%20handle%20stolen%20refresh%20token/">How to handle stolen refresh token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Id%20Token/">Id Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Refresh%20Token/">Refresh Token</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/Token%20Best%20Practices/">Token Best Practices</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/What%20can%20be%20stored%20in%20Auth0%20DB/">What can be stored in Auth0 DB</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Auth0/When%20not%20to%20add%20application%20for%20an%20API/">When not to add application for an API</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Bank Related Jobs</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Security/Bank%20Related%20Jobs/ASIC%2C%20AUSTRAC%2C%20AML%2C%20and%20KYC/">ASIC, AUSTRAC, AML, and KYC</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TerraForm</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../TerraForm/Terraform%20Does%20or%20DoesNot%20for%20AKS/">Terraform Does or DoesNot for AKS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >KodeCloud Tutorial</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/1-%20Intro/">1  Intro</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/2-%20Types%20of%20IAC%20Tools/">2  Types of IAC Tools</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/3-%20Terraform/">3  Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/4-%20Installing%20Terraform/">4  Installing Terraform</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/5-%20HCL%20Basics/">5  HCL Basics</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../TerraForm/KodeCloud-Tutorial/6-%20Labs/">6  Labs</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Test</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/Functional%20Tests/">Functional Tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/In%20NET%206%2B/">In NET 6+</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/Log%20Console.WriteLine/">Log Console.WriteLine</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/Moq%20vs%20NSubstitute/">Moq vs NSubstitute</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/TestExplorer%20not%20showing%20tests/">TestExplorer not showing tests</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Test/TheUnit/">TheUnit</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >BDD</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/BDD/BDD%20Workflow/">BDDWorkflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/BDD/BDD%20vs.%20TDD/">BDD vs. TDD</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/BDD/Behavior%20Driven%20Development%20BDD/">BehaviorDrivenDevelopment-BDD is a collaborative software development methodology that focuses on defining the behavior of an application through examples written in plain language, bridging the gap between business stakeholders and technical teams. It extends Test Driven Development (TDD) by using human-readable scenarios to ensure a shared understanding of requirements and automating them as tests.</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/BDD/Is%20BDD%20black%20box/">Is BDD black box</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/BDD/Popular%20BDD%20Tools/">Popular BDD Tools</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/BDD/Untitled/">Untitled</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/BDD/Who%20writes%20specs/">Who writes specs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >2024 12</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Test/BDD/2024-12/How%20test%20code%20is%20written%20in%20BDD/">How test code is written in BDD</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >xUnit</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20Packages/">XUnit Packages</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20VS%20MSTest/">XUnit VS MSTest</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Test/xUnit/XUnit%20and%20Mocking/">XUnit and Mocking</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">UBuntuSetup</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../UBuntuSetup/Untitled/">Untitled</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >UBuntuServerForK8SLocal</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Install%20XFCE%20Minimal/">Install XFCE Minimal</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Ubuntu%20Server%20for%20K8S%20Control%20Plane/">Ubuntu Server for K8S Control Plane</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Update-Upgrade/">Update Upgrade</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Verify%20Static%20IP/">Verify Static IP</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/VirtualBox/">VirtualBox</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/etc%20resolve%20conf/">This is /run/systemd/resolve/stub-resolv.conf managed by man:systemd-resolved(8).</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Commands</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Commands/1%20-%20Verify%20Static%20Ip%2C%20Install%20XFCE%2C%20VBoxAdditions/">1   Verify Static Ip, Install XFCE, VBoxAdditions</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Commands/2a-%20%20Install%20Containerd/">2a   Install Containerd</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Commands/2b-%20Install%20CRI-O/">2b  Install CRI O</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Commands/3%20-%20Install%20Kubelet%20Kubectl%20Kubeadmin/">3   Install Kubelet Kubectl Kubeadmin</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../UBuntuSetup/UBuntuServerForK8SLocal/Commands/Switch%20to%20terminal/">Switch to terminal</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Ubuntu</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Ubuntu/Debian%20vs%20Ubuntu%20Hardening/">Debian vs Ubuntu Hardening</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Ubuntu/Snap%20vs%20Apt/">Snap vs Apt</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">VS Help</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../VS%20Help/Get%20Json%20during%20debugging/">Get Json during debugging</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Search</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../search/Elastic%20Search%20Perdictability/">Elastic Search Perdictability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../search/Elastic%20Search%20vs%20NoSQL/">Elastic Search vs NoSQL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../search/Elastic%20Search/">Elastic Search</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../search/Elastic%20VS%20OpenSearch/">Elastic VS OpenSearch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../search/GreyLog/">GreyLog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../search/KQL%20VS%20DSL/">KQL VS DSL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../search/Kibana/">Kibana</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Notes</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Integrations</li>
+      <li class="breadcrumb-item active">MuleSoft</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <ol>
+<li>Here's a summary of MuleSoft's Mule Runtime versions, their release dates, and support timelines:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>Version</strong></th>
+<th><strong>Release Date</strong></th>
+<th><strong>End of Standard Support</strong></th>
+<th><strong>End of Extended Support</strong></th>
+<th><strong>End of Life (EOL)</strong></th>
+<th><strong>Java Versions Supported</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.8 (Edge)</td>
+<td>October 2024</td>
+<td>March 2025</td>
+<td>June 2025</td>
+<td>N/A</td>
+<td>8, 11, 17</td>
+</tr>
+<tr>
+<td>4.7 (Edge)</td>
+<td>June 2024</td>
+<td>October 2024</td>
+<td>February 2025</td>
+<td>N/A</td>
+<td>8, 11, 17</td>
+</tr>
+<tr>
+<td>4.6 (LTS)</td>
+<td>February 2024</td>
+<td>August 2025</td>
+<td>February 2026</td>
+<td>N/A</td>
+<td>8, 11, 17</td>
+</tr>
+<tr>
+<td>4.5 (Edge)</td>
+<td>October 2023</td>
+<td>February 2024</td>
+<td>June 2024</td>
+<td>N/A</td>
+<td>8, 11</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>September 2021</td>
+<td>October 8, 2024</td>
+<td>October 8, 2025</td>
+<td>October 8, 2026</td>
+<td>8, 11</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>April 2020</td>
+<td>March 7, 2023</td>
+<td>March 7, 2025</td>
+<td>March 7, 2026</td>
+<td>8</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>May 2019</td>
+<td>May 2, 2021</td>
+<td>May 2, 2023</td>
+<td>May 2, 2024</td>
+<td>8</td>
+</tr>
+<tr>
+<td>4.1</td>
+<td>March 2018</td>
+<td>November 2, 2020</td>
+<td>November 2, 2022</td>
+<td>November 2, 2023</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3.9 (LTS)</td>
+<td>October 2017</td>
+<td>March 20, 2021</td>
+<td>March 20, 2024</td>
+<td>March 20, 2025</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3.8 (LTS)</td>
+<td>May 2016</td>
+<td>November 16, 2018</td>
+<td>November 16, 2021</td>
+<td>November 16, 2022</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<pre><code>**Key Definitions:**
+
+- **Standard Support**: Includes technical support, assistance with application configuration, performance tuning, compatibility support, and patches for security vulnerabilities.
+
+- **Extended Support**: Provides technical support for production environments, including troubleshooting and resolution of issues not requiring source code patches, along with patches for critical security vulnerabilities.
+
+- **End of Life (EOL)**: The date after which the product version is no longer supported or available.
+
+
+**Notes:**
+
+- MuleSoft introduced Edge and Long-Term Support (LTS) release channels starting with Mule 4.5 to offer flexibility in updating Mule runtime instances.
+
+    [MuleSoft Blogs](https://blogs.mulesoft.com/news/updates-to-the-mule-runtime-support-structure/?utm_source=chatgpt.com)
+
+- Java version support varies by Mule version; ensure compatibility when planning upgrades.
+
+- For the most current information, refer to MuleSoft's official documentation and support policies.
+
+- Dates are subject to change; always verify with MuleSoft's latest resources.
+
+- Extended Support versions are typically available on CloudHub for applications already deployed on it.
+
+- It's recommended to plan upgrades ahead of End of Standard Support to maintain full support coverage.
+
+- For detailed information on each version, including release notes and upgrade guides, consult MuleSoft's official documentation.
+
+- Transitioning to newer versions ensures access to the latest features, security updates, and performance improvements.
+
+- MuleSoft's support policy outlines the duration and scope of support for each version; reviewing this policy can aid in effective planning.
+
+- Regularly updating to supported versions helps maintain system security and operational efficiency.
+
+- For assistance with upgrades or migrations, consider reaching out to MuleSoft support or consulting services.
+
+- Staying informed about upcoming end-of-support dates allows for proactive system management and resource allocation.
+
+- Leveraging the latest MuleSoft features can enhance integration capabilities and business agility.
+
+- Ensure that all dependencies and connected systems are compatible when planning an upgrade to a newer Mule version.
+
+- Testing in a staging environment before full deployment can help identify and mitigate potential issues during an upgrade.
+
+- Reviewing release notes for each version provides insights into new features, bug fixes, and any known issues.
+
+- Engaging with the MuleSoft community and forums can offer additional support and best practices during the upgrade process.
+
+- Consider the impact on existing applications and integrations when planning an upgrade to ensure continuity of operations.
+
+- Regular maintenance and updates are key to leveraging the full potential of MuleSoft's integration platform.
+
+- For comprehensive support and guidance, refer to MuleSoft's official support channels and documentation.
+
+- Staying current with MuleSoft's release cadence helps in aligning integration strategies with technological advancements.
+
+- Proactive planning for end-of-support transitions can minimize disruptions and maintain system integrity.
+
+- Utilize MuleSoft's tools and resources for a streamlined upgrade process and optimal performance.
+
+- Keeping abreast of MuleSoft's product announcements ensures timely awareness of support timelines and new releases.
+
+- Aligning upgrade schedules with organizational goals can enhance the effectiveness of integration solutions.
+
+- Regularly reviewing and updating integration architectures in line with MuleSoft's latest offerings can drive innovation and efficiency.
+
+- Ensuring team readiness and training for new MuleSoft versions can facilitate smoother transitions and adoption.
+
+- Monitoring system performance post-upgrade is essential to confirm the success of the transition and to address any emerging issues promptly.
+
+- Engaging with MuleSoft's customer success resources can provide additional support and insights during upgrade planning and execution.
+
+- Documenting the upgrade process and any customizations can aid in future maintenance and troubleshooting.
+
+- Considering the total cost of ownership, including support and maintenance, is important when planning upgrades to newer MuleSoft versions.
+
+- Evaluating the
+
+
+Sources
+
+![Favicon](https://www.google.com/s2/favicons?domain=https://blogs.mulesoft.com&amp;sz=32)
+</code></pre>
+<ol>
+<li>
+<h5 id="you-said">You said:<a class="headerlink" href="#you-said" title="Permanent link">&para;</a></h5>
+<p>MuleSoft customizati0n code in AnyPoint can be written only in Java ?</p>
+</li>
+<li>
+<h6 id="chatgpt-said">ChatGPT said:<a class="headerlink" href="#chatgpt-said" title="Permanent link">&para;</a></h6>
+<p>No, MuleSoft customization code in <strong>Anypoint Platform</strong> is not limited to <strong>Java</strong>. While <strong>Java</strong> is the most commonly used language for extending and customizing MuleSoft components, you can use other tools and languages depending on the scenario. Here's an overview:</p>
+<hr />
+<h3 id="1-java-for-customization-primary-language"><strong>1. Java for Customization (Primary Language):</strong><a class="headerlink" href="#1-java-for-customization-primary-language" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MuleSoft runs on a Java-based runtime, and Java is the <strong>default</strong> language for writing custom code.</li>
+<li><strong>Use Cases</strong>:<ul>
+<li>Creating <strong>custom connectors</strong> using MuleSoft's <strong>Connector SDK</strong>.</li>
+<li>Writing <strong>custom Java components</strong> and classes for business logic.</li>
+<li>Extending Mule 4.x components using <strong>Java libraries</strong>.</li>
+<li>Developing custom <strong>Transformers</strong>, <strong>Policies</strong>, or <strong>Modules</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="2-dataweave-native-transformation-language"><strong>2. DataWeave (Native Transformation Language):</strong><a class="headerlink" href="#2-dataweave-native-transformation-language" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>DataWeave</strong> is MuleSoft's expression and transformation language.</li>
+<li><strong>Use Cases</strong>:<ul>
+<li>Writing complex <strong>data transformations</strong> between formats like JSON, XML, CSV, etc.</li>
+<li>Performing <strong>custom logic</strong> without needing Java code.</li>
+<li>Solving integration requirements through <strong>scripting</strong> directly within Mule applications.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="3-groovy-javascript-python-etc-through-scripting-components"><strong>3. Groovy, JavaScript, Python, etc. (Through Scripting Components):</strong><a class="headerlink" href="#3-groovy-javascript-python-etc-through-scripting-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>MuleSoft supports <strong>scripting languages</strong> (Groovy, JavaScript, Python, Ruby, etc.) using the <strong>Scripting Module</strong>.</p>
+</li>
+<li>
+<p><strong>Use Cases</strong>:</p>
+<ul>
+<li>Running custom scripts for small tasks or legacy logic.</li>
+<li>Embedding scripting components within flows.</li>
+</ul>
+<p>Example:</p>
+<p>xml</p>
+<p>Copy code</p>
+<p><code>&lt;scripting:execute engine="groovy"&gt;     def result = 'Hello, Mule!'     return result &lt;/scripting:execute&gt;</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="4-custom-policies-and-api-extensions-javajavascript"><strong>4. Custom Policies and API Extensions (Java/JavaScript):</strong><a class="headerlink" href="#4-custom-policies-and-api-extensions-javajavascript" title="Permanent link">&para;</a></h3>
+<ul>
+<li>For API Management (Anypoint Platform), you can create <strong>custom policies</strong> using Java or JavaScript.</li>
+<li>JavaScript can also be used for simple logic within <strong>MuleSoft API gateways</strong>.</li>
+</ul>
+<hr />
+<h3 id="summary"><strong>Summary:</strong><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Java</strong> is the primary and most powerful language for MuleSoft customizations.</li>
+<li><strong>DataWeave</strong> provides robust native functionality for data transformation and light scripting.</li>
+<li><strong>Groovy, JavaScript, Python</strong>, and other scripting languages are supported for specific tasks using the <strong>Scripting Module</strong>.</li>
+</ul>
+<p>Thus, while <strong>Java</strong> remains dominant for heavy customizations and extensions, MuleSoft allows flexibility with <strong>other scripting languages</strong> based on the specific use case.</p>
+</li>
+<li>
+<h5 id="you-said_1">You said:<a class="headerlink" href="#you-said_1" title="Permanent link">&para;</a></h5>
+<p>What activities integration can be done using MuleSoft with out coding at all</p>
+</li>
+<li>
+<h6 id="chatgpt-said_1">ChatGPT said:<a class="headerlink" href="#chatgpt-said_1" title="Permanent link">&para;</a></h6>
+<p>MuleSoft allows many integration activities to be performed <strong>without coding</strong> by leveraging its <strong>Anypoint Platform</strong> tools, pre-built components, and configuration-based approaches. These capabilities make MuleSoft a <strong>low-code integration platform</strong>, enabling developers and non-developers to build integrations efficiently.</p>
+<p>Here are the activities that can be performed <strong>without writing any code</strong> in MuleSoft:</p>
+<hr />
+<h3 id="1-data-integration-using-pre-built-connectors"><strong>1. Data Integration Using Pre-built Connectors</strong><a class="headerlink" href="#1-data-integration-using-pre-built-connectors" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Connect to systems</strong> like databases, SaaS applications, APIs, and legacy systems using <strong>out-of-the-box connectors</strong>.</li>
+<li>Examples:<ul>
+<li>Integrating with <strong>Salesforce, SAP, Workday, Oracle</strong>, or <strong>AWS S3</strong> using the respective MuleSoft connectors.</li>
+<li>Pulling or pushing data without writing code – just drag and drop connectors in <strong>Anypoint Studio</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="2-data-transformation-with-dataweave-visual-editor"><strong>2. Data Transformation with DataWeave Visual Editor</strong><a class="headerlink" href="#2-data-transformation-with-dataweave-visual-editor" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Transform data formats (e.g., <strong>XML to JSON</strong>, <strong>CSV to XML</strong>) visually using the <strong>DataWeave UI editor</strong>.</li>
+<li>You can perform:<ul>
+<li>Field mappings</li>
+<li>Format transformations</li>
+<li>Simple filters and conditions</li>
+</ul>
+</li>
+<li>MuleSoft provides <strong>drag-and-drop data mapping</strong> with <strong>auto-generated DataWeave scripts</strong> in Anypoint Studio.</li>
+</ul>
+<hr />
+<h3 id="3-routing-and-orchestration"><strong>3. Routing and Orchestration</strong><a class="headerlink" href="#3-routing-and-orchestration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Message routing</strong> and orchestration can be achieved using <strong>Flow components</strong> like:<ul>
+<li><strong>Choice Router</strong>: Conditional routing of messages.</li>
+<li><strong>Scatter-Gather</strong>: Send messages to multiple systems concurrently and aggregate responses.</li>
+<li><strong>For Each</strong>: Iterating over a list of records.</li>
+<li><strong>VM Queues</strong>: Passing messages between flows for decoupled processing.</li>
+</ul>
+</li>
+</ul>
+<p>All these configurations can be done <strong>visually</strong> using drag-and-drop components in <strong>Anypoint Studio</strong>.</p>
+<hr />
+<h3 id="4-connecting-apis-and-systems-with-apikit"><strong>4. Connecting APIs and Systems with APIKit</strong><a class="headerlink" href="#4-connecting-apis-and-systems-with-apikit" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <strong>APIKit</strong> to auto-generate flows based on an API specification (RAML or OAS).<ul>
+<li>You only need to define the API contract.</li>
+<li>MuleSoft will auto-generate the flows and scaffolding for routing.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="5-file-and-data-processing"><strong>5. File and Data Processing</strong><a class="headerlink" href="#5-file-and-data-processing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Automate <strong>file processing</strong> activities like:<ul>
+<li>Reading and writing to files (e.g., FTP, SFTP).</li>
+<li>Polling directories for file changes.</li>
+<li>Moving and renaming files.</li>
+</ul>
+</li>
+<li>Pre-built <strong>File Connector</strong> allows you to configure these tasks without coding.</li>
+</ul>
+<hr />
+<h3 id="6-scheduled-jobs-and-event-based-triggers"><strong>6. Scheduled Jobs and Event-based Triggers</strong><a class="headerlink" href="#6-scheduled-jobs-and-event-based-triggers" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use the <strong>Scheduler</strong> component to schedule jobs or trigger flows at a specified time.</li>
+<li>Common use cases:<ul>
+<li>Run a process every hour, day, or month (e.g., database cleanup, reporting tasks).</li>
+</ul>
+</li>
+<li>Event-based triggers like <strong>HTTP Listener</strong>, <strong>Salesforce Listener</strong>, or <strong>JMS</strong> can start flows automatically.</li>
+</ul>
+<hr />
+<h3 id="7-message-enrichment-and-filtering"><strong>7. Message Enrichment and Filtering</strong><a class="headerlink" href="#7-message-enrichment-and-filtering" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enrich incoming data using the <strong>Message Enricher</strong> component (fetch additional data from a system).</li>
+<li>Filter messages based on conditions using <strong>Filter</strong> and <strong>Choice</strong> routers.</li>
+</ul>
+<hr />
+<h3 id="8-error-handling"><strong>8. Error Handling</strong><a class="headerlink" href="#8-error-handling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implement error-handling strategies using the <strong>Error Handling</strong> framework:<ul>
+<li>Catch, rollback, and retry errors.</li>
+<li>Log errors without writing code.</li>
+<li>Configure error handlers visually in <strong>Anypoint Studio</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="9-api-management-without-custom-code"><strong>9. API Management without Custom Code</strong><a class="headerlink" href="#9-api-management-without-custom-code" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Publish, monitor, and secure APIs using <strong>Anypoint API Manager</strong>:<ul>
+<li>Apply pre-built <strong>policies</strong> like Rate Limiting, OAuth 2.0 security, CORS, and IP Whitelisting <strong>without coding</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="10-monitoring-and-logging"><strong>10. Monitoring and Logging</strong><a class="headerlink" href="#10-monitoring-and-logging" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use <strong>Anypoint Monitoring</strong> to monitor system health, performance, and usage metrics.</li>
+<li>Enable <strong>logging</strong> via pre-built logging components or by configuring log levels visually.</li>
+</ul>
+<hr />
+<h3 id="11-cloudhub-deployment"><strong>11. CloudHub Deployment</strong><a class="headerlink" href="#11-cloudhub-deployment" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Deploy integrations to <strong>CloudHub</strong> using simple configurations:<ul>
+<li>Deploy applications without code changes.</li>
+<li>Manage environments, scaling, and settings via UI.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="12-visual-flow-design"><strong>12. Visual Flow Design</strong><a class="headerlink" href="#12-visual-flow-design" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MuleSoft offers a <strong>drag-and-drop visual flow designer</strong> in Anypoint Studio.</li>
+<li>This eliminates the need to write XML configurations for most use cases, as flows and components can be configured visually.</li>
+</ul>
+<hr />
+<h3 id="key-no-code-components-in-mulesoft"><strong>Key No-Code Components in MuleSoft</strong><a class="headerlink" href="#key-no-code-components-in-mulesoft" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HTTP Listener / Request</li>
+<li>Database Connector</li>
+<li>File / FTP / SFTP Connector</li>
+<li>JMS, Kafka Connectors</li>
+<li>Choice Router, Scatter-Gather, VM Queues</li>
+<li>Scheduler</li>
+<li>Logger</li>
+<li>Error Handler</li>
+<li>Object Store for caching</li>
+</ul>
+<hr />
+<h3 id="summary_1"><strong>Summary</strong><a class="headerlink" href="#summary_1" title="Permanent link">&para;</a></h3>
+<p>With MuleSoft, you can achieve integration activities like <strong>data movement, API connection, routing, transformations, scheduling, and error handling</strong> without coding by using the <strong>pre-built components</strong>, <strong>connectors</strong>, and <strong>visual design tools</strong> available in the platform.</p>
+<p>This low-code approach allows organizations to accelerate integration development while minimizing the need for custom code.</p>
+</li>
+<li>
+<h5 id="you-said_2">You said:<a class="headerlink" href="#you-said_2" title="Permanent link">&para;</a></h5>
+<p>1) What activities need coding and 2) why they cant be done by the non code activities</p>
+</li>
+<li>
+<h6 id="chatgpt-said_2">ChatGPT said:<a class="headerlink" href="#chatgpt-said_2" title="Permanent link">&para;</a></h6>
+<p>While MuleSoft supports <strong>low-code/no-code activities</strong>, certain <strong>complex tasks</strong> still require coding. Below is a breakdown:</p>
+<hr />
+<h2 id="1-activities-that-require-coding-in-mulesoft"><strong>1. Activities That Require Coding in MuleSoft</strong><a class="headerlink" href="#1-activities-that-require-coding-in-mulesoft" title="Permanent link">&para;</a></h2>
+<h3 id="a-custom-connectors-and-extensions"><strong>a. Custom Connectors and Extensions</strong><a class="headerlink" href="#a-custom-connectors-and-extensions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Writing <strong>Custom Connectors</strong> using <strong>MuleSoft Connector SDK</strong> when no out-of-the-box connector exists for a specific system.</li>
+<li><strong>Why can't it be done without coding?</strong><ul>
+<li>Pre-built connectors may not exist for niche or legacy systems.</li>
+<li>Custom logic requires detailed control and extensibility.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="b-advanced-data-transformations"><strong>b. Advanced Data Transformations</strong><a class="headerlink" href="#b-advanced-data-transformations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Performing complex data manipulations beyond what is achievable with the <strong>DataWeave Visual Editor</strong>:</p>
+<ul>
+<li>Multi-step transformations</li>
+<li>Conditional mapping with deep nesting</li>
+<li>
+<p>Custom logic requiring loops or recursion</p>
+<ul>
+<li><strong>Why can't it be done without coding?</strong></li>
+</ul>
+</li>
+<li>
+<p>Visual tools have limitations for deeply nested or conditional data logic.</p>
+</li>
+<li>Advanced <strong>DataWeave scripting</strong> is necessary to meet complex business rules.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="c-custom-security-implementations"><strong>c. Custom Security Implementations</strong><a class="headerlink" href="#c-custom-security-implementations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Implementing <strong>advanced security protocols</strong> or encryption mechanisms:</p>
+<ul>
+<li>Custom JWT validation.</li>
+<li>
+<p>Specialized encryption algorithms or <strong>HMAC</strong> authentication.</p>
+<ul>
+<li><strong>Why can't it be done without coding?</strong></li>
+</ul>
+</li>
+<li>
+<p>Pre-built security policies may not cover proprietary security requirements.</p>
+</li>
+<li>Custom libraries must be integrated for specific use cases.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="d-exception-handling-beyond-default-behavior"><strong>d. Exception Handling Beyond Default Behavior</strong><a class="headerlink" href="#d-exception-handling-beyond-default-behavior" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Writing custom logic to handle <strong>specific errors</strong> dynamically:</p>
+<ul>
+<li>Retrying failed transactions based on certain conditions.</li>
+<li>
+<p>Sending custom notifications upon failure (e.g., via a Slack API).</p>
+<ul>
+<li><strong>Why can't it be done without coding?</strong></li>
+</ul>
+</li>
+<li>
+<p>Default <strong>Error Handling</strong> works for standard cases, but business-specific retry policies, notifications, or compensating transactions require coding.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="e-integration-with-legacy-systems"><strong>e. Integration with Legacy Systems</strong><a class="headerlink" href="#e-integration-with-legacy-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Interfacing with systems using <strong>custom protocols</strong> (e.g., old TCP/IP protocols or binary formats).</p>
+</li>
+<li>
+<p>Building Java libraries or components for MuleSoft to interact with such systems.</p>
+</li>
+<li>
+<p><strong>Why can't it be done without coding?</strong></p>
+<ul>
+<li>Pre-built connectors do not support legacy protocols.</li>
+<li>These systems require Java or custom-built utilities for communication.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="f-complex-logic-in-flows"><strong>f. Complex Logic in Flows</strong><a class="headerlink" href="#f-complex-logic-in-flows" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Implementing <strong>decision-making processes</strong>, <strong>custom aggregations</strong>, or iterative operations that can't be expressed via basic flow components.</p>
+</li>
+<li>
+<p><strong>Why can't it be done without coding?</strong></p>
+<ul>
+<li>Visual flows cannot represent intricate logic like recursive algorithms, dynamic aggregations, or complex computations.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="g-using-third-party-libraries"><strong>g. Using Third-Party Libraries</strong><a class="headerlink" href="#g-using-third-party-libraries" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Integrating <strong>third-party libraries</strong> (e.g., Java libraries for machine learning, encryption, or messaging).</p>
+</li>
+<li>
+<p><strong>Why can't it be done without coding?</strong></p>
+<ul>
+<li>MuleSoft does not natively support all libraries. Custom Java code or scripts must be written to include these dependencies.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="h-performance-optimization-and-custom-processing"><strong>h. Performance Optimization and Custom Processing</strong><a class="headerlink" href="#h-performance-optimization-and-custom-processing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Custom optimization strategies like caching, stream handling, or large payload processing.</p>
+</li>
+<li>
+<p><strong>Why can't it be done without coding?</strong></p>
+<ul>
+<li>Visual tools cannot control low-level processing of messages, like <strong>streaming</strong> large files or optimizing for performance.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="i-writing-custom-policies-in-api-manager"><strong>i. Writing Custom Policies in API Manager</strong><a class="headerlink" href="#i-writing-custom-policies-in-api-manager" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Developing policies beyond standard ones (e.g., custom throttling, transformation, or request validation).</p>
+</li>
+<li>
+<p><strong>Why can't it be done without coding?</strong></p>
+<ul>
+<li>Out-of-the-box policies only support common use cases. Custom policies need Java/JavaScript for advanced requirements.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="2-why-cant-these-be-done-without-coding"><strong>2. Why Can't These Be Done Without Coding?</strong><a class="headerlink" href="#2-why-cant-these-be-done-without-coding" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Customization</strong>:</p>
+<ul>
+<li>
+<p>Low-code tools are designed to handle <strong>common use cases</strong> but lack flexibility for <strong>niche, advanced, or highly specific requirements</strong>.</p>
+<ol>
+<li><strong>Complex Logic</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Visual flow builders and configuration tools cannot represent complex business rules, recursion, or multi-step logic elegantly.</p>
+<ol>
+<li><strong>Performance and Scalability</strong>:</li>
+</ol>
+</li>
+<li>
+<p>For performance optimization (e.g., streaming large files), direct coding gives finer control than pre-built components.</p>
+<ol>
+<li><strong>Integrating Legacy Systems</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Many old systems don't follow modern standards (REST, SOAP, etc.), requiring custom-built connectors.</p>
+<ol>
+<li><strong>Advanced Security</strong>:</li>
+</ol>
+</li>
+<li>
+<p>MuleSoft's pre-built security tools handle common scenarios, but specialized encryption or authentication needs code.</p>
+<ol>
+<li><strong>Third-Party Integrations</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Some third-party libraries cannot be integrated visually. Java or scripting bridges the gap.</p>
+<ol>
+<li><strong>Error Recovery and Business-Specific Policies</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Complex retry mechanisms, notifications, and compensating transactions can't be expressed visually.</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="conclusion"><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>While MuleSoft enables a <strong>low-code/no-code experience</strong> for most tasks, coding is required for:</p>
+<ol>
+<li><strong>Custom connectors and legacy systems</strong> integration.</li>
+<li><strong>Complex data logic</strong> and advanced security needs.</li>
+<li>Fine-tuning <strong>performance</strong> and optimization.</li>
+<li>Supporting <strong>third-party libraries</strong> and niche use cases.</li>
+</ol>
+<p>Using <strong>Java</strong>, <strong>DataWeave scripting</strong>, and <strong>custom policies</strong>, MuleSoft balances ease of use with the flexibility to meet advanced integration challenges.</p>
+</li>
+<li>
+<h5 id="you-said_3">You said:<a class="headerlink" href="#you-said_3" title="Permanent link">&para;</a></h5>
+<p>When Data Transformation with DataWeave Visual Editor was introduced</p>
+</li>
+<li>
+<h6 id="chatgpt-said_3">ChatGPT said:<a class="headerlink" href="#chatgpt-said_3" title="Permanent link">&para;</a></h6>
+<p>The <strong>DataWeave Visual Editor</strong> was introduced in <strong>MuleSoft Anypoint Studio 7.11</strong>, released in <strong>October 2021</strong>.</p>
+<hr />
+<h3 id="background-and-purpose"><strong>Background and Purpose:</strong><a class="headerlink" href="#background-and-purpose" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prior to this, data transformations in MuleSoft were written in <strong>DataWeave scripts</strong> manually, which required knowledge of the <strong>DataWeave language</strong>.</li>
+<li>The <strong>Visual Editor</strong> provided a <strong>graphical interface</strong> for creating <strong>data mappings and transformations</strong> without writing code.</li>
+</ul>
+<hr />
+<h3 id="key-features-of-dataweave-visual-editor"><strong>Key Features of DataWeave Visual Editor:</strong><a class="headerlink" href="#key-features-of-dataweave-visual-editor" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Drag-and-Drop Mapping</strong>:<ul>
+<li>Users can visually map fields between input and output data formats.</li>
+</ul>
+</li>
+<li><strong>Auto-Generation of Scripts</strong>:<ul>
+<li>Generates <strong>DataWeave scripts</strong> automatically behind the scenes.</li>
+</ul>
+</li>
+<li><strong>Support for Multiple Formats</strong>:<ul>
+<li>Handles <strong>JSON, XML, CSV, and other data formats</strong>.</li>
+</ul>
+</li>
+<li><strong>Ease of Use</strong>:<ul>
+<li>Reduces the learning curve for non-technical users or those unfamiliar with DataWeave syntax.</li>
+</ul>
+</li>
+<li><strong>Dynamic Preview</strong>:<ul>
+<li>Provides a real-time preview of transformation outputs.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="why-it-was-introduced"><strong>Why It Was Introduced</strong>:<a class="headerlink" href="#why-it-was-introduced" title="Permanent link">&para;</a></h3>
+<ul>
+<li>To cater to <strong>non-developers</strong> and business analysts needing to build data transformations quickly.</li>
+<li>To <strong>accelerate development</strong> by reducing manual coding and simplifying transformations.</li>
+</ul>
+<hr />
+<h3 id="impact"><strong>Impact</strong>:<a class="headerlink" href="#impact" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The <strong>DataWeave Visual Editor</strong> has made it easier to implement simple to medium-complexity transformations while still allowing developers to fine-tune transformations using manual DataWeave scripts for more complex cases.</li>
+</ul>
+<p>Let me know if you'd like details on using the <strong>Visual Editor</strong> or its limitations!</p>
+</li>
+<li>
+<h5 id="you-said_4">You said:<a class="headerlink" href="#you-said_4" title="Permanent link">&para;</a></h5>
+<p>What was avauilable to do similar thgings before Data Transformation with DataWeave Visual Editor</p>
+</li>
+<li>
+<h6 id="chatgpt-said_4">ChatGPT said:<a class="headerlink" href="#chatgpt-said_4" title="Permanent link">&para;</a></h6>
+<p>Before the introduction of the <strong>DataWeave Visual Editor</strong> (in <strong>Anypoint Studio 7.11</strong>, October 2021), MuleSoft developers performed data transformations primarily through <strong>manual coding</strong> using the <strong>DataWeave Language</strong> and <strong>legacy tools</strong> like <strong>MEL (Mule Expression Language)</strong> in earlier MuleSoft versions.</p>
+<p>Here’s a breakdown of the tools and approaches that were used for similar purposes:</p>
+<hr />
+<h3 id="1-manual-dataweave-scripting-primary-method"><strong>1. Manual DataWeave Scripting (Primary Method)</strong><a class="headerlink" href="#1-manual-dataweave-scripting-primary-method" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MuleSoft users manually wrote <strong>DataWeave scripts</strong> in the <strong>Transform Message Component</strong>.</li>
+<li>The <strong>DataWeave language</strong> (introduced in <strong>Mule 4</strong>) replaced MEL for all transformation tasks.</li>
+<li>Developers needed to be familiar with DataWeave syntax for:<ul>
+<li>Mapping fields.</li>
+<li>Conditional transformations.</li>
+<li>Nested data structures.</li>
+<li>Converting between formats like JSON, XML, CSV, and Java objects.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example of a Manual DataWeave Transformation Script</strong>:</p>
+<p>dataweave</p>
+<p>Copy code</p>
+<p><code>%dw 2.0 output application/json --- {     fullName: payload.firstName ++ " " ++ payload.lastName,     age: payload.age,     address: {         street: payload.address.street,         city: payload.address.city     } }</code></p>
+<ul>
+<li><strong>Challenges</strong>:<ul>
+<li>Required expertise in DataWeave scripting.</li>
+<li>Limited visual assistance for complex mappings.</li>
+<li>No drag-and-drop features for non-developers.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="2-mule-expression-language-mel-mule-3"><strong>2. Mule Expression Language (MEL) - Mule 3</strong><a class="headerlink" href="#2-mule-expression-language-mel-mule-3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In <strong>Mule 3.x</strong>, data transformations were achieved using <strong>MEL (Mule Expression Language)</strong> in addition to <strong>DataMapper</strong>.</li>
+<li>MEL allowed you to extract, manipulate, and transform data in Mule flows.</li>
+<li>However, MEL lacked the expressiveness and capabilities of DataWeave.</li>
+</ul>
+<p><strong>Example of MEL</strong>:</p>
+<p>xml</p>
+<p>Copy code</p>
+<p><code>&lt;expression-transformer expression="#[payload.firstName + ' ' + payload.lastName]"/&gt;</code></p>
+<ul>
+<li><strong>Challenges</strong>:<ul>
+<li>MEL was less powerful and more complex for nested and multi-step transformations.</li>
+<li>It required more lines of code for similar transformations.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="3-datamapper-mule-3x"><strong>3. DataMapper (Mule 3.x)</strong><a class="headerlink" href="#3-datamapper-mule-3x" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MuleSoft provided the <strong>DataMapper</strong> tool in Mule 3 as a visual transformation tool for data mapping between formats.</li>
+<li>Features of DataMapper:<ul>
+<li><strong>Graphical UI</strong> for mapping fields.</li>
+<li>Support for simple transformations between <strong>JSON, XML, CSV, and POJOs</strong>.</li>
+</ul>
+</li>
+<li>However, it was <strong>deprecated</strong> in Mule 4 in favor of DataWeave.</li>
+</ul>
+<p><strong>Why DataMapper Was Deprecated</strong>:</p>
+<ul>
+<li>Performance limitations for large data sets.</li>
+<li>Lack of flexibility for complex transformations.</li>
+<li>Required additional <strong>memory</strong> and runtime resources.</li>
+<li>DataWeave provided better performance, flexibility, and scalability.</li>
+</ul>
+<hr />
+<h3 id="4-third-party-tools-and-libraries"><strong>4. Third-Party Tools and Libraries</strong><a class="headerlink" href="#4-third-party-tools-and-libraries" title="Permanent link">&para;</a></h3>
+<ul>
+<li>For <strong>very complex transformations</strong>, developers sometimes integrated third-party libraries or used Java for custom logic.<ul>
+<li>Example: Custom <strong>Java Transformers</strong> or <strong>Apache Camel</strong> for complex routing.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Challenges</strong>:</p>
+<ul>
+<li>Required coding in Java or integrating external tools.</li>
+<li>Increased development time and complexity.</li>
+</ul>
+<hr />
+<h3 id="5-external-tools-for-transformation-design"><strong>5. External Tools for Transformation Design</strong><a class="headerlink" href="#5-external-tools-for-transformation-design" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Some organizations used external tools like <strong>Excel</strong>, <strong>XSLT editors</strong>, or <strong>ETL tools</strong> for mapping and then imported the transformations into MuleSoft flows.</li>
+<li>While these tools helped design the mappings, integrating them into MuleSoft required additional effort.</li>
+</ul>
+<hr />
+<h3 id="summary-of-differences"><strong>Summary of Differences</strong><a class="headerlink" href="#summary-of-differences" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Tool/Method</strong></th>
+<th><strong>Availability</strong></th>
+<th><strong>Capabilities</strong></th>
+<th><strong>Challenges</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DataWeave Scripting</strong></td>
+<td>Mule 4 (before 7.11)</td>
+<td>Powerful, flexible for all transformations.</td>
+<td>Required coding expertise.</td>
+</tr>
+<tr>
+<td><strong>MEL</strong></td>
+<td>Mule 3</td>
+<td>Basic transformations and expressions.</td>
+<td>Limited power for nested data handling.</td>
+</tr>
+<tr>
+<td><strong>DataMapper</strong></td>
+<td>Mule 3</td>
+<td>Visual mapping for simple scenarios.</td>
+<td>Deprecated; performance issues.</td>
+</tr>
+<tr>
+<td><strong>Java/Custom Tools</strong></td>
+<td>Mule 3 and 4</td>
+<td>Extensible, used for niche cases.</td>
+<td>Required coding; complex to maintain.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="key-takeaway"><strong>Key Takeaway</strong><a class="headerlink" href="#key-takeaway" title="Permanent link">&para;</a></h3>
+<p>Before the <strong>DataWeave Visual Editor</strong>, users had to rely on <strong>manual DataWeave scripting</strong>, <strong>MEL</strong>, or <strong>DataMapper</strong> for data transformations. While these methods were functional, they required more technical expertise, lacked visual design capabilities, and were less user-friendly for non-developers.</p>
+<p>With the <strong>Visual Editor</strong>, MuleSoft simplified <strong>data mapping and transformation</strong>, making it accessible to users with minimal coding knowledge while retaining the flexibility of the underlying DataWeave language.</p>
+</li>
+<li>
+<h5 id="you-said_5">You said:<a class="headerlink" href="#you-said_5" title="Permanent link">&para;</a></h5>
+<p>What is RAML</p>
+</li>
+<li>
+<h6 id="chatgpt-said_5">ChatGPT said:<a class="headerlink" href="#chatgpt-said_5" title="Permanent link">&para;</a></h6>
+<p><strong>RAML</strong> (<strong>RESTful API Modeling Language</strong>) is a <strong>specification language</strong> designed to describe <strong>RESTful APIs</strong> in a human-readable and machine-parsable format. It allows developers to define an API's endpoints, methods, parameters, data types, and responses in a structured and reusable way.</p>
+<p>RAML is used to design, document, and test APIs efficiently, making it a powerful tool in API lifecycle management.</p>
+<hr />
+<h3 id="key-features-of-raml"><strong>Key Features of RAML</strong><a class="headerlink" href="#key-features-of-raml" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>YAML-Based</strong>:</p>
+<ul>
+<li>RAML uses <strong>YAML</strong> syntax, making it lightweight, clean, and easy to read.</li>
+<li>
+<p>It is also highly structured for defining API components.</p>
+<ol>
+<li><strong>API Design First</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Enables a <strong>design-first</strong> approach where the API is designed and documented <strong>before development</strong> begins.</p>
+<ol>
+<li><strong>Reusable Components</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Promotes <strong>reusability</strong> by allowing modular components like resource types, traits, and data types.</p>
+<ol>
+<li><strong>Human-Readable and Machine-Processable</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Easy to understand for humans and can be processed by tools for code generation, documentation, and testing.</p>
+<ol>
+<li><strong>Code Generation</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Tools like <strong>MuleSoft Anypoint Platform</strong> can generate client SDKs, mock servers, and API flows based on RAML.</p>
+<ol>
+<li><strong>Integration with API Management</strong>:</li>
+</ol>
+</li>
+<li>
+<p>RAML integrates seamlessly with MuleSoft's <strong>Anypoint API Manager</strong> for managing APIs.</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="structure-of-raml"><strong>Structure of RAML</strong><a class="headerlink" href="#structure-of-raml" title="Permanent link">&para;</a></h3>
+<p>A RAML file typically starts with the <code>#%RAML</code> declaration and includes key API components.</p>
+<h4 id="example-of-a-simple-raml-specification"><strong>Example of a Simple RAML Specification</strong><a class="headerlink" href="#example-of-a-simple-raml-specification" title="Permanent link">&para;</a></h4>
+<p>yaml</p>
+<p>Copy code</p>
+<p><code>#%RAML 1.0 title: Example API baseUri: https://api.example.com/v1 version: v1  /hello:   get:     description: Returns a greeting message.     responses:       200:         body:           application/json:             example:               {                 "message": "Hello, World!"               }</code></p>
+<hr />
+<h3 id="core-components-of-raml"><strong>Core Components of RAML</strong><a class="headerlink" href="#core-components-of-raml" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Title and Base URI</strong>:</p>
+<ul>
+<li>
+<p>Define the API's title, version, and base endpoint.</p>
+<ol>
+<li><strong>Resources</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Define paths (e.g., <code>/users</code>, <code>/orders</code>) and HTTP methods (GET, POST, PUT, DELETE).</p>
+<ol>
+<li><strong>Parameters</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Support query, header, URI, and body parameters.</p>
+<ol>
+<li><strong>Data Types</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Use custom or built-in data types for defining request/response payloads.</p>
+<ol>
+<li><strong>Traits and Resource Types</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Traits: Reusable behaviors like authentication or pagination.</p>
+</li>
+<li>
+<p>Resource Types: Reusable resource structures for consistency.</p>
+<ol>
+<li><strong>Examples and Mock Data</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Provide examples of input and output payloads for testing and documentation.</p>
+<ol>
+<li><strong>Responses and Status Codes</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Define responses for various HTTP status codes (e.g., 200, 400, 500).</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="why-use-raml"><strong>Why Use RAML?</strong><a class="headerlink" href="#why-use-raml" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Simplified API Design</strong>:</p>
+<ul>
+<li>
+<p>Design RESTful APIs in a clear, structured, and reusable format.</p>
+<ol>
+<li><strong>Faster Development</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Generate API documentation, mock servers, and client SDKs automatically.</p>
+<ol>
+<li><strong>Improved Collaboration</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Allows developers, architects, and stakeholders to collaborate on API design.</p>
+<ol>
+<li><strong>Tool Integration</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Supported by MuleSoft's <strong>Anypoint Platform</strong> and other tools like <strong>Postman</strong>.</p>
+<ol>
+<li><strong>Standardized Documentation</strong>:</li>
+</ol>
+</li>
+<li>
+<p>Ensures API documentation is consistent and up-to-date.</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="raml-vs-openapi-swagger"><strong>RAML vs OpenAPI (Swagger)</strong><a class="headerlink" href="#raml-vs-openapi-swagger" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>RAML</strong></th>
+<th><strong>OpenAPI (Swagger)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Format</strong></td>
+<td>YAML</td>
+<td>JSON or YAML</td>
+</tr>
+<tr>
+<td><strong>Focus</strong></td>
+<td>API design-first</td>
+<td>API description and testing</td>
+</tr>
+<tr>
+<td><strong>Reusability</strong></td>
+<td>Strong reusability (traits, types)</td>
+<td>Limited reusability</td>
+</tr>
+<tr>
+<td><strong>Adoption</strong></td>
+<td>Popular in MuleSoft ecosystem</td>
+<td>Industry-wide adoption</td>
+</tr>
+<tr>
+<td><strong>Tooling</strong></td>
+<td>Supported by Anypoint Studio</td>
+<td>Supported by many tools</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="conclusion_1"><strong>Conclusion</strong><a class="headerlink" href="#conclusion_1" title="Permanent link">&para;</a></h3>
+<p>RAML is a powerful, YAML-based specification for designing, documenting, and testing <strong>RESTful APIs</strong>. It simplifies API development by providing a structured, reusable, and human-readable approach and integrates seamlessly into tools like MuleSoft <strong>Anypoint Platform</strong>.</p>
+</li>
+<li>
+<h5 id="you-said_6">You said:<a class="headerlink" href="#you-said_6" title="Permanent link">&para;</a></h5>
+<p>Is RAML used in MuleSoft</p>
+</li>
+<li>
+<h6 id="chatgpt-said_6">ChatGPT said:<a class="headerlink" href="#chatgpt-said_6" title="Permanent link">&para;</a></h6>
+<p>Yes, <strong>RAML</strong> (<strong>RESTful API Modeling Language</strong>) is extensively used in <strong>MuleSoft</strong> as a key part of the <strong>API design and development process</strong>. MuleSoft’s <strong>Anypoint Platform</strong> supports RAML as the primary language for designing and documenting <strong>RESTful APIs</strong>.</p>
+<hr />
+<h3 id="how-raml-is-used-in-mulesoft"><strong>How RAML is Used in MuleSoft</strong><a class="headerlink" href="#how-raml-is-used-in-mulesoft" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>API Design in Anypoint Design Center</strong>:</p>
+<ul>
+<li>RAML is used to design APIs in MuleSoft’s <strong>Anypoint Design Center</strong>.</li>
+<li>
+<p>Developers can define <strong>resources</strong>, <strong>methods</strong>, <strong>parameters</strong>, <strong>data types</strong>, and <strong>responses</strong> in RAML to create a clear API contract.</p>
+<ol>
+<li><strong>APIKit</strong>:</li>
+</ol>
+</li>
+<li>
+<p><strong>APIKit</strong> is a MuleSoft tool that auto-generates Mule flows based on a RAML definition.</p>
+</li>
+<li>When you import a RAML file, <strong>APIKit</strong> automatically scaffolds the API implementation with flows for each resource and method defined in RAML.</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>
+<p>RAML file with <code>/users</code> and <code>GET</code> will generate:</p>
+<p>xml</p>
+<p>Copy code</p>
+<p><code>&lt;flow name="get:/users:api-config"&gt;     &lt;!-- Flow implementation --&gt; &lt;/flow&gt;</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Generation</strong>:</p>
+<ul>
+<li>
+<p>RAML allows <strong>automatic generation</strong> of:</p>
+<ul>
+<li>API implementations (flows in MuleSoft).</li>
+<li>Mock servers for testing APIs.</li>
+<li>API documentation.</li>
+<li><strong>API Mocking and Testing</strong>:</li>
+</ul>
+</li>
+<li>
+<p>MuleSoft uses RAML to create <strong>mock services</strong> that simulate API responses for testing during development.</p>
+</li>
+<li>
+<p>Developers can validate the API design and structure before implementation.</p>
+<ol>
+<li><strong>Anypoint Exchange</strong>:</li>
+</ol>
+</li>
+<li>
+<p>MuleSoft uses RAML to provide reusable <strong>API specifications</strong> in the <strong>Anypoint Exchange</strong>.</p>
+</li>
+<li>
+<p>Developers can discover, reuse, and publish RAML-based API designs.</p>
+<ol>
+<li><strong>API Documentation</strong>:</li>
+</ol>
+</li>
+<li>
+<p>RAML serves as a blueprint for API documentation, which is auto-generated and published in tools like <strong>Anypoint API Portal</strong>.</p>
+<ol>
+<li><strong>API Management</strong>:</li>
+</ol>
+</li>
+<li>
+<p>RAML-based APIs can be deployed and managed on <strong>Anypoint API Manager</strong>.</p>
+</li>
+<li>Policies like <strong>rate limiting</strong>, <strong>security enforcement</strong>, and <strong>monitoring</strong> can be applied to RAML-defined APIs.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="key-benefits-of-using-raml-in-mulesoft"><strong>Key Benefits of Using RAML in MuleSoft</strong><a class="headerlink" href="#key-benefits-of-using-raml-in-mulesoft" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Design-First Approach</strong>:</p>
+<ul>
+<li>
+<p>RAML supports a design-first methodology, enabling teams to design and validate APIs <strong>before implementation</strong>.</p>
+<ol>
+<li><strong>Automatic Scaffolding</strong>:</li>
+</ol>
+</li>
+<li>
+<p>MuleSoft’s <strong>APIKit</strong> automatically generates API implementation flows from a RAML definition, saving development time.</p>
+<ol>
+<li><strong>Reusable Components</strong>:</li>
+</ol>
+</li>
+<li>
+<p>RAML promotes reusability through components like <strong>traits</strong>, <strong>resource types</strong>, and <strong>data types</strong>, which can be shared across APIs.</p>
+<ol>
+<li><strong>Clear Documentation</strong>:</li>
+</ol>
+</li>
+<li>
+<p>RAML’s structure ensures that APIs are well-documented and easy to understand for developers and stakeholders.</p>
+<ol>
+<li><strong>Seamless Integration</strong>:</li>
+</ol>
+</li>
+<li>
+<p>RAML integrates seamlessly with MuleSoft tools like <strong>Design Center</strong>, <strong>API Manager</strong>, <strong>Exchange</strong>, and <strong>APIKit</strong>.</p>
+<ol>
+<li><strong>Mocking and Testing</strong>:</li>
+</ol>
+</li>
+<li>
+<p>RAML definitions enable the creation of <strong>mock services</strong> to test APIs before the backend is implemented.</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="example-raml-in-mulesoft"><strong>Example: RAML in MuleSoft</strong><a class="headerlink" href="#example-raml-in-mulesoft" title="Permanent link">&para;</a></h3>
+<p>Here’s an example of a RAML file used in MuleSoft:</p>
+<p>yaml</p>
+<p>Copy code</p>
+<p><code>#%RAML 1.0 title: User API baseUri: https://api.example.com/v1 version: v1  /users:   get:     description: Retrieve a list of users.     responses:       200:         body:           application/json:             example:               [                 { "id": 1, "name": "John Doe" },                 { "id": 2, "name": "Jane Smith" }               ]   post:     description: Create a new user.     body:       application/json:         example:           { "name": "New User" }     responses:       201:         body:           application/json:             example:               { "id": 3, "name": "New User" }</code></p>
+<p>When this RAML file is imported into <strong>MuleSoft Anypoint Studio</strong>, <strong>APIKit</strong> will auto-generate flows for the <code>GET</code> and <code>POST</code> methods under the <code>/users</code> resource.</p>
+<hr />
+<h3 id="conclusion_2"><strong>Conclusion</strong><a class="headerlink" href="#conclusion_2" title="Permanent link">&para;</a></h3>
+<p>RAML is an integral part of MuleSoft’s API development lifecycle. It simplifies <strong>API design</strong>, improves documentation, and enables tools like <strong>APIKit</strong>, <strong>Anypoint Exchange</strong>, and <strong>API Manager</strong> to accelerate development and ensure consistency. It aligns perfectly with MuleSoft's <strong>API-led connectivity</strong> approach.</p>
+</li>
+<li>
+<h5 id="you-said_7">You said:<a class="headerlink" href="#you-said_7" title="Permanent link">&para;</a></h5>
+<p>Make it professional: Thanks for your call earlier in the moirning and sending the JD. After goung through JD I believe I am a very good match. However there are following two areas which may be deal breaker from your clients point of view: 1) I dont have experience in Core Java as I my main experience has been in Microsoft technologies. 2) JD has placed too much emphasis on MuleSoft. So I wanted to clarify that I have worked with dedicated MuleSoft team where I was responsible for defining over all architecture along with data exchange contracts with the MuleSoft team. I have excellent coding skills using .Net frame work, however I am not a MuleSoft developer. My MuleSoft skills include following: a- Data Integration Using Pre-built Connectors b- Routing and Orchestration c- File and Data Processing d- Scheduled Jobs and Event-based Triggers, e- Message Enrichment and Filtering f- Monitoring and Logging I have not worked with custom connectors, extensions and custom security implementations as the dedicated mulesoft team was working on these features. So please discuss with your client and let me know if I am suitable for this role.</p>
+</li>
+<li>
+<h6 id="chatgpt-said_7">ChatGPT said:<a class="headerlink" href="#chatgpt-said_7" title="Permanent link">&para;</a></h6>
+<p>Here's a professional version of your message:</p>
+<hr />
+<p><strong>Subject:</strong> Clarification Regarding JD and My Suitability for the Role</p>
+<p>Dear [Recruiter's Name],</p>
+<p>Thank you for your call earlier this morning and for sharing the job description (JD). After carefully reviewing the details, I believe my skills and experience align well with the role. However, I would like to highlight two specific areas that may require further discussion with your client:</p>
+<ol>
+<li>
+<p><strong>Core Java Experience</strong>:<br />
+    While I do not have experience in Core Java, my primary expertise lies in <strong>Microsoft technologies</strong>.</p>
+</li>
+<li>
+<p><strong>MuleSoft Experience</strong>:<br />
+    The JD places significant emphasis on MuleSoft development. I want to clarify my experience in this area.</p>
+<ul>
+<li>I have worked closely with a <strong>dedicated MuleSoft team</strong>, where I was responsible for defining the overall architecture and data exchange contracts with the MuleSoft developers.</li>
+<li>My expertise includes:<ul>
+<li><strong>Data Integration</strong> using pre-built connectors.</li>
+<li><strong>Routing and Orchestration</strong>.</li>
+<li><strong>File and Data Processing</strong>.</li>
+<li><strong>Scheduled Jobs and Event-Based Triggers</strong>.</li>
+<li><strong>Message Enrichment and Filtering</strong>.</li>
+<li><strong>Monitoring and Logging</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>While I have solid architectural knowledge and have successfully collaborated with MuleSoft teams, I am not a <strong>hands-on MuleSoft developer</strong>. I have not worked on custom connectors, extensions, or custom security implementations, as these were handled by the dedicated MuleSoft team.</p>
+</li>
+</ol>
+<p>Additionally, I possess excellent coding skills using the <strong>.NET framework</strong> and have a proven ability to deliver robust integration solutions leveraging my architectural expertise.</p>
+<p>I kindly request that you discuss these points with your client to determine if my profile aligns with their requirements. I remain confident that my skills, experience, and collaborative approach can add significant value to their team.</p>
+<p>Please let me know their feedback, and I look forward to your response.</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../FrontEnd/React/Hooks/React%20Hooks/" class="btn btn-neutral float-left" title="React Hooks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Mulesoft%20VS%20Azure%20Service%20Bus/" class="btn btn-neutral float-right" title="Mulesoft VS Azure Service Bus">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../FrontEnd/React/Hooks/React%20Hooks/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Mulesoft%20VS%20Azure%20Service%20Bus/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
